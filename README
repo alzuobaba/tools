@@ -5,3 +5,6 @@
 
 2. iscsi_tools
     批量做iscsi操作, login, logout, delete, discover, 获取已连接的iscsi 列表
+
+3. press_test
+    某个系统的并行压力测试脚本，修改一下又能节省几分钟。
