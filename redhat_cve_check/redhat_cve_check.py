@@ -52,6 +52,13 @@ def get_cves():
     return cves
 
 
+def _get_rpm_version(package_name, rpms_lists):
+    for rpm in rpms_lists:
+        name, version, release, _, _ = split_filename(rpm)
+        if name == package_name:
+            return "{}-{}-{}".format(name, version, release)
+
+
 class RedHatCveCheck(object):
     headers = {
         'authority': 'access.redhat.com',
@@ -113,7 +120,8 @@ class RedHatCveCheck(object):
                 if errate_url and get_rpm:
                     fixed_rpms = self._get_errata_rpm_packages(errate_url)
                 if fixed_rpms:
-                    products.update({'fixed_rpms': fixed_rpms})
+                    products.update(
+                        {'fixed_rpms': fixed_rpms, 'rpm_version': _get_rpm_version(obj['package'], fixed_rpms)})
                 affect_products.append(products)
         else:
             cve_state = '红帽未收录'
@@ -179,6 +187,38 @@ def longestCommonPrefix(strs: List[str]) -> str:
     return strs[0][:low]
 
 
+# copy from https://github.com/rpm-software-management/yum/blob/master/rpmUtils/miscutils.py splitFilename
+def split_filename(filename):
+    """
+    Pass in a standard style rpm fullname
+
+    Return a name, version, release, epoch, arch, e.g.::
+        foo-1.0-1.i386.rpm returns foo, 1.0, 1, i386
+        1:bar-9-123a.ia64.rpm returns bar, 9, 123a, 1, ia64
+    """
+
+    if filename[-4:] == '.rpm':
+        filename = filename[:-4]
+
+    archIndex = filename.rfind('.')
+    arch = filename[archIndex + 1:]
+
+    relIndex = filename[:archIndex].rfind('-')
+    rel = filename[relIndex + 1:archIndex]
+
+    verIndex = filename[:relIndex].rfind('-')
+    ver = filename[verIndex + 1:relIndex]
+
+    epochIndex = filename.find(':')
+    if epochIndex == -1:
+        epoch = ''
+    else:
+        epoch = filename[:epochIndex]
+
+    name = filename[epochIndex + 1:verIndex]
+    return name, ver, rel, epoch, arch
+
+
 def dump_to_file(filename, obj):
     with open('{}.json'.format(filename), 'w', encoding='utf8') as fp:
         fp.write(json.dumps(obj, ensure_ascii=False))
@@ -196,10 +236,10 @@ def get_cves_from_file(filename, reacquire=False):
     return read_from_file(filename)
 
 
-if __name__ == '__main__':
-    reacquire = False  # 是否重新获取
-    file_name = 'cve_infos'
-    cve_infos = get_cves_from_file(file_name, reacquire=reacquire)
+def get_and_dump_cve(filename='cve_infos', reacquire=False):
+    # reacquire = False  # 是否重新获取
+    # filename = 'cve_infos'
+    cve_infos = get_cves_from_file(filename, reacquire=reacquire)
     check = RedHatCveCheck()
     # 查询并保存详情信息
     try:
@@ -213,7 +253,7 @@ if __name__ == '__main__':
             check.set_cve(cve['cve_num'])
             cve['detail'] = check.get_cve_erratas(get_rpm=True)
     finally:
-        dump_to_file(file_name, cve_infos)
+        dump_to_file(filename, cve_infos)
     # 分组保存
     # 1.保存无cve号的漏洞
     no_cves = list(filter(lambda x: not x.get('cve_num'), cve_infos))
@@ -226,4 +266,20 @@ if __name__ == '__main__':
     groupby_cves = groupby(cve_infos, lambda x: x.get('title_key'))
     for key, group in groupby_cves:
         fname = 'cve_{}'.format(key)
-        dump_to_file(fname, list(group))
+        groups = list(group)
+        groups.sort(key=sort_lamba, reverse=True)
+        dump_to_file(fname, groups)
+
+
+def sort_lamba(cve):
+    cve_keyword = cve['detail']['cve_keyword']
+    sort_key = re.search('rpm_version\': \'({}-.*?)\''.format(cve_keyword), str(cve))
+    if sort_key:
+        print(sort_key.groups(), '----')
+        return sort_key.groups()[0]
+    else:
+        return ''
+
+
+if __name__ == '__main__':
+    get_and_dump_cve()
