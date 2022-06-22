@@ -1,0 +1,248 @@
+[
+  {
+    "cve_num": "CVE-2020-1927",
+    "title": "Apache HTTP Server 输入验证错误漏洞(CVE-2020-1927)",
+    "level": "中",
+    "title_key": "apache",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2020-1927",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "A flaw was found in Apache HTTP Server (httpd) versions 2.4.0 to 2.4.41. Redirects configured with mod_rewrite that were intended to be self-referential might be fooled by encoded newlines and redirected instead to an unexpected URL within the request URL.",
+      "cve_statement": "This issue only affects httpd versions between 2.4.0 and 2.4.41. Therefore Red Hat Enterprise Linux 5 and 6 are not affected by this flaw.",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2020:3958",
+          "errate_package_name": "httpd",
+          "fixed_rpms": [
+            "httpd-2.4.6-95.el7.src.rpm",
+            "httpd-2.4.6-95.el7.x86_64.rpm",
+            "httpd-debuginfo-2.4.6-95.el7.x86_64.rpm",
+            "httpd-debuginfo-2.4.6-95.el7.x86_64.rpm",
+            "httpd-devel-2.4.6-95.el7.x86_64.rpm",
+            "httpd-manual-2.4.6-95.el7.noarch.rpm",
+            "httpd-tools-2.4.6-95.el7.x86_64.rpm",
+            "mod_ldap-2.4.6-95.el7.x86_64.rpm",
+            "mod_proxy_html-2.4.6-95.el7.x86_64.rpm",
+            "mod_session-2.4.6-95.el7.x86_64.rpm",
+            "mod_ssl-2.4.6-95.el7.x86_64.rpm"
+          ],
+          "rpm_version": "httpd-2.4.6-95.el7"
+        }
+      ],
+      "cve_keyword": "httpd"
+    }
+  },
+  {
+    "cve_num": "CVE-2019-10098",
+    "title": "Apache httpd 输入验证错误漏洞(CVE-2019-10098)",
+    "level": "中",
+    "title_key": "apache",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2019-10098",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "低",
+      "cve_detail": "A vulnerability was discovered in Apache httpd, in mod_rewrite. Certain self-referential mod_rewrite rules could be fooled by encoded newlines, causing them to redirect to an unexpected location. An attacker could abuse this flaw in a phishing attack or as part of a client-side attack on browsers.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2020:3958",
+          "errate_package_name": "httpd",
+          "fixed_rpms": [
+            "httpd-2.4.6-95.el7.src.rpm",
+            "httpd-2.4.6-95.el7.x86_64.rpm",
+            "httpd-debuginfo-2.4.6-95.el7.x86_64.rpm",
+            "httpd-debuginfo-2.4.6-95.el7.x86_64.rpm",
+            "httpd-devel-2.4.6-95.el7.x86_64.rpm",
+            "httpd-manual-2.4.6-95.el7.noarch.rpm",
+            "httpd-tools-2.4.6-95.el7.x86_64.rpm",
+            "mod_ldap-2.4.6-95.el7.x86_64.rpm",
+            "mod_proxy_html-2.4.6-95.el7.x86_64.rpm",
+            "mod_session-2.4.6-95.el7.x86_64.rpm",
+            "mod_ssl-2.4.6-95.el7.x86_64.rpm"
+          ],
+          "rpm_version": "httpd-2.4.6-95.el7"
+        }
+      ],
+      "cve_keyword": "httpd"
+    }
+  },
+  {
+    "cve_num": "CVE-2020-1934",
+    "title": "Apache HTTP Server 安全漏洞(CVE-2020-1934)",
+    "level": "中",
+    "title_key": "apache",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2020-1934",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "低",
+      "cve_detail": "A flaw was found in Apache's HTTP server (httpd) .The mod_proxy_ftp module may use uninitialized memory with proxying to a malicious FTP server. The highest threat from this vulnerability is to data confidentiality.",
+      "cve_statement": "This flaw is caused by use of an uninitialized memory variable. Practically this has no impact, but in some corner cases it is possible that the contents of this variable could be read by a remote process, causing loss of confidentiality as a result of this. There is no evidence of code execution.",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2020:3958",
+          "errate_package_name": "httpd",
+          "fixed_rpms": [
+            "httpd-2.4.6-95.el7.src.rpm",
+            "httpd-2.4.6-95.el7.x86_64.rpm",
+            "httpd-debuginfo-2.4.6-95.el7.x86_64.rpm",
+            "httpd-debuginfo-2.4.6-95.el7.x86_64.rpm",
+            "httpd-devel-2.4.6-95.el7.x86_64.rpm",
+            "httpd-manual-2.4.6-95.el7.noarch.rpm",
+            "httpd-tools-2.4.6-95.el7.x86_64.rpm",
+            "mod_ldap-2.4.6-95.el7.x86_64.rpm",
+            "mod_proxy_html-2.4.6-95.el7.x86_64.rpm",
+            "mod_session-2.4.6-95.el7.x86_64.rpm",
+            "mod_ssl-2.4.6-95.el7.x86_64.rpm"
+          ],
+          "rpm_version": "httpd-2.4.6-95.el7"
+        }
+      ],
+      "cve_keyword": "httpd"
+    }
+  },
+  {
+    "cve_num": "CVE-2020-11984",
+    "title": "Apache HTTP Server 缓冲区错误漏洞(CVE-2020-11984)",
+    "level": "高",
+    "title_key": "apache",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2020-11984",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "A flaw was found in Apache httpd in versions 2.4.32 to 2.4.46. The uwsgi protocol does not serialize more than 16K of HTTP header leading to resource exhaustion and denial of service. The highest threat from this vulnerability is to data confidentiality and integrity as well as system availability.",
+      "cve_statement": "Red Hat Enterprise Linux 5, 6, and 7 do not ship the vulnerable version of httpd and, thus, are not affected.",
+      "affect_products": [
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "httpd"
+        }
+      ],
+      "cve_keyword": "httpd"
+    }
+  },
+  {
+    "cve_num": "CVE-2019-10082",
+    "title": "Apache httpd 资源管理错误漏洞(CVE-2019-10082)",
+    "level": "高",
+    "title_key": "apache",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2019-10082",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "A read-after-free vulnerability was discovered in Apache httpd, in mod_http2. A specially crafted http/2 client session could cause the server to read memory that was previously freed during connection shutdown, potentially leading to a crash.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "httpd"
+        }
+      ],
+      "cve_keyword": "httpd"
+    }
+  },
+  {
+    "cve_num": "CVE-2019-9517",
+    "title": "Apache HTTP/2实现安全漏洞(CVE-2019-9517)",
+    "level": "高",
+    "title_key": "apache",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2019-9517",
+      "cve_state": "未找到相关修复：Red Hat Enterprise Linux 7",
+      "cve_threat_severity": "高",
+      "cve_detail": "A vulnerability was found in HTTP/2. An attacker can open a HTTP/2 window so the peer can send without constraint. The TCP window remains closed so the peer cannot write the bytes on the wire. The attacker then sends a stream of requests for a large response object. Depending on how the server's queue is setup, the responses can consume excess memory, CPU, or both, potentially leading to a denial of service. The highest threat from this vulnerability is to system availability.",
+      "cve_statement": "The package httpd versions as shipped with Red Hat Enterprise Linux 5, 6 and 7 are not affected by this issue as HTTP/2 support is not provided.\nThis flaw has no available mitigation for nodejs package. It will be updated once the available fixes are released for Red Hat Enterprise Linux and Red Hat Software Collections.\n\nThe nodejs RPM shipped in OpenShift Container Platform 3.9 and 3.10 is not affected by this flaw as it does not contain the vulnerable code.",
+      "affect_products": [],
+      "cve_keyword": "未分类"
+    }
+  },
+  {
+    "cve_num": "CVE-2020-9490",
+    "title": "Apache HTTP Server 安全漏洞(CVE-2020-9490)",
+    "level": "高",
+    "title_key": "apache",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2020-9490",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "高",
+      "cve_detail": "A flaw was found in Apache httpd in versions prior to 2.4.46. A specially crafted Cache-Digest header triggers negative argument to memmove() that could lead to a crash and denial of service. The highest threat from this vulnerability is to system availability.",
+      "cve_statement": "As per upstream this flaw only affects Apache HTTP Server versions 2.4.20 to 2.4.43. Therefore only httpd packages shipped with Red Hat Enterprise Linux 8 are affected.",
+      "affect_products": [
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "httpd"
+        }
+      ],
+      "cve_keyword": "httpd"
+    }
+  },
+  {
+    "cve_num": "CVE-2020-11993",
+    "title": "Apache HTTP Server 环境问题漏洞(CVE-2020-11993)",
+    "level": "高",
+    "title_key": "apache",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2020-11993",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "A flaw was found in Apache httpd in versions 2.4.20 to 2.4.43. Logging using the wrong pool by mod_http2 at debug/trace log level may lead to potential crashes and denial of service. The highest threat from this vulnerability is to system availability.",
+      "cve_statement": "Red Hat Enterprise Linux 5, 6, and 7 do not ship the vulnerable version of httpd and, thus, are not affected.",
+      "affect_products": [
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "httpd"
+        }
+      ],
+      "cve_keyword": "httpd"
+    }
+  },
+  {
+    "cve_num": "CVE-2019-10081",
+    "title": "Apache httpd 安全漏洞(CVE-2019-10081)",
+    "level": "高",
+    "title_key": "apache",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2019-10081",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "A vulnerability was found in Apache httpd, in mod_http2. Under certain circumstances, HTTP/2 early pushes could lead to memory corruption, causing a server to crash.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "httpd"
+        }
+      ],
+      "cve_keyword": "httpd"
+    }
+  },
+  {
+    "cve_num": "CVE-2019-10092",
+    "title": "Apache httpd 跨站脚本漏洞(CVE-2019-10092)",
+    "level": "中",
+    "title_key": "apache",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2019-10092",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "低",
+      "cve_detail": "A cross-site scripting vulnerability was found in Apache httpd, affecting the mod_proxy error page. Under certain circumstances, a crafted link could inject content into the HTML displayed in the error page, potentially leading to client-side exploitation.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "httpd"
+        }
+      ],
+      "cve_keyword": "httpd"
+    }
+  }
+]

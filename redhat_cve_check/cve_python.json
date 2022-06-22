@@ -1,0 +1,939 @@
+[
+  {
+    "cve_num": "CVE-2019-16935",
+    "title": "Python 跨站脚本漏洞(CVE-2019-16935)",
+    "level": "中",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2019-16935",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "A reflected cross-site scripting (XSS) vulnerability was found in Python XML-RPC server. The `server_title` field is not sufficiently sanitized allowing malicious JavaScript to be injected. Successful exploitation would allow a remote attacker to execute JavaScript code within the context of the affected user.",
+      "cve_statement": "This flaw does not affect the versions of python27-python as shipped with Red Hat Software Collections 3 as they already include the fix.\nThis flaw does not affect the versions of python36:3.6/python36 as shipped with Red Hat Enterprise Linux 8 as they are \"symlinks\" to the main python3 component, which provides the actual interpreter of the Python programming language.",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2020:3888",
+          "errate_package_name": "python3",
+          "fixed_rpms": [
+            "python3-3.6.8-17.el7.src.rpm",
+            "python3-3.6.8-17.el7.i686.rpm",
+            "python3-3.6.8-17.el7.x86_64.rpm",
+            "python3-debug-3.6.8-17.el7.i686.rpm",
+            "python3-debug-3.6.8-17.el7.x86_64.rpm",
+            "python3-debuginfo-3.6.8-17.el7.i686.rpm",
+            "python3-debuginfo-3.6.8-17.el7.i686.rpm",
+            "python3-debuginfo-3.6.8-17.el7.x86_64.rpm",
+            "python3-debuginfo-3.6.8-17.el7.x86_64.rpm",
+            "python3-devel-3.6.8-17.el7.i686.rpm",
+            "python3-devel-3.6.8-17.el7.x86_64.rpm",
+            "python3-idle-3.6.8-17.el7.i686.rpm",
+            "python3-idle-3.6.8-17.el7.x86_64.rpm",
+            "python3-libs-3.6.8-17.el7.i686.rpm",
+            "python3-libs-3.6.8-17.el7.x86_64.rpm",
+            "python3-test-3.6.8-17.el7.i686.rpm",
+            "python3-test-3.6.8-17.el7.x86_64.rpm",
+            "python3-tkinter-3.6.8-17.el7.i686.rpm",
+            "python3-tkinter-3.6.8-17.el7.x86_64.rpm"
+          ],
+          "rpm_version": "python3-3.6.8-17.el7"
+        },
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2020:3911",
+          "errate_package_name": "python",
+          "fixed_rpms": [
+            "python-2.7.5-89.el7.src.rpm",
+            "python-2.7.5-89.el7.x86_64.rpm",
+            "python-debug-2.7.5-89.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-89.el7.i686.rpm",
+            "python-debuginfo-2.7.5-89.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-89.el7.x86_64.rpm",
+            "python-devel-2.7.5-89.el7.x86_64.rpm",
+            "python-libs-2.7.5-89.el7.i686.rpm",
+            "python-libs-2.7.5-89.el7.x86_64.rpm",
+            "python-test-2.7.5-89.el7.x86_64.rpm",
+            "python-tools-2.7.5-89.el7.x86_64.rpm",
+            "tkinter-2.7.5-89.el7.x86_64.rpm"
+          ],
+          "rpm_version": "python-2.7.5-89.el7"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  },
+  {
+    "cve_num": "CVE-2019-16056",
+    "title": "Python email.utils.parseaddr安全漏洞（CVE-2019-16056）",
+    "level": "高",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2019-16056",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "An issue was discovered in Python through 2.7.16, 3.x through 3.5.7, 3.6.x through 3.6.9, and 3.7.x through 3.7.4. The email module wrongly parses email addresses that contain multiple @ characters. An application that uses the email module and implements some kind of checks on the From/To headers of a message could be tricked into accepting an email address that should be denied. An attack may be the same as in CVE-2019-11340; however, this CVE applies to Python more generally.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2020:1131",
+          "errate_package_name": "python",
+          "fixed_rpms": [
+            "python-2.7.5-88.el7.src.rpm",
+            "python-2.7.5-88.el7.x86_64.rpm",
+            "python-debug-2.7.5-88.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-88.el7.i686.rpm",
+            "python-debuginfo-2.7.5-88.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-88.el7.x86_64.rpm",
+            "python-devel-2.7.5-88.el7.x86_64.rpm",
+            "python-libs-2.7.5-88.el7.i686.rpm",
+            "python-libs-2.7.5-88.el7.x86_64.rpm",
+            "python-test-2.7.5-88.el7.x86_64.rpm",
+            "python-tools-2.7.5-88.el7.x86_64.rpm",
+            "tkinter-2.7.5-88.el7.x86_64.rpm"
+          ],
+          "rpm_version": "python-2.7.5-88.el7"
+        },
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2020:1132",
+          "errate_package_name": "python3",
+          "fixed_rpms": [
+            "python3-3.6.8-13.el7.src.rpm",
+            "python3-3.6.8-13.el7.i686.rpm",
+            "python3-3.6.8-13.el7.x86_64.rpm",
+            "python3-debug-3.6.8-13.el7.i686.rpm",
+            "python3-debug-3.6.8-13.el7.x86_64.rpm",
+            "python3-debuginfo-3.6.8-13.el7.i686.rpm",
+            "python3-debuginfo-3.6.8-13.el7.i686.rpm",
+            "python3-debuginfo-3.6.8-13.el7.x86_64.rpm",
+            "python3-debuginfo-3.6.8-13.el7.x86_64.rpm",
+            "python3-devel-3.6.8-13.el7.i686.rpm",
+            "python3-devel-3.6.8-13.el7.x86_64.rpm",
+            "python3-idle-3.6.8-13.el7.i686.rpm",
+            "python3-idle-3.6.8-13.el7.x86_64.rpm",
+            "python3-libs-3.6.8-13.el7.i686.rpm",
+            "python3-libs-3.6.8-13.el7.x86_64.rpm",
+            "python3-test-3.6.8-13.el7.i686.rpm",
+            "python3-test-3.6.8-13.el7.x86_64.rpm",
+            "python3-tkinter-3.6.8-13.el7.i686.rpm",
+            "python3-tkinter-3.6.8-13.el7.x86_64.rpm"
+          ],
+          "rpm_version": "python3-3.6.8-13.el7"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  },
+  {
+    "cve_num": "CVE-2018-20852",
+    "title": "Python 输入验证错误漏洞(CVE-2018-20852)",
+    "level": "中",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2018-20852",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "http.cookiejar.DefaultPolicy.domain_return_ok in Lib/http/cookiejar.py in Python before 3.7.3 does not correctly validate the domain: it can be tricked into sending existing cookies to the wrong server. An attacker may abuse this flaw by using a server with a hostname that has another valid hostname as a suffix (e.g., pythonicexample.com to steal cookies for example.com). When a program uses http.cookiejar.DefaultPolicy and tries to do an HTTP connection to an attacker-controlled server, existing cookies can be leaked to the attacker. This affects 2.x through 2.7.16, 3.x before 3.4.10, 3.5.x before 3.5.7, 3.6.x before 3.6.9, and 3.7.x before 3.7.3.",
+      "cve_statement": "This issue affects the versions of python as shipped with Red Hat Enterprise Linux 5, 6, and 7. This issue affects the versions of python3 as shipped with Red Hat Enterprise Linux 7 and 8. This issue affects the versions of python2 and python36 as shipped with Red Hat Enterprise Linux 8.\n\nRed Hat Enterprise Linux 5 is now in Extended Life Phase of the support and maintenance life cycle. This issue is not currently planned to be addressed in future updates. For additional information, refer to the Red Hat Enterprise Linux Life Cycle: https://access.redhat.com/support/policy/updates/errata/.\n\nRed Hat Enterprise Linux 6 is now in Maintenance Support 2 Phase of the support and maintenance life cycle. This has been rated as having a security impact of Moderate, and is not currently planned to be addressed in future updates. For additional information, refer to the Red Hat Enterprise Linux Life Cycle: https://access.redhat.com/support/policy/updates/errata/.",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2020:1131",
+          "errate_package_name": "python",
+          "fixed_rpms": [
+            "python-2.7.5-88.el7.src.rpm",
+            "python-2.7.5-88.el7.x86_64.rpm",
+            "python-debug-2.7.5-88.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-88.el7.i686.rpm",
+            "python-debuginfo-2.7.5-88.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-88.el7.x86_64.rpm",
+            "python-devel-2.7.5-88.el7.x86_64.rpm",
+            "python-libs-2.7.5-88.el7.i686.rpm",
+            "python-libs-2.7.5-88.el7.x86_64.rpm",
+            "python-test-2.7.5-88.el7.x86_64.rpm",
+            "python-tools-2.7.5-88.el7.x86_64.rpm",
+            "tkinter-2.7.5-88.el7.x86_64.rpm"
+          ],
+          "rpm_version": "python-2.7.5-88.el7"
+        },
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2020:1132",
+          "errate_package_name": "python3",
+          "fixed_rpms": [
+            "python3-3.6.8-13.el7.src.rpm",
+            "python3-3.6.8-13.el7.i686.rpm",
+            "python3-3.6.8-13.el7.x86_64.rpm",
+            "python3-debug-3.6.8-13.el7.i686.rpm",
+            "python3-debug-3.6.8-13.el7.x86_64.rpm",
+            "python3-debuginfo-3.6.8-13.el7.i686.rpm",
+            "python3-debuginfo-3.6.8-13.el7.i686.rpm",
+            "python3-debuginfo-3.6.8-13.el7.x86_64.rpm",
+            "python3-debuginfo-3.6.8-13.el7.x86_64.rpm",
+            "python3-devel-3.6.8-13.el7.i686.rpm",
+            "python3-devel-3.6.8-13.el7.x86_64.rpm",
+            "python3-idle-3.6.8-13.el7.i686.rpm",
+            "python3-idle-3.6.8-13.el7.x86_64.rpm",
+            "python3-libs-3.6.8-13.el7.i686.rpm",
+            "python3-libs-3.6.8-13.el7.x86_64.rpm",
+            "python3-test-3.6.8-13.el7.i686.rpm",
+            "python3-test-3.6.8-13.el7.x86_64.rpm",
+            "python3-tkinter-3.6.8-13.el7.i686.rpm",
+            "python3-tkinter-3.6.8-13.el7.x86_64.rpm"
+          ],
+          "rpm_version": "python3-3.6.8-13.el7"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  },
+  {
+    "cve_num": "CVE-2019-9948",
+    "title": "Python 安全特征问题漏洞(CVE-2019-9948)",
+    "level": "高",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2019-9948",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "urllib in Python 2.x through 2.7.16 supports the local_file: scheme, which makes it easier for remote attackers to bypass protection mechanisms that blacklist file: URIs, as demonstrated by triggering a urllib.urlopen('local_file:///etc/passwd') call.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2019:2030",
+          "errate_package_name": "python",
+          "fixed_rpms": [
+            "python-2.7.5-86.el7.src.rpm",
+            "python-2.7.5-86.el7.x86_64.rpm",
+            "python-debug-2.7.5-86.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-86.el7.i686.rpm",
+            "python-debuginfo-2.7.5-86.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-86.el7.x86_64.rpm",
+            "python-devel-2.7.5-86.el7.x86_64.rpm",
+            "python-libs-2.7.5-86.el7.i686.rpm",
+            "python-libs-2.7.5-86.el7.x86_64.rpm",
+            "python-test-2.7.5-86.el7.x86_64.rpm",
+            "python-tools-2.7.5-86.el7.x86_64.rpm",
+            "tkinter-2.7.5-86.el7.x86_64.rpm"
+          ],
+          "rpm_version": "python-2.7.5-86.el7"
+        },
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "python3"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  },
+  {
+    "cve_num": "CVE-2018-14647",
+    "title": "Python 资源管理错误漏洞(CVE-2018-14647)",
+    "level": "高",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2018-14647",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "Python's elementtree C accelerator failed to initialise Expat's hash salt during initialization. This could make it easy to conduct denial of service attacks against Expat by contructing an XML document that would cause pathological hash collisions in Expat's internal data structures, consuming large amounts CPU and RAM.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2019:2030",
+          "errate_package_name": "python",
+          "fixed_rpms": [
+            "python-2.7.5-86.el7.src.rpm",
+            "python-2.7.5-86.el7.x86_64.rpm",
+            "python-debug-2.7.5-86.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-86.el7.i686.rpm",
+            "python-debuginfo-2.7.5-86.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-86.el7.x86_64.rpm",
+            "python-devel-2.7.5-86.el7.x86_64.rpm",
+            "python-libs-2.7.5-86.el7.i686.rpm",
+            "python-libs-2.7.5-86.el7.x86_64.rpm",
+            "python-test-2.7.5-86.el7.x86_64.rpm",
+            "python-tools-2.7.5-86.el7.x86_64.rpm",
+            "tkinter-2.7.5-86.el7.x86_64.rpm"
+          ],
+          "rpm_version": "python-2.7.5-86.el7"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  },
+  {
+    "cve_num": "CVE-2019-9740",
+    "title": "python Redis Labs Redis和Python 注入漏洞(CVE-2019-9740)",
+    "level": "中",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2019-9740",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "An issue was discovered in urllib2 in Python 2.x through 2.7.16 and urllib in Python 3.x through 3.7.3. CRLF injection is possible if the attacker controls a url parameter, as demonstrated by the first argument to urllib.request.urlopen with \\r\\n (specifically in the query string after a ? character) followed by an HTTP header or a Redis command. This is fixed in: v2.7.17, v2.7.17rc1, v2.7.18, v2.7.18rc1; v3.5.10, v3.5.10rc1, v3.5.8, v3.5.8rc1, v3.5.8rc2, v3.5.9; v3.6.10, v3.6.10rc1, v3.6.11, v3.6.11rc1, v3.6.12, v3.6.9, v3.6.9rc1; v3.7.4, v3.7.4rc1, v3.7.4rc2, v3.7.5, v3.7.5rc1, v3.7.6, v3.7.6rc1, v3.7.7, v3.7.7rc1, v3.7.8, v3.7.8rc1, v3.7.9.",
+      "cve_statement": "This issue affects:\n* All current versions of Red Hat OpenStack Platform. However, version 8 is due to retire on the 20th of April 2019, there are no more planned releases prior to this date.",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2019:2030",
+          "errate_package_name": "python",
+          "fixed_rpms": [
+            "python-2.7.5-86.el7.src.rpm",
+            "python-2.7.5-86.el7.x86_64.rpm",
+            "python-debug-2.7.5-86.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-86.el7.i686.rpm",
+            "python-debuginfo-2.7.5-86.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-86.el7.x86_64.rpm",
+            "python-devel-2.7.5-86.el7.x86_64.rpm",
+            "python-libs-2.7.5-86.el7.i686.rpm",
+            "python-libs-2.7.5-86.el7.x86_64.rpm",
+            "python-test-2.7.5-86.el7.x86_64.rpm",
+            "python-tools-2.7.5-86.el7.x86_64.rpm",
+            "tkinter-2.7.5-86.el7.x86_64.rpm"
+          ],
+          "rpm_version": "python-2.7.5-86.el7"
+        },
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "python3"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  },
+  {
+    "cve_num": "CVE-2019-9947",
+    "title": "python Redis Labs Redis和Python 注入漏洞(CVE-2019-9947)",
+    "level": "中",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2019-9947",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "An issue was discovered in urllib2 in Python 2.x through 2.7.16 and urllib in Python 3.x through 3.7.3. CRLF injection is possible if the attacker controls a url parameter, as demonstrated by the first argument to urllib.request.urlopen with \\r\\n (specifically in the path component of a URL that lacks a ? character) followed by an HTTP header or a Redis command. This is similar to the CVE-2019-9740 query string issue. This is fixed in: v2.7.17, v2.7.17rc1, v2.7.18, v2.7.18rc1; v3.5.10, v3.5.10rc1, v3.5.8, v3.5.8rc1, v3.5.8rc2, v3.5.9; v3.6.10, v3.6.10rc1, v3.6.11, v3.6.11rc1, v3.6.12, v3.6.9, v3.6.9rc1; v3.7.4, v3.7.4rc1, v3.7.4rc2, v3.7.5, v3.7.5rc1, v3.7.6, v3.7.6rc1, v3.7.7, v3.7.7rc1, v3.7.8, v3.7.8rc1, v3.7.9.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2019:2030",
+          "errate_package_name": "python",
+          "fixed_rpms": [
+            "python-2.7.5-86.el7.src.rpm",
+            "python-2.7.5-86.el7.x86_64.rpm",
+            "python-debug-2.7.5-86.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-86.el7.i686.rpm",
+            "python-debuginfo-2.7.5-86.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-86.el7.x86_64.rpm",
+            "python-devel-2.7.5-86.el7.x86_64.rpm",
+            "python-libs-2.7.5-86.el7.i686.rpm",
+            "python-libs-2.7.5-86.el7.x86_64.rpm",
+            "python-test-2.7.5-86.el7.x86_64.rpm",
+            "python-tools-2.7.5-86.el7.x86_64.rpm",
+            "tkinter-2.7.5-86.el7.x86_64.rpm"
+          ],
+          "rpm_version": "python-2.7.5-86.el7"
+        },
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "python3"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  },
+  {
+    "cve_num": "CVE-2019-10160",
+    "title": "Python 信任管理问题漏洞(CVE-2019-10160)",
+    "level": "高",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2019-10160",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "高",
+      "cve_detail": "A security regression of CVE-2019-9636 was discovered in python, since commit d537ab0ff9767ef024f26246899728f0116b1ec3, which still allows an attacker to exploit CVE-2019-9636 by abusing the user and password parts of a URL. When an application parses user-supplied URLs to store cookies, authentication credentials, or other kind of information, it is possible for an attacker to provide specially crafted URLs to make the application locate host-related information (e.g. cookies, authentication data) and send them to a different host than where it should, unlike if the URLs had been correctly parsed. The result of an attack may vary based on the application.",
+      "cve_statement": "This issue did not affect the versions of python as shipped with Red Hat Enterprise Linux 5 and 6 as the security regression was not introduced in those versions. See CVE-2019-9636 for more details about the how these versions of Red Hat Enterprise Linux are affected with regard to the original flaw.\n\nThis issue did not affect the versions of python as shipped with Red Hat Enterprise Linux 8 as the security regression was not introduced in those versions. See CVE-2019-9636 for more details about the how these versions of Red Hat Enterprise Linux are affected with regard to the original flaw.",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2019:1587",
+          "errate_package_name": "python",
+          "fixed_rpms": [
+            "python-2.7.5-80.el7_6.src.rpm",
+            "python-2.7.5-80.el7_6.x86_64.rpm",
+            "python-debug-2.7.5-80.el7_6.x86_64.rpm",
+            "python-debuginfo-2.7.5-80.el7_6.i686.rpm",
+            "python-debuginfo-2.7.5-80.el7_6.x86_64.rpm",
+            "python-debuginfo-2.7.5-80.el7_6.x86_64.rpm",
+            "python-devel-2.7.5-80.el7_6.x86_64.rpm",
+            "python-libs-2.7.5-80.el7_6.i686.rpm",
+            "python-libs-2.7.5-80.el7_6.x86_64.rpm",
+            "python-test-2.7.5-80.el7_6.x86_64.rpm",
+            "python-tools-2.7.5-80.el7_6.x86_64.rpm",
+            "tkinter-2.7.5-80.el7_6.x86_64.rpm"
+          ],
+          "rpm_version": "python-2.7.5-80.el7_6"
+        },
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "python3"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  },
+  {
+    "cve_num": "CVE-2019-9636",
+    "title": "Python 信任管理问题漏洞(CVE-2019-9636)",
+    "level": "高",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2019-9636",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "高",
+      "cve_detail": "It was discovered that python's functions urllib.parse.urlsplit and urllib.parse.urlparse do not properly handle URLs encoded with Punycode/Internationalizing Domain Names in Applications (IDNA), which may result in a wrong domain name (specifically the netloc component of URL - user@domain:port) being returned by those functions. When an application parses user-supplied URLs to store cookies, authentication credentials, or other kind of information, it is possible for an attacker to provide specially crafted URLs to make the application locate host-related information (e.g. cookies, authentication data) and send them to a different host than where it should, unlike if the URLs had been correctly parsed. The result of an attack may vary based on the application.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2019:0710",
+          "errate_package_name": "python",
+          "fixed_rpms": [
+            "python-2.7.5-77.el7_6.src.rpm",
+            "python-2.7.5-77.el7_6.x86_64.rpm",
+            "python-debug-2.7.5-77.el7_6.x86_64.rpm",
+            "python-debuginfo-2.7.5-77.el7_6.i686.rpm",
+            "python-debuginfo-2.7.5-77.el7_6.x86_64.rpm",
+            "python-debuginfo-2.7.5-77.el7_6.x86_64.rpm",
+            "python-devel-2.7.5-77.el7_6.x86_64.rpm",
+            "python-libs-2.7.5-77.el7_6.i686.rpm",
+            "python-libs-2.7.5-77.el7_6.x86_64.rpm",
+            "python-test-2.7.5-77.el7_6.x86_64.rpm",
+            "python-tools-2.7.5-77.el7_6.x86_64.rpm",
+            "tkinter-2.7.5-77.el7_6.x86_64.rpm"
+          ],
+          "rpm_version": "python-2.7.5-77.el7_6"
+        },
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "python3"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  },
+  {
+    "cve_num": "CVE-2018-1060",
+    "title": "Python 资源管理错误漏洞（CVE-2018-1060）",
+    "level": "高",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2018-1060",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "低",
+      "cve_detail": "A flaw was found in the way catastrophic backtracking was implemented in python's pop3lib's apop() method. An attacker could use this flaw to cause denial of service.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2018:3041",
+          "errate_package_name": "python",
+          "fixed_rpms": [
+            "python-2.7.5-76.el7.src.rpm",
+            "python-2.7.5-76.el7.x86_64.rpm",
+            "python-debug-2.7.5-76.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-76.el7.i686.rpm",
+            "python-debuginfo-2.7.5-76.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-76.el7.x86_64.rpm",
+            "python-devel-2.7.5-76.el7.x86_64.rpm",
+            "python-libs-2.7.5-76.el7.i686.rpm",
+            "python-libs-2.7.5-76.el7.x86_64.rpm",
+            "python-test-2.7.5-76.el7.x86_64.rpm",
+            "python-tools-2.7.5-76.el7.x86_64.rpm",
+            "tkinter-2.7.5-76.el7.x86_64.rpm"
+          ],
+          "rpm_version": "python-2.7.5-76.el7"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  },
+  {
+    "cve_num": "CVE-2018-1061",
+    "title": "Python 资源管理错误漏洞（CVE-2018-1061）",
+    "level": "高",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2018-1061",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "A flaw was found in the way catastrophic backtracking was implemented in python's difflib.IS_LINE_JUNK method. An attacker could use this flaw to cause denial of service.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2018:3041",
+          "errate_package_name": "python",
+          "fixed_rpms": [
+            "python-2.7.5-76.el7.src.rpm",
+            "python-2.7.5-76.el7.x86_64.rpm",
+            "python-debug-2.7.5-76.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-76.el7.i686.rpm",
+            "python-debuginfo-2.7.5-76.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-76.el7.x86_64.rpm",
+            "python-devel-2.7.5-76.el7.x86_64.rpm",
+            "python-libs-2.7.5-76.el7.i686.rpm",
+            "python-libs-2.7.5-76.el7.x86_64.rpm",
+            "python-test-2.7.5-76.el7.x86_64.rpm",
+            "python-tools-2.7.5-76.el7.x86_64.rpm",
+            "tkinter-2.7.5-76.el7.x86_64.rpm"
+          ],
+          "rpm_version": "python-2.7.5-76.el7"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  },
+  {
+    "cve_num": "CVE-2016-5636",
+    "title": "Python 输入验证错误漏洞(CVE-2016-5636)",
+    "level": "高",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2016-5636",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "低",
+      "cve_detail": "A vulnerability was discovered in Python, in the built-in zipimporter. A specially crafted zip file placed in a module path such that it would be loaded by a later \"import\" statement could cause a heap overflow, leading to arbitrary code execution.",
+      "cve_statement": "Red Hat Product Security has rated this issue as having Low security impact. This issue is not currently planned to be addressed in future updates. For additional information, refer to the Issue Severity Classification: https://access.redhat.com/security/updates/classification/.",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2016:2586",
+          "errate_package_name": "python",
+          "fixed_rpms": [
+            "python-2.7.5-48.el7.src.rpm",
+            "python-2.7.5-48.el7.x86_64.rpm",
+            "python-debug-2.7.5-48.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-48.el7.i686.rpm",
+            "python-debuginfo-2.7.5-48.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-48.el7.x86_64.rpm",
+            "python-devel-2.7.5-48.el7.x86_64.rpm",
+            "python-libs-2.7.5-48.el7.i686.rpm",
+            "python-libs-2.7.5-48.el7.x86_64.rpm",
+            "python-test-2.7.5-48.el7.x86_64.rpm",
+            "python-tools-2.7.5-48.el7.x86_64.rpm",
+            "tkinter-2.7.5-48.el7.x86_64.rpm"
+          ],
+          "rpm_version": "python-2.7.5-48.el7"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  },
+  {
+    "cve_num": "CVE-2016-1000110",
+    "title": "Python CGIHandler httpoxy 安全漏洞(CVE-2016-1000110)",
+    "level": "中",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2016-1000110",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "It was discovered that the Python CGIHandler class did not properly protect against the HTTP_PROXY variable name clash in a CGI context. A remote attacker could possibly use this flaw to redirect HTTP requests performed by a Python CGI script to an attacker-controlled proxy via a malicious HTTP request.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2016:1626",
+          "errate_package_name": "python",
+          "fixed_rpms": [
+            "python-2.7.5-38.el7_2.src.rpm",
+            "python-2.7.5-38.el7_2.x86_64.rpm",
+            "python-debug-2.7.5-38.el7_2.x86_64.rpm",
+            "python-debuginfo-2.7.5-38.el7_2.i686.rpm",
+            "python-debuginfo-2.7.5-38.el7_2.x86_64.rpm",
+            "python-debuginfo-2.7.5-38.el7_2.x86_64.rpm",
+            "python-devel-2.7.5-38.el7_2.x86_64.rpm",
+            "python-libs-2.7.5-38.el7_2.i686.rpm",
+            "python-libs-2.7.5-38.el7_2.x86_64.rpm",
+            "python-test-2.7.5-38.el7_2.x86_64.rpm",
+            "python-tools-2.7.5-38.el7_2.x86_64.rpm",
+            "tkinter-2.7.5-38.el7_2.x86_64.rpm"
+          ],
+          "rpm_version": "python-2.7.5-38.el7_2"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  },
+  {
+    "cve_num": "CVE-2016-5699",
+    "title": "Python 'urrlib2/urllib/httplib/http.client' HTTP标头注入漏洞(CVE-2016-5699)",
+    "level": "中",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2016-5699",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "It was found that the Python's httplib library (used by urllib, urllib2 and others) did not properly check HTTPConnection.putheader() function arguments. An attacker could use this flaw to inject additional headers in a Python application that allowed user provided header names or values.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2016:1626",
+          "errate_package_name": "python",
+          "fixed_rpms": [
+            "python-2.7.5-38.el7_2.src.rpm",
+            "python-2.7.5-38.el7_2.x86_64.rpm",
+            "python-debug-2.7.5-38.el7_2.x86_64.rpm",
+            "python-debuginfo-2.7.5-38.el7_2.i686.rpm",
+            "python-debuginfo-2.7.5-38.el7_2.x86_64.rpm",
+            "python-debuginfo-2.7.5-38.el7_2.x86_64.rpm",
+            "python-devel-2.7.5-38.el7_2.x86_64.rpm",
+            "python-libs-2.7.5-38.el7_2.i686.rpm",
+            "python-libs-2.7.5-38.el7_2.x86_64.rpm",
+            "python-test-2.7.5-38.el7_2.x86_64.rpm",
+            "python-tools-2.7.5-38.el7_2.x86_64.rpm",
+            "tkinter-2.7.5-38.el7_2.x86_64.rpm"
+          ],
+          "rpm_version": "python-2.7.5-38.el7_2"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  },
+  {
+    "cve_num": "CVE-2014-7185",
+    "title": "Python‘bufferobject.c’整数溢出漏洞(CVE-2014-7185)",
+    "level": "中",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2014-7185",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "低",
+      "cve_detail": "An integer overflow flaw was found in the way the buffer() function handled its offset and size arguments. An attacker able to control those arguments could use this flaw to disclose portions of the application memory or cause it to crash.",
+      "cve_statement": "This issue affects the versions of python as shipped with Red Hat Enterprise Linux 7. A future update may address this issue.\n\nRed Hat Enterprise Linux 5 is now in Production 3 Phase of the support and maintenance life cycle. This has been rated as having Low security impact and is not currently planned to be addressed in future updates. For additional information, refer to the Red Hat Enterprise Linux Life Cycle: https://access.redhat.com/support/policy/updates/errata/.",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2015:2101",
+          "errate_package_name": "python",
+          "fixed_rpms": [
+            "python-2.7.5-34.el7.src.rpm",
+            "python-2.7.5-34.el7.x86_64.rpm",
+            "python-debug-2.7.5-34.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-34.el7.i686.rpm",
+            "python-debuginfo-2.7.5-34.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-34.el7.x86_64.rpm",
+            "python-devel-2.7.5-34.el7.x86_64.rpm",
+            "python-libs-2.7.5-34.el7.i686.rpm",
+            "python-libs-2.7.5-34.el7.x86_64.rpm",
+            "python-test-2.7.5-34.el7.x86_64.rpm",
+            "python-tools-2.7.5-34.el7.x86_64.rpm",
+            "tkinter-2.7.5-34.el7.x86_64.rpm"
+          ],
+          "rpm_version": "python-2.7.5-34.el7"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  },
+  {
+    "cve_num": "CVE-2014-4616",
+    "title": "Python和simplejson _json模块信息泄露漏洞(CVE-2014-4616)",
+    "level": "低",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2014-4616",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "A flaw was found in the way the json module handled negative index argument passed to certain functions (such as raw_decode()). An attacker able to control index value passed to one of the affected functions could possibly use this flaw to disclose portions of the application memory.",
+      "cve_statement": "This issue affects the versions of python as shipped with Red Hat Enterprise Linux 7, the versions of python-simplejson as shipped with Red Hat Enterprise Linux 5 and 6, and the versions of python33-python and python33-python-simplejson as shipped with Red Hat Software Collections. Red Hat Product Security has rated this issue as having Moderate security impact. Future updates may address this issue. For additional information, refer to the Issue Severity Classification: https://access.redhat.com/security/updates/classification/.",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2015:2101",
+          "errate_package_name": "python",
+          "fixed_rpms": [
+            "python-2.7.5-34.el7.src.rpm",
+            "python-2.7.5-34.el7.x86_64.rpm",
+            "python-debug-2.7.5-34.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-34.el7.i686.rpm",
+            "python-debuginfo-2.7.5-34.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-34.el7.x86_64.rpm",
+            "python-devel-2.7.5-34.el7.x86_64.rpm",
+            "python-libs-2.7.5-34.el7.i686.rpm",
+            "python-libs-2.7.5-34.el7.x86_64.rpm",
+            "python-test-2.7.5-34.el7.x86_64.rpm",
+            "python-tools-2.7.5-34.el7.x86_64.rpm",
+            "tkinter-2.7.5-34.el7.x86_64.rpm"
+          ],
+          "rpm_version": "python-2.7.5-34.el7"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  },
+  {
+    "cve_num": "CVE-2017-1000158",
+    "title": "CPython 数字错误漏洞(CVE-2017-1000158)",
+    "level": "高",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2017-1000158",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "CPython (aka Python) up to 2.7.13 is vulnerable to an integer overflow in the PyString_DecodeEscape function in stringobject.c, resulting in heap-based buffer overflow (and possible arbitrary code execution)",
+      "cve_statement": "This issue affects the versions of python as shipped with Red Hat Enterprise Linux 6 and Red Hat Enterprise Linux 7, and python27-python, rh-python34-python, and rh-python35-python as shipped with Red Hat Software Collections 3. Red Hat Product Security has rated this issue as having Moderate security impact. A future update may address this issue. For additional information, refer to the Issue Severity Classification: https://access.redhat.com/security/updates/classification/.",
+      "affect_products": [
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "python"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  },
+  {
+    "cve_num": "CVE-2016-9063",
+    "title": "python Mozilla Firefox 安全漏洞(CVE-2016-9063)",
+    "level": "高",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2016-9063",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "低",
+      "cve_detail": "An integer overflow during the parsing of XML using the Expat library. This vulnerability affects Firefox < 50.",
+      "cve_statement": "This issue does not affect the version of firefox and thunderbird as shipped with Red Hat Enterprise Linux 5, 6 and 7.",
+      "affect_products": [
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "expat"
+        },
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "firefox"
+        },
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "thunderbird"
+        }
+      ],
+      "cve_keyword": "未分类"
+    }
+  },
+  {
+    "cve_num": "CVE-2017-9233",
+    "title": "python libexpat 安全漏洞(CVE-2017-9233)",
+    "level": "高",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2017-9233",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "XML External Entity vulnerability in libexpat 2.2.0 and earlier (Expat XML Parser Library) allows attackers to put the parser in an infinite loop using a malformed external entity definition from an external DTD.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "expat"
+        },
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "firefox"
+        },
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "thunderbird"
+        },
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "xulrunner"
+        }
+      ],
+      "cve_keyword": "未分类"
+    }
+  },
+  {
+    "cve_num": "CVE-2020-8492",
+    "title": "Python 资源管理错误漏洞(CVE-2020-8492)",
+    "level": "中",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2020-8492",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "Python 2.7 through 2.7.17, 3.5 through 3.5.9, 3.6 through 3.6.10, 3.7 through 3.7.6, and 3.8 through 3.8.1 allows an HTTP server to conduct Regular Expression Denial of Service (ReDoS) attacks against a client because of urllib.request.AbstractBasicAuthHandler catastrophic backtracking.",
+      "cve_statement": "Applications that use AbstractBasicAuthHandler, HTTPBasicAuthHandler and ProxyBasicAuthHandler may be affected by this flaw. Other classes may use the vulnerable method http_error_auth_reqed in AbstractBasicAuthHandler as well.\n\nVersions of python36:3.6/python36 as shipped with Red Hat Enterprise Linux 8 are marked as notaffected as they just provide \"symlinks\" to the main python3 component, which provides the actual interpreter of the Python programming language.",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2020:3888",
+          "errate_package_name": "python3",
+          "fixed_rpms": [
+            "python3-3.6.8-17.el7.src.rpm",
+            "python3-3.6.8-17.el7.i686.rpm",
+            "python3-3.6.8-17.el7.x86_64.rpm",
+            "python3-debug-3.6.8-17.el7.i686.rpm",
+            "python3-debug-3.6.8-17.el7.x86_64.rpm",
+            "python3-debuginfo-3.6.8-17.el7.i686.rpm",
+            "python3-debuginfo-3.6.8-17.el7.i686.rpm",
+            "python3-debuginfo-3.6.8-17.el7.x86_64.rpm",
+            "python3-debuginfo-3.6.8-17.el7.x86_64.rpm",
+            "python3-devel-3.6.8-17.el7.i686.rpm",
+            "python3-devel-3.6.8-17.el7.x86_64.rpm",
+            "python3-idle-3.6.8-17.el7.i686.rpm",
+            "python3-idle-3.6.8-17.el7.x86_64.rpm",
+            "python3-libs-3.6.8-17.el7.i686.rpm",
+            "python3-libs-3.6.8-17.el7.x86_64.rpm",
+            "python3-test-3.6.8-17.el7.i686.rpm",
+            "python3-test-3.6.8-17.el7.x86_64.rpm",
+            "python3-tkinter-3.6.8-17.el7.i686.rpm",
+            "python3-tkinter-3.6.8-17.el7.x86_64.rpm"
+          ],
+          "rpm_version": "python3-3.6.8-17.el7"
+        },
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "python"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  },
+  {
+    "cve_num": "CVE-2019-18348",
+    "title": "Python 注入漏洞(CVE-2019-18348)",
+    "level": "中",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2019-18348",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "A CRLF injection flaw was discovered in python in the way URLs are handled when doing an HTTP/HTTPS connection (e.g. through urlopen() or HTTPConnection). An attacker who can control the url parameter passed to urlopen method in the urllib/urllib2 modules can inject CRLF sequences and HTTP headers by abusing the \"host\" part of the URL.",
+      "cve_statement": "This issue does not affect the versions of python and python3 as shipped with Red Hat Enterprise Linux 7.7 and above because glibc flaw CVE-2016-10739 was fixed in RHSA-2019:2118-03, which makes this bug not exploitable.\n\nThis issue does not affect the versions of python and python3 as shipped with Red Hat Enterprise Linux 8 because glibc is not vulnerable to CVE-2016-10739, making this bug not exploitable.",
+      "affect_products": [
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "python"
+        },
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "python3"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  },
+  {
+    "cve_num": "CVE-2010-3492",
+    "title": "Python asyncore模块设计错误漏洞(CVE-2010-3492)",
+    "level": "中",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2010-3492",
+      "cve_state": "未找到相关修复：Red Hat Enterprise Linux 7",
+      "cve_threat_severity": "低",
+      "cve_detail": "The asyncore module in Python before 3.2 does not properly handle unsuccessful calls to the accept function, and does not have accompanying documentation describing how daemon applications should handle unsuccessful calls to the accept function, which makes it easier for remote attackers to conduct denial of service attacks that terminate these applications via network connections.",
+      "cve_statement": "This issue affects the version of the python package as shipped with Red Hat Enterprise Linux 4, 5, and 6. Due to the nature of this flaw, it cannot be fixed in the python language, but must be addressed in each module which calls accept().",
+      "affect_products": [],
+      "cve_keyword": "未分类"
+    }
+  },
+  {
+    "cve_num": "CVE-2012-0876",
+    "title": "python Expat library多个拒绝服务漏洞(CVE-2012-0876)",
+    "level": "中",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2012-0876",
+      "cve_state": "未找到相关修复：Red Hat Enterprise Linux 7",
+      "cve_threat_severity": "中",
+      "cve_detail": "A denial of service flaw was found in the implementation of hash arrays in Expat. An attacker could use this flaw to make an application using Expat consume an excessive amount of CPU time by providing a specially crafted XML file that triggers multiple hash function collisions. To mitigate this issue, randomization has been added to the hash function to reduce the chance of an attacker successfully causing intentional collisions.",
+      "cve_statement": "",
+      "affect_products": [],
+      "cve_keyword": "未分类"
+    }
+  },
+  {
+    "cve_num": "CVE-2013-7040",
+    "title": "Python 加密问题漏洞(CVE-2013-7040)",
+    "level": "中",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2013-7040",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "Python 2.7 before 3.4 only uses the last eight bits of the prefix to randomize hash values, which causes it to compute hash values without restricting the ability to trigger hash collisions predictably and makes it easier for context-dependent attackers to cause a denial of service (CPU consumption) via crafted input to an application that maintains a hash table.  NOTE: this vulnerability exists because of an incomplete fix for CVE-2012-1150.",
+      "cve_statement": "This issue affects the version of python as shipped with Red Hat Enterprise Linux 5 and 6. There are currently no plans to fix this issue. For more details please refer to  https://bugzilla.redhat.com/show_bug.cgi?id=1039915#c4",
+      "affect_products": [
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "python"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  },
+  {
+    "cve_num": "CVE-2013-4238",
+    "title": "Python SSL模块安全绕过漏洞(CVE-2013-4238)",
+    "level": "中",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2013-4238",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "The ssl.match_hostname function in the SSL module in Python 2.6 through 3.4 does not properly handle a '\\0' character in a domain name in the Subject Alternative Name field of an X.509 certificate, which allows man-in-the-middle attackers to spoof arbitrary SSL servers via a crafted certificate issued by a legitimate Certification Authority, a related issue to CVE-2009-2408.",
+      "cve_statement": "This issue does not affect the version of python as shipped with Red Hat Enterprise Linux 5. The Red Hat Security Response Team has rated this issue as having moderate security impact, a future update may address this flaw.",
+      "affect_products": [
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "python"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  },
+  {
+    "cve_num": "CVE-2018-1000030",
+    "title": "Python 缓冲区错误漏洞(CVE-2018-1000030)",
+    "level": "低",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2018-1000030",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "低",
+      "cve_detail": "Python 2.7.14 is vulnerable to a Heap-Buffer-Overflow as well as a Heap-Use-After-Free. Python versions prior to 2.7.14 may also be vulnerable and it appears that Python 2.7.17 and prior may also be vulnerable however this has not been confirmed. The vulnerability lies when multiply threads are handling large amounts of data. In both cases there is essentially a race condition that occurs. For the Heap-Buffer-Overflow, Thread 2 is creating the size for a buffer, but Thread1 is already writing to the buffer without knowing how much to write. So when a large amount of data is being processed, it is very easy to cause memory corruption using a Heap-Buffer-Overflow. As for the Use-After-Free, Thread3->Malloc->Thread1->Free's->Thread2-Re-uses-Free'd Memory. The PSRT has stated that this is not a security vulnerability due to the fact that the attacker must be able to run code, however in some situations, such as function as a service, this vulnerability can potentially be used by an attacker to violate a trust boundary, as such the DWF feels this issue deserves a CVE.",
+      "cve_statement": "Versions of Python 2 included in Red Hat Enterprise Linux 6 and 7 are affected by this issue. Reading concurrently from the same file handle in multiple threads is inherently unstable, and should not be relied upon in any real program. This issue is not planned to be fixed in future releases.\n\nThis CVE assignment was disputed by upstream. While an attack is theoretically possible, it relies on a programming pattern in the vulnerable Python program that is generally considered bad practice if not an outright bug.",
+      "affect_products": [
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "python"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  }
+]

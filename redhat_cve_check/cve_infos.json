@@ -1,0 +1,2735 @@
+[
+  {
+    "cve_num": "CVE-2016-1908",
+    "title": "OpenSSH 安全漏洞(CVE-2016-1908)",
+    "level": "高",
+    "title_key": "ssh",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2016-1908",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "An access flaw was discovered in OpenSSH; the OpenSSH client did not correctly handle failures to generate authentication cookies for untrusted X11 forwarding. A malicious or compromised remote X application could possibly use this flaw to establish a trusted connection to the local X server, even if only untrusted X11 forwarding was requested.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2016:0465",
+          "errate_package_name": "openssh",
+          "fixed_rpms": [
+            "openssh-6.6.1p1-25.el7_2.src.rpm",
+            "openssh-6.6.1p1-25.el7_2.x86_64.rpm",
+            "openssh-askpass-6.6.1p1-25.el7_2.x86_64.rpm",
+            "openssh-clients-6.6.1p1-25.el7_2.x86_64.rpm",
+            "openssh-debuginfo-6.6.1p1-25.el7_2.i686.rpm",
+            "openssh-debuginfo-6.6.1p1-25.el7_2.x86_64.rpm",
+            "openssh-debuginfo-6.6.1p1-25.el7_2.x86_64.rpm",
+            "openssh-keycat-6.6.1p1-25.el7_2.x86_64.rpm",
+            "openssh-ldap-6.6.1p1-25.el7_2.x86_64.rpm",
+            "openssh-server-6.6.1p1-25.el7_2.x86_64.rpm",
+            "openssh-server-sysvinit-6.6.1p1-25.el7_2.x86_64.rpm",
+            "pam_ssh_agent_auth-0.9.3-9.25.el7_2.i686.rpm",
+            "pam_ssh_agent_auth-0.9.3-9.25.el7_2.x86_64.rpm"
+          ],
+          "rpm_version": "openssh-6.6.1p1-25.el7_2"
+        }
+      ],
+      "cve_keyword": "openssh"
+    }
+  },
+  {
+    "cve_num": "CVE-2016-5636",
+    "title": "Python 输入验证错误漏洞(CVE-2016-5636)",
+    "level": "高",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2016-5636",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "低",
+      "cve_detail": "A vulnerability was discovered in Python, in the built-in zipimporter. A specially crafted zip file placed in a module path such that it would be loaded by a later \"import\" statement could cause a heap overflow, leading to arbitrary code execution.",
+      "cve_statement": "Red Hat Product Security has rated this issue as having Low security impact. This issue is not currently planned to be addressed in future updates. For additional information, refer to the Issue Severity Classification: https://access.redhat.com/security/updates/classification/.",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2016:2586",
+          "errate_package_name": "python",
+          "fixed_rpms": [
+            "python-2.7.5-48.el7.src.rpm",
+            "python-2.7.5-48.el7.x86_64.rpm",
+            "python-debug-2.7.5-48.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-48.el7.i686.rpm",
+            "python-debuginfo-2.7.5-48.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-48.el7.x86_64.rpm",
+            "python-devel-2.7.5-48.el7.x86_64.rpm",
+            "python-libs-2.7.5-48.el7.i686.rpm",
+            "python-libs-2.7.5-48.el7.x86_64.rpm",
+            "python-test-2.7.5-48.el7.x86_64.rpm",
+            "python-tools-2.7.5-48.el7.x86_64.rpm",
+            "tkinter-2.7.5-48.el7.x86_64.rpm"
+          ],
+          "rpm_version": "python-2.7.5-48.el7"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  },
+  {
+    "cve_num": "CVE-2019-10160",
+    "title": "Python 信任管理问题漏洞(CVE-2019-10160)",
+    "level": "高",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2019-10160",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "高",
+      "cve_detail": "A security regression of CVE-2019-9636 was discovered in python, since commit d537ab0ff9767ef024f26246899728f0116b1ec3, which still allows an attacker to exploit CVE-2019-9636 by abusing the user and password parts of a URL. When an application parses user-supplied URLs to store cookies, authentication credentials, or other kind of information, it is possible for an attacker to provide specially crafted URLs to make the application locate host-related information (e.g. cookies, authentication data) and send them to a different host than where it should, unlike if the URLs had been correctly parsed. The result of an attack may vary based on the application.",
+      "cve_statement": "This issue did not affect the versions of python as shipped with Red Hat Enterprise Linux 5 and 6 as the security regression was not introduced in those versions. See CVE-2019-9636 for more details about the how these versions of Red Hat Enterprise Linux are affected with regard to the original flaw.\n\nThis issue did not affect the versions of python as shipped with Red Hat Enterprise Linux 8 as the security regression was not introduced in those versions. See CVE-2019-9636 for more details about the how these versions of Red Hat Enterprise Linux are affected with regard to the original flaw.",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2019:1587",
+          "errate_package_name": "python",
+          "fixed_rpms": [
+            "python-2.7.5-80.el7_6.src.rpm",
+            "python-2.7.5-80.el7_6.x86_64.rpm",
+            "python-debug-2.7.5-80.el7_6.x86_64.rpm",
+            "python-debuginfo-2.7.5-80.el7_6.i686.rpm",
+            "python-debuginfo-2.7.5-80.el7_6.x86_64.rpm",
+            "python-debuginfo-2.7.5-80.el7_6.x86_64.rpm",
+            "python-devel-2.7.5-80.el7_6.x86_64.rpm",
+            "python-libs-2.7.5-80.el7_6.i686.rpm",
+            "python-libs-2.7.5-80.el7_6.x86_64.rpm",
+            "python-test-2.7.5-80.el7_6.x86_64.rpm",
+            "python-tools-2.7.5-80.el7_6.x86_64.rpm",
+            "tkinter-2.7.5-80.el7_6.x86_64.rpm"
+          ],
+          "rpm_version": "python-2.7.5-80.el7_6"
+        },
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "python3"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  },
+  {
+    "cve_num": "CVE-2019-9636",
+    "title": "Python 信任管理问题漏洞(CVE-2019-9636)",
+    "level": "高",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2019-9636",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "高",
+      "cve_detail": "It was discovered that python's functions urllib.parse.urlsplit and urllib.parse.urlparse do not properly handle URLs encoded with Punycode/Internationalizing Domain Names in Applications (IDNA), which may result in a wrong domain name (specifically the netloc component of URL - user@domain:port) being returned by those functions. When an application parses user-supplied URLs to store cookies, authentication credentials, or other kind of information, it is possible for an attacker to provide specially crafted URLs to make the application locate host-related information (e.g. cookies, authentication data) and send them to a different host than where it should, unlike if the URLs had been correctly parsed. The result of an attack may vary based on the application.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2019:0710",
+          "errate_package_name": "python",
+          "fixed_rpms": [
+            "python-2.7.5-77.el7_6.src.rpm",
+            "python-2.7.5-77.el7_6.x86_64.rpm",
+            "python-debug-2.7.5-77.el7_6.x86_64.rpm",
+            "python-debuginfo-2.7.5-77.el7_6.i686.rpm",
+            "python-debuginfo-2.7.5-77.el7_6.x86_64.rpm",
+            "python-debuginfo-2.7.5-77.el7_6.x86_64.rpm",
+            "python-devel-2.7.5-77.el7_6.x86_64.rpm",
+            "python-libs-2.7.5-77.el7_6.i686.rpm",
+            "python-libs-2.7.5-77.el7_6.x86_64.rpm",
+            "python-test-2.7.5-77.el7_6.x86_64.rpm",
+            "python-tools-2.7.5-77.el7_6.x86_64.rpm",
+            "tkinter-2.7.5-77.el7_6.x86_64.rpm"
+          ],
+          "rpm_version": "python-2.7.5-77.el7_6"
+        },
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "python3"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  },
+  {
+    "cve_num": "CVE-2017-1000158",
+    "title": "CPython 数字错误漏洞(CVE-2017-1000158)",
+    "level": "高",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2017-1000158",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "CPython (aka Python) up to 2.7.13 is vulnerable to an integer overflow in the PyString_DecodeEscape function in stringobject.c, resulting in heap-based buffer overflow (and possible arbitrary code execution)",
+      "cve_statement": "This issue affects the versions of python as shipped with Red Hat Enterprise Linux 6 and Red Hat Enterprise Linux 7, and python27-python, rh-python34-python, and rh-python35-python as shipped with Red Hat Software Collections 3. Red Hat Product Security has rated this issue as having Moderate security impact. A future update may address this issue. For additional information, refer to the Issue Severity Classification: https://access.redhat.com/security/updates/classification/.",
+      "affect_products": [
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "python"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  },
+  {
+    "cve_num": "CVE-2020-11984",
+    "title": "Apache HTTP Server 缓冲区错误漏洞(CVE-2020-11984)",
+    "level": "高",
+    "title_key": "apache",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2020-11984",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "A flaw was found in Apache httpd in versions 2.4.32 to 2.4.46. The uwsgi protocol does not serialize more than 16K of HTTP header leading to resource exhaustion and denial of service. The highest threat from this vulnerability is to data confidentiality and integrity as well as system availability.",
+      "cve_statement": "Red Hat Enterprise Linux 5, 6, and 7 do not ship the vulnerable version of httpd and, thus, are not affected.",
+      "affect_products": [
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "httpd"
+        }
+      ],
+      "cve_keyword": "httpd"
+    }
+  },
+  {
+    "cve_num": "CVE-2016-9063",
+    "title": "python Mozilla Firefox 安全漏洞(CVE-2016-9063)",
+    "level": "高",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2016-9063",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "低",
+      "cve_detail": "An integer overflow during the parsing of XML using the Expat library. This vulnerability affects Firefox < 50.",
+      "cve_statement": "This issue does not affect the version of firefox and thunderbird as shipped with Red Hat Enterprise Linux 5, 6 and 7.",
+      "affect_products": [
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "expat"
+        },
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "firefox"
+        },
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "thunderbird"
+        }
+      ],
+      "cve_keyword": "未分类"
+    }
+  },
+  {
+    "cve_num": "CVE-2019-9948",
+    "title": "Python 安全特征问题漏洞(CVE-2019-9948)",
+    "level": "高",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2019-9948",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "urllib in Python 2.x through 2.7.16 supports the local_file: scheme, which makes it easier for remote attackers to bypass protection mechanisms that blacklist file: URIs, as demonstrated by triggering a urllib.urlopen('local_file:///etc/passwd') call.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2019:2030",
+          "errate_package_name": "python",
+          "fixed_rpms": [
+            "python-2.7.5-86.el7.src.rpm",
+            "python-2.7.5-86.el7.x86_64.rpm",
+            "python-debug-2.7.5-86.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-86.el7.i686.rpm",
+            "python-debuginfo-2.7.5-86.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-86.el7.x86_64.rpm",
+            "python-devel-2.7.5-86.el7.x86_64.rpm",
+            "python-libs-2.7.5-86.el7.i686.rpm",
+            "python-libs-2.7.5-86.el7.x86_64.rpm",
+            "python-test-2.7.5-86.el7.x86_64.rpm",
+            "python-tools-2.7.5-86.el7.x86_64.rpm",
+            "tkinter-2.7.5-86.el7.x86_64.rpm"
+          ],
+          "rpm_version": "python-2.7.5-86.el7"
+        },
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "python3"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  },
+  {
+    "cve_num": "CVE-2019-10082",
+    "title": "Apache httpd 资源管理错误漏洞(CVE-2019-10082)",
+    "level": "高",
+    "title_key": "apache",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2019-10082",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "A read-after-free vulnerability was discovered in Apache httpd, in mod_http2. A specially crafted http/2 client session could cause the server to read memory that was previously freed during connection shutdown, potentially leading to a crash.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "httpd"
+        }
+      ],
+      "cve_keyword": "httpd"
+    }
+  },
+  {
+    "cve_num": "CVE-2015-5600",
+    "title": "Openssh MaxAuthTries限制绕过漏洞(CVE-2015-5600)",
+    "level": "高",
+    "title_key": "ssh",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2015-5600",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "低",
+      "cve_detail": "It was discovered that the OpenSSH sshd daemon did not check the list of keyboard-interactive authentication methods for duplicates. A remote attacker could use this flaw to bypass the MaxAuthTries limit, making it easier to perform password guessing attacks.",
+      "cve_statement": "This issue does not affect the default OpenSSH sshd configuration in Red Hat Enterprise Linux 4, 5, 6 and 7.",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2015:2088",
+          "errate_package_name": "openssh",
+          "fixed_rpms": [
+            "openssh-6.6.1p1-22.el7.src.rpm",
+            "openssh-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-askpass-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-clients-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-debuginfo-6.6.1p1-22.el7.i686.rpm",
+            "openssh-debuginfo-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-debuginfo-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-keycat-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-ldap-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-server-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-server-sysvinit-6.6.1p1-22.el7.x86_64.rpm",
+            "pam_ssh_agent_auth-0.9.3-9.22.el7.i686.rpm",
+            "pam_ssh_agent_auth-0.9.3-9.22.el7.x86_64.rpm"
+          ],
+          "rpm_version": "openssh-6.6.1p1-22.el7"
+        }
+      ],
+      "cve_keyword": "openssh"
+    }
+  },
+  {
+    "cve_num": "CVE-2016-10012",
+    "title": "OpenSSH 安全限制绕过漏洞(CVE-2016-10012)",
+    "level": "高",
+    "title_key": "ssh",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2016-10012",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "低",
+      "cve_detail": "It was found that the boundary checks in the code implementing support for pre-authentication compression could have been optimized out by certain compilers. An attacker able to compromise the privilege-separated process could possibly use this flaw for further attacks against the privileged monitor process.",
+      "cve_statement": "In order to exploit this flaw, the attacker needs to first compromise the sandboxed privilege-separation process by using another security flaw. Because of this restriction for successful exploitation, this issue has been rated as having Low security impact.",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2017:2029",
+          "errate_package_name": "openssh",
+          "fixed_rpms": [
+            "openssh-7.4p1-11.el7.src.rpm",
+            "openssh-7.4p1-11.el7.x86_64.rpm",
+            "openssh-askpass-7.4p1-11.el7.x86_64.rpm",
+            "openssh-cavs-7.4p1-11.el7.x86_64.rpm",
+            "openssh-clients-7.4p1-11.el7.x86_64.rpm",
+            "openssh-debuginfo-7.4p1-11.el7.i686.rpm",
+            "openssh-debuginfo-7.4p1-11.el7.x86_64.rpm",
+            "openssh-debuginfo-7.4p1-11.el7.x86_64.rpm",
+            "openssh-keycat-7.4p1-11.el7.x86_64.rpm",
+            "openssh-ldap-7.4p1-11.el7.x86_64.rpm",
+            "openssh-server-7.4p1-11.el7.x86_64.rpm",
+            "openssh-server-sysvinit-7.4p1-11.el7.x86_64.rpm",
+            "pam_ssh_agent_auth-0.10.3-1.11.el7.i686.rpm",
+            "pam_ssh_agent_auth-0.10.3-1.11.el7.x86_64.rpm"
+          ],
+          "rpm_version": "openssh-7.4p1-11.el7"
+        }
+      ],
+      "cve_keyword": "openssh"
+    }
+  },
+  {
+    "cve_num": "CVE-2020-15778",
+    "title": "OpenSSH 命令注入漏洞(CVE-2020-15778)",
+    "level": "高",
+    "title_key": "ssh",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2020-15778",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "A flaw was found in the scp program shipped with the openssh-clients package. An attacker having the ability to scp files to a remote server, could execute arbitrary commands on the remote server by including the command as a part of the filename being copied on the server. This command is run with the permissions of user with which the files were copied on the remote server. The highest threat from this vulnerability is to data confidentiality and integrity as well as system availability.",
+      "cve_statement": "This security flaw lies in the way scp command parses its command line arguments. The SSH protocol or any other applications shipped as a part of openssh-clients packages are not vulnerable.\n\nIn order to exploit this flaw, the attacker needs to social engineer or manipulate a system administrator (who has root access on the remote server)  to run scp with a malicious command line parameter. \n\nAdministrators can uninstall openssh-clients for additional protection against accidental usage of this binary. Removing the openssh-clients package will make binaries like scp and ssh etc unavailable on that system. Also administrators can change the execute permissions on the scp binary. However this mitigation will be in place until the openssh-clients package is updated.",
+      "affect_products": [
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "openssh"
+        }
+      ],
+      "cve_keyword": "openssh"
+    }
+  },
+  {
+    "cve_num": "CVE-2015-8325",
+    "title": "OpenSSH do_setup_env函数权限提升漏洞(CVE-2015-8325)",
+    "level": "高",
+    "title_key": "ssh",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2015-8325",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "It was discovered that the OpenSSH sshd daemon fetched PAM environment settings before running the login program. In configurations with UseLogin=yes and the pam_env PAM module configured to read user environment settings, a local user could use this flaw to execute arbitrary code as root.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2016:2588",
+          "errate_package_name": "openssh",
+          "fixed_rpms": [
+            "openssh-6.6.1p1-31.el7.src.rpm",
+            "openssh-6.6.1p1-31.el7.x86_64.rpm",
+            "openssh-askpass-6.6.1p1-31.el7.x86_64.rpm",
+            "openssh-clients-6.6.1p1-31.el7.x86_64.rpm",
+            "openssh-debuginfo-6.6.1p1-31.el7.i686.rpm",
+            "openssh-debuginfo-6.6.1p1-31.el7.x86_64.rpm",
+            "openssh-debuginfo-6.6.1p1-31.el7.x86_64.rpm",
+            "openssh-keycat-6.6.1p1-31.el7.x86_64.rpm",
+            "openssh-ldap-6.6.1p1-31.el7.x86_64.rpm",
+            "openssh-server-6.6.1p1-31.el7.x86_64.rpm",
+            "openssh-server-sysvinit-6.6.1p1-31.el7.x86_64.rpm",
+            "pam_ssh_agent_auth-0.9.3-9.31.el7.i686.rpm",
+            "pam_ssh_agent_auth-0.9.3-9.31.el7.x86_64.rpm"
+          ],
+          "rpm_version": "openssh-6.6.1p1-31.el7"
+        }
+      ],
+      "cve_keyword": "openssh"
+    }
+  },
+  {
+    "cve_num": "CVE-2017-9233",
+    "title": "python libexpat 安全漏洞(CVE-2017-9233)",
+    "level": "高",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2017-9233",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "XML External Entity vulnerability in libexpat 2.2.0 and earlier (Expat XML Parser Library) allows attackers to put the parser in an infinite loop using a malformed external entity definition from an external DTD.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "expat"
+        },
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "firefox"
+        },
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "thunderbird"
+        },
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "xulrunner"
+        }
+      ],
+      "cve_keyword": "未分类"
+    }
+  },
+  {
+    "cve_num": "CVE-2019-9517",
+    "title": "Apache HTTP/2实现安全漏洞(CVE-2019-9517)",
+    "level": "高",
+    "title_key": "apache",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2019-9517",
+      "cve_state": "未找到相关修复：Red Hat Enterprise Linux 7",
+      "cve_threat_severity": "高",
+      "cve_detail": "A vulnerability was found in HTTP/2. An attacker can open a HTTP/2 window so the peer can send without constraint. The TCP window remains closed so the peer cannot write the bytes on the wire. The attacker then sends a stream of requests for a large response object. Depending on how the server's queue is setup, the responses can consume excess memory, CPU, or both, potentially leading to a denial of service. The highest threat from this vulnerability is to system availability.",
+      "cve_statement": "The package httpd versions as shipped with Red Hat Enterprise Linux 5, 6 and 7 are not affected by this issue as HTTP/2 support is not provided.\nThis flaw has no available mitigation for nodejs package. It will be updated once the available fixes are released for Red Hat Enterprise Linux and Red Hat Software Collections.\n\nThe nodejs RPM shipped in OpenShift Container Platform 3.9 and 3.10 is not affected by this flaw as it does not contain the vulnerable code.",
+      "affect_products": [],
+      "cve_keyword": "未分类"
+    }
+  },
+  {
+    "cve_num": "CVE-2020-9490",
+    "title": "Apache HTTP Server 安全漏洞(CVE-2020-9490)",
+    "level": "高",
+    "title_key": "apache",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2020-9490",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "高",
+      "cve_detail": "A flaw was found in Apache httpd in versions prior to 2.4.46. A specially crafted Cache-Digest header triggers negative argument to memmove() that could lead to a crash and denial of service. The highest threat from this vulnerability is to system availability.",
+      "cve_statement": "As per upstream this flaw only affects Apache HTTP Server versions 2.4.20 to 2.4.43. Therefore only httpd packages shipped with Red Hat Enterprise Linux 8 are affected.",
+      "affect_products": [
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "httpd"
+        }
+      ],
+      "cve_keyword": "httpd"
+    }
+  },
+  {
+    "cve_num": "CVE-2021-23840",
+    "title": "OpenSSL 安全漏洞(CVE-2021-23840)",
+    "level": "高",
+    "title_key": "openssl",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2021-23840",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "Calls to EVP_CipherUpdate, EVP_EncryptUpdate and EVP_DecryptUpdate may overflow the output length argument in some cases where the input length is close to the maximum permissible length for an integer on the platform. In such cases the return value from the function call will be 1 (indicating success), but the output length value will be negative. This could cause applications to behave incorrectly or crash.",
+      "cve_statement": "This flaw only affects applications which are compiled with OpenSSL and using  EVP_CipherUpdate, EVP_EncryptUpdate or EVP_DecryptUpdate functions. When specially-crafted values are passed to these functions, it can cause the application to crash or behave incorrectly.",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2021:3798",
+          "errate_package_name": "openssl",
+          "fixed_rpms": [
+            "openssl-1.0.2k-22.el7_9.src.rpm",
+            "openssl-1.0.2k-22.el7_9.x86_64.rpm",
+            "openssl-debuginfo-1.0.2k-22.el7_9.i686.rpm",
+            "openssl-debuginfo-1.0.2k-22.el7_9.i686.rpm",
+            "openssl-debuginfo-1.0.2k-22.el7_9.x86_64.rpm",
+            "openssl-debuginfo-1.0.2k-22.el7_9.x86_64.rpm",
+            "openssl-devel-1.0.2k-22.el7_9.i686.rpm",
+            "openssl-devel-1.0.2k-22.el7_9.x86_64.rpm",
+            "openssl-libs-1.0.2k-22.el7_9.i686.rpm",
+            "openssl-libs-1.0.2k-22.el7_9.x86_64.rpm",
+            "openssl-perl-1.0.2k-22.el7_9.x86_64.rpm",
+            "openssl-static-1.0.2k-22.el7_9.i686.rpm",
+            "openssl-static-1.0.2k-22.el7_9.x86_64.rpm"
+          ],
+          "rpm_version": "openssl-1.0.2k-22.el7_9"
+        },
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "openssl098e"
+        },
+        {
+          "errate_state": "Affected",
+          "errate_url": null,
+          "errate_package_name": "ovmf"
+        }
+      ],
+      "cve_keyword": "o"
+    }
+  },
+  {
+    "cve_num": "CVE-2018-1060",
+    "title": "Python 资源管理错误漏洞（CVE-2018-1060）",
+    "level": "高",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2018-1060",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "低",
+      "cve_detail": "A flaw was found in the way catastrophic backtracking was implemented in python's pop3lib's apop() method. An attacker could use this flaw to cause denial of service.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2018:3041",
+          "errate_package_name": "python",
+          "fixed_rpms": [
+            "python-2.7.5-76.el7.src.rpm",
+            "python-2.7.5-76.el7.x86_64.rpm",
+            "python-debug-2.7.5-76.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-76.el7.i686.rpm",
+            "python-debuginfo-2.7.5-76.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-76.el7.x86_64.rpm",
+            "python-devel-2.7.5-76.el7.x86_64.rpm",
+            "python-libs-2.7.5-76.el7.i686.rpm",
+            "python-libs-2.7.5-76.el7.x86_64.rpm",
+            "python-test-2.7.5-76.el7.x86_64.rpm",
+            "python-tools-2.7.5-76.el7.x86_64.rpm",
+            "tkinter-2.7.5-76.el7.x86_64.rpm"
+          ],
+          "rpm_version": "python-2.7.5-76.el7"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  },
+  {
+    "cve_num": "CVE-2018-1061",
+    "title": "Python 资源管理错误漏洞（CVE-2018-1061）",
+    "level": "高",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2018-1061",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "A flaw was found in the way catastrophic backtracking was implemented in python's difflib.IS_LINE_JUNK method. An attacker could use this flaw to cause denial of service.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2018:3041",
+          "errate_package_name": "python",
+          "fixed_rpms": [
+            "python-2.7.5-76.el7.src.rpm",
+            "python-2.7.5-76.el7.x86_64.rpm",
+            "python-debug-2.7.5-76.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-76.el7.i686.rpm",
+            "python-debuginfo-2.7.5-76.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-76.el7.x86_64.rpm",
+            "python-devel-2.7.5-76.el7.x86_64.rpm",
+            "python-libs-2.7.5-76.el7.i686.rpm",
+            "python-libs-2.7.5-76.el7.x86_64.rpm",
+            "python-test-2.7.5-76.el7.x86_64.rpm",
+            "python-tools-2.7.5-76.el7.x86_64.rpm",
+            "tkinter-2.7.5-76.el7.x86_64.rpm"
+          ],
+          "rpm_version": "python-2.7.5-76.el7"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  },
+  {
+    "cve_num": "CVE-2019-16056",
+    "title": "Python email.utils.parseaddr安全漏洞（CVE-2019-16056）",
+    "level": "高",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2019-16056",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "An issue was discovered in Python through 2.7.16, 3.x through 3.5.7, 3.6.x through 3.6.9, and 3.7.x through 3.7.4. The email module wrongly parses email addresses that contain multiple @ characters. An application that uses the email module and implements some kind of checks on the From/To headers of a message could be tricked into accepting an email address that should be denied. An attack may be the same as in CVE-2019-11340; however, this CVE applies to Python more generally.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2020:1131",
+          "errate_package_name": "python",
+          "fixed_rpms": [
+            "python-2.7.5-88.el7.src.rpm",
+            "python-2.7.5-88.el7.x86_64.rpm",
+            "python-debug-2.7.5-88.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-88.el7.i686.rpm",
+            "python-debuginfo-2.7.5-88.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-88.el7.x86_64.rpm",
+            "python-devel-2.7.5-88.el7.x86_64.rpm",
+            "python-libs-2.7.5-88.el7.i686.rpm",
+            "python-libs-2.7.5-88.el7.x86_64.rpm",
+            "python-test-2.7.5-88.el7.x86_64.rpm",
+            "python-tools-2.7.5-88.el7.x86_64.rpm",
+            "tkinter-2.7.5-88.el7.x86_64.rpm"
+          ],
+          "rpm_version": "python-2.7.5-88.el7"
+        },
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2020:1132",
+          "errate_package_name": "python3",
+          "fixed_rpms": [
+            "python3-3.6.8-13.el7.src.rpm",
+            "python3-3.6.8-13.el7.i686.rpm",
+            "python3-3.6.8-13.el7.x86_64.rpm",
+            "python3-debug-3.6.8-13.el7.i686.rpm",
+            "python3-debug-3.6.8-13.el7.x86_64.rpm",
+            "python3-debuginfo-3.6.8-13.el7.i686.rpm",
+            "python3-debuginfo-3.6.8-13.el7.i686.rpm",
+            "python3-debuginfo-3.6.8-13.el7.x86_64.rpm",
+            "python3-debuginfo-3.6.8-13.el7.x86_64.rpm",
+            "python3-devel-3.6.8-13.el7.i686.rpm",
+            "python3-devel-3.6.8-13.el7.x86_64.rpm",
+            "python3-idle-3.6.8-13.el7.i686.rpm",
+            "python3-idle-3.6.8-13.el7.x86_64.rpm",
+            "python3-libs-3.6.8-13.el7.i686.rpm",
+            "python3-libs-3.6.8-13.el7.x86_64.rpm",
+            "python3-test-3.6.8-13.el7.i686.rpm",
+            "python3-test-3.6.8-13.el7.x86_64.rpm",
+            "python3-tkinter-3.6.8-13.el7.i686.rpm",
+            "python3-tkinter-3.6.8-13.el7.x86_64.rpm"
+          ],
+          "rpm_version": "python3-3.6.8-13.el7"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  },
+  {
+    "cve_num": "CVE-2006-2369",
+    "title": "RealVNC远程认证绕过漏洞(CVE-2006-2369)",
+    "level": "高",
+    "title_key": "未分类",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2006-2369",
+      "cve_state": "未找到相关修复：Red Hat Enterprise Linux 7",
+      "cve_threat_severity": "红帽未分级",
+      "cve_detail": "RealVNC 4.1.1, and other products that use RealVNC such as AdderLink IP and Cisco CallManager, allows remote attackers to bypass authentication via a request in which the client specifies an insecure security type such as \"Type 1 - None\", which is accepted even if it is not offered by the server, as originally demonstrated using a long password.",
+      "cve_statement": "This issue only affected version 4.1.1 and not the versions distributed with Red Hat Enterprise Linux 2.1, 3, or 4.",
+      "affect_products": [],
+      "cve_keyword": "未分类"
+    }
+  },
+  {
+    "cve_num": "CVE-2018-0732",
+    "title": "OpenSSL 安全漏洞(CVE-2018-0732)",
+    "level": "高",
+    "title_key": "openssl",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2018-0732",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "During key agreement in a TLS handshake using a DH(E) based ciphersuite a malicious server can send a very large prime value to the client. This will cause the client to spend an unreasonably long period of time generating a key for this prime resulting in a hang until the client has finished. This could be exploited in a Denial Of Service attack. Fixed in OpenSSL 1.1.0i-dev (Affected 1.1.0-1.1.0h). Fixed in OpenSSL 1.0.2p-dev (Affected 1.0.2-1.0.2o).",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2018:3221",
+          "errate_package_name": "openssl",
+          "fixed_rpms": [
+            "openssl-1.0.2k-16.el7.src.rpm",
+            "openssl-1.0.2k-16.el7.x86_64.rpm",
+            "openssl-debuginfo-1.0.2k-16.el7.i686.rpm",
+            "openssl-debuginfo-1.0.2k-16.el7.i686.rpm",
+            "openssl-debuginfo-1.0.2k-16.el7.x86_64.rpm",
+            "openssl-debuginfo-1.0.2k-16.el7.x86_64.rpm",
+            "openssl-devel-1.0.2k-16.el7.i686.rpm",
+            "openssl-devel-1.0.2k-16.el7.x86_64.rpm",
+            "openssl-libs-1.0.2k-16.el7.i686.rpm",
+            "openssl-libs-1.0.2k-16.el7.x86_64.rpm",
+            "openssl-perl-1.0.2k-16.el7.x86_64.rpm",
+            "openssl-static-1.0.2k-16.el7.i686.rpm",
+            "openssl-static-1.0.2k-16.el7.x86_64.rpm"
+          ],
+          "rpm_version": "openssl-1.0.2k-16.el7"
+        },
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "openssl098e"
+        },
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "OVMF"
+        }
+      ],
+      "cve_keyword": "未分类"
+    }
+  },
+  {
+    "cve_num": "CVE-2016-6515",
+    "title": "OpenSSH auth_password函数拒绝服务漏洞(CVE-2016-6515)",
+    "level": "高",
+    "title_key": "ssh",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2016-6515",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "It was found that OpenSSH did not limit password lengths for password authentication. A remote unauthenticated attacker could use this flaw to temporarily trigger high CPU consumption in sshd by sending long passwords.",
+      "cve_statement": "This issue in OpenSSH is mitigated by the usage of SELinux in Red Hat Enterprise Linux 6, 7 and 8. More details available at: https://bugzilla.redhat.com/show_bug.cgi?id=1364935#c13",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2017:2029",
+          "errate_package_name": "openssh",
+          "fixed_rpms": [
+            "openssh-7.4p1-11.el7.src.rpm",
+            "openssh-7.4p1-11.el7.x86_64.rpm",
+            "openssh-askpass-7.4p1-11.el7.x86_64.rpm",
+            "openssh-cavs-7.4p1-11.el7.x86_64.rpm",
+            "openssh-clients-7.4p1-11.el7.x86_64.rpm",
+            "openssh-debuginfo-7.4p1-11.el7.i686.rpm",
+            "openssh-debuginfo-7.4p1-11.el7.x86_64.rpm",
+            "openssh-debuginfo-7.4p1-11.el7.x86_64.rpm",
+            "openssh-keycat-7.4p1-11.el7.x86_64.rpm",
+            "openssh-ldap-7.4p1-11.el7.x86_64.rpm",
+            "openssh-server-7.4p1-11.el7.x86_64.rpm",
+            "openssh-server-sysvinit-7.4p1-11.el7.x86_64.rpm",
+            "pam_ssh_agent_auth-0.10.3-1.11.el7.i686.rpm",
+            "pam_ssh_agent_auth-0.10.3-1.11.el7.x86_64.rpm"
+          ],
+          "rpm_version": "openssh-7.4p1-11.el7"
+        }
+      ],
+      "cve_keyword": "openssh"
+    }
+  },
+  {
+    "cve_num": "CVE-2020-11993",
+    "title": "Apache HTTP Server 环境问题漏洞(CVE-2020-11993)",
+    "level": "高",
+    "title_key": "apache",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2020-11993",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "A flaw was found in Apache httpd in versions 2.4.20 to 2.4.43. Logging using the wrong pool by mod_http2 at debug/trace log level may lead to potential crashes and denial of service. The highest threat from this vulnerability is to system availability.",
+      "cve_statement": "Red Hat Enterprise Linux 5, 6, and 7 do not ship the vulnerable version of httpd and, thus, are not affected.",
+      "affect_products": [
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "httpd"
+        }
+      ],
+      "cve_keyword": "httpd"
+    }
+  },
+  {
+    "cve_num": "CVE-2019-9513",
+    "title": "nginx 安全漏洞(CVE-2019-9513)",
+    "level": "高",
+    "title_key": "nginx",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2019-9513",
+      "cve_state": "未找到相关修复：Red Hat Enterprise Linux 7",
+      "cve_threat_severity": "高",
+      "cve_detail": "A flaw was found in HTTP/2. An attacker, using PRIORITY frames to flood the system, could cause excessive CPU usage and starvation of other clients. The largest threat from this vulnerability is to system availability.",
+      "cve_statement": "This flaw has no available mitigation for packages nghttp2 and nodejs. Both packages will be updated once the available fixes are released for Red Hat Enterprise Linux and Red Hat Software Collections.\n\nThe nodejs RPM shipped in OpenShift Container Platform 3.9 and 3.10 is not affected by this flaw as it does not contain the vulnerable code.",
+      "affect_products": [],
+      "cve_keyword": "未分类"
+    }
+  },
+  {
+    "cve_num": "CVE-2019-9511",
+    "title": "nginx 安全漏洞(CVE-2019-9511)",
+    "level": "高",
+    "title_key": "nginx",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2019-9511",
+      "cve_state": "未找到相关修复：Red Hat Enterprise Linux 7",
+      "cve_threat_severity": "高",
+      "cve_detail": "A flaw was found in HTTP/2. An attacker can request a large amount of data by manipulating window size and stream priority to force the server to queue the data in 1-byte chunks. Depending on how efficiently this data is queued, this queue can consume excess CPU, memory, or both, leading to a denial of service. The highest threat from this vulnerability is to system availability.",
+      "cve_statement": "There are no mitigations available for nghttp2 and nodejs. Both packages will be updated once the available fixes are released for Red Hat Enterprise Linux and Red Hat Software Collections.\n\nThe nodejs RPM shipped in OpenShift Container Platform 3.9 and 3.10 is not affected by this flaw as it does not contain the vulnerable code.",
+      "affect_products": [],
+      "cve_keyword": "未分类"
+    }
+  },
+  {
+    "cve_num": "CVE-2018-16843",
+    "title": "nginx 安全漏洞（CVE-2018-16843）",
+    "level": "高",
+    "title_key": "nginx",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2018-16843",
+      "cve_state": "未找到相关修复：Red Hat Enterprise Linux 7",
+      "cve_threat_severity": "中",
+      "cve_detail": "nginx before versions 1.15.6 and 1.14.1 has a vulnerability in the implementation of HTTP/2 that can allow for excessive memory consumption. This issue affects nginx compiled with the ngx_http_v2_module (not compiled by default) if the 'http2' option of the 'listen' directive is used in a configuration file.",
+      "cve_statement": "This issue did not affect the versions of rh-nginx18-nginx as shipped with Red Hat Software Collections as they did not include the vulnerable module ngx_http_v2_module.",
+      "affect_products": [],
+      "cve_keyword": "未分类"
+    }
+  },
+  {
+    "cve_num": "CVE-2018-16844",
+    "title": "nginx 安全漏洞（CVE-2018-16844）",
+    "level": "高",
+    "title_key": "nginx",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2018-16844",
+      "cve_state": "未找到相关修复：Red Hat Enterprise Linux 7",
+      "cve_threat_severity": "中",
+      "cve_detail": "nginx before versions 1.15.6 and 1.14.1 has a vulnerability in the implementation of HTTP/2 that can allow for excessive CPU usage. This issue affects nginx compiled with the ngx_http_v2_module (not compiled by default) if the 'http2' option of the 'listen' directive is used in a configuration file.",
+      "cve_statement": "This issue did not affect the versions of rh-nginx18-nginx as shipped with Red Hat Software Collections as they did not include the vulnerable module ngx_http_v2_module.",
+      "affect_products": [],
+      "cve_keyword": "未分类"
+    }
+  },
+  {
+    "cve_num": "CVE-2019-10081",
+    "title": "Apache httpd 安全漏洞(CVE-2019-10081)",
+    "level": "高",
+    "title_key": "apache",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2019-10081",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "A vulnerability was found in Apache httpd, in mod_http2. Under certain circumstances, HTTP/2 early pushes could lead to memory corruption, causing a server to crash.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "httpd"
+        }
+      ],
+      "cve_keyword": "httpd"
+    }
+  },
+  {
+    "cve_num": "CVE-2016-10708",
+    "title": "OpenSSH多个拒绝服务漏洞（CVE-2016-10708）",
+    "level": "高",
+    "title_key": "ssh",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2016-10708",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "低",
+      "cve_detail": "sshd in OpenSSH before 7.4 allows remote attackers to cause a denial of service (NULL pointer dereference and daemon crash) via an out-of-sequence NEWKEYS message, as demonstrated by Honggfuzz, related to kex.c and packet.c.",
+      "cve_statement": "This issue affects the versions of openssh as shipped with Red Hat Enterprise Linux 6 and Red Hat Enterprise Linux 7 (versions 7.3 and earlier).  For Red Hat Enterprise Linux 7 (versions 7.4 and later), this issue was fixed by the Security Advisory RHSA-2017:2029. For Red Hat Enterprise Linux 6, Red Hat Product Security has rated this issue as having Low security impact. A future update may address this issue. For additional information, refer to the Issue Severity Classification: https://access.redhat.com/security/updates/classification/.",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2017:2029",
+          "errate_package_name": "openssh",
+          "fixed_rpms": [
+            "openssh-7.4p1-11.el7.src.rpm",
+            "openssh-7.4p1-11.el7.x86_64.rpm",
+            "openssh-askpass-7.4p1-11.el7.x86_64.rpm",
+            "openssh-cavs-7.4p1-11.el7.x86_64.rpm",
+            "openssh-clients-7.4p1-11.el7.x86_64.rpm",
+            "openssh-debuginfo-7.4p1-11.el7.i686.rpm",
+            "openssh-debuginfo-7.4p1-11.el7.x86_64.rpm",
+            "openssh-debuginfo-7.4p1-11.el7.x86_64.rpm",
+            "openssh-keycat-7.4p1-11.el7.x86_64.rpm",
+            "openssh-ldap-7.4p1-11.el7.x86_64.rpm",
+            "openssh-server-7.4p1-11.el7.x86_64.rpm",
+            "openssh-server-sysvinit-7.4p1-11.el7.x86_64.rpm",
+            "pam_ssh_agent_auth-0.10.3-1.11.el7.i686.rpm",
+            "pam_ssh_agent_auth-0.10.3-1.11.el7.x86_64.rpm"
+          ],
+          "rpm_version": "openssh-7.4p1-11.el7"
+        }
+      ],
+      "cve_keyword": "openssh"
+    }
+  },
+  {
+    "cve_num": "CVE-2018-14647",
+    "title": "Python 资源管理错误漏洞(CVE-2018-14647)",
+    "level": "高",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2018-14647",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "Python's elementtree C accelerator failed to initialise Expat's hash salt during initialization. This could make it easy to conduct denial of service attacks against Expat by contructing an XML document that would cause pathological hash collisions in Expat's internal data structures, consuming large amounts CPU and RAM.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2019:2030",
+          "errate_package_name": "python",
+          "fixed_rpms": [
+            "python-2.7.5-86.el7.src.rpm",
+            "python-2.7.5-86.el7.x86_64.rpm",
+            "python-debug-2.7.5-86.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-86.el7.i686.rpm",
+            "python-debuginfo-2.7.5-86.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-86.el7.x86_64.rpm",
+            "python-devel-2.7.5-86.el7.x86_64.rpm",
+            "python-libs-2.7.5-86.el7.i686.rpm",
+            "python-libs-2.7.5-86.el7.x86_64.rpm",
+            "python-test-2.7.5-86.el7.x86_64.rpm",
+            "python-tools-2.7.5-86.el7.x86_64.rpm",
+            "tkinter-2.7.5-86.el7.x86_64.rpm"
+          ],
+          "rpm_version": "python-2.7.5-86.el7"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  },
+  {
+    "cve_num": "CVE-2016-10009",
+    "title": "OpenSSH 远程代码执行漏洞(CVE-2016-10009)",
+    "level": "高",
+    "title_key": "ssh",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2016-10009",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "It was found that ssh-agent could load PKCS#11 modules from arbitrary paths. An attacker having control of the forwarded agent-socket on the server, and the ability to write to the filesystem of the client host, could use this flaw to execute arbitrary code with the privileges of the user running ssh-agent.",
+      "cve_statement": "In order to exploit this flaw, the attacker needs to have control of the forwarded agent-socket and the ability to write to the filesystem of the host running ssh-agent. Because of this restriction for successful exploitation, this issue has been rated as having Moderate security impact. A future update may address this flaw.",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2017:2029",
+          "errate_package_name": "openssh",
+          "fixed_rpms": [
+            "openssh-7.4p1-11.el7.src.rpm",
+            "openssh-7.4p1-11.el7.x86_64.rpm",
+            "openssh-askpass-7.4p1-11.el7.x86_64.rpm",
+            "openssh-cavs-7.4p1-11.el7.x86_64.rpm",
+            "openssh-clients-7.4p1-11.el7.x86_64.rpm",
+            "openssh-debuginfo-7.4p1-11.el7.i686.rpm",
+            "openssh-debuginfo-7.4p1-11.el7.x86_64.rpm",
+            "openssh-debuginfo-7.4p1-11.el7.x86_64.rpm",
+            "openssh-keycat-7.4p1-11.el7.x86_64.rpm",
+            "openssh-ldap-7.4p1-11.el7.x86_64.rpm",
+            "openssh-server-7.4p1-11.el7.x86_64.rpm",
+            "openssh-server-sysvinit-7.4p1-11.el7.x86_64.rpm",
+            "pam_ssh_agent_auth-0.10.3-1.11.el7.i686.rpm",
+            "pam_ssh_agent_auth-0.10.3-1.11.el7.x86_64.rpm"
+          ],
+          "rpm_version": "openssh-7.4p1-11.el7"
+        }
+      ],
+      "cve_keyword": "openssh"
+    }
+  },
+  {
+    "cve_num": "CVE-2021-28041",
+    "title": "OpenSSH 安全漏洞(CVE-2021-28041)",
+    "level": "高",
+    "title_key": "ssh",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2021-28041",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "A double-free memory corruption flaw was found in OpenSSH 8.2, more specifically in ssh-agent application. This flaw allows an attacker with access to the agent socket to forward an agent either to an account shared with a malicious user or to a host with an attacker holding root access. The highest threat from this vulnerability is to confidentiality, integrity, as well as system availability.",
+      "cve_statement": "This issue doesn't affected any versions of OpenSSH packaged and shipped with Red Hat Enterprise Linux 6, 7 and 8. The issue was introduced in OpenSSH 8.2 while the most recent OpenSSH version available for Red Hat Enterprise Linux 8 is based on OpenSSH  8.0.",
+      "affect_products": [
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "openssh"
+        }
+      ],
+      "cve_keyword": "openssh"
+    }
+  },
+  {
+    "cve_num": "CVE-2016-10010",
+    "title": "OpenSSH 远程权限提升漏洞(CVE-2016-10010)",
+    "level": "中",
+    "title_key": "ssh",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2016-10010",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "低",
+      "cve_detail": "sshd in OpenSSH before 7.4, when privilege separation is not used, creates forwarded Unix-domain sockets as root, which might allow local users to gain privileges via unspecified vectors, related to serverloop.c.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "openssh"
+        }
+      ],
+      "cve_keyword": "openssh"
+    }
+  },
+  {
+    "cve_num": "CVE-2015-6564",
+    "title": "OpenSSH sshd mm_answer_pam_free_ctx释放后重利用漏洞(CVE-2015-6564)",
+    "level": "中",
+    "title_key": "ssh",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2015-6564",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "A use-after-free flaw was found in OpenSSH. An attacker able to fully compromise a non-privileged pre-authentication process using a different flaw could possibly cause sshd to crash or execute arbitrary code with root privileges.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2015:2088",
+          "errate_package_name": "openssh",
+          "fixed_rpms": [
+            "openssh-6.6.1p1-22.el7.src.rpm",
+            "openssh-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-askpass-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-clients-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-debuginfo-6.6.1p1-22.el7.i686.rpm",
+            "openssh-debuginfo-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-debuginfo-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-keycat-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-ldap-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-server-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-server-sysvinit-6.6.1p1-22.el7.x86_64.rpm",
+            "pam_ssh_agent_auth-0.9.3-9.22.el7.i686.rpm",
+            "pam_ssh_agent_auth-0.9.3-9.22.el7.x86_64.rpm"
+          ],
+          "rpm_version": "openssh-6.6.1p1-22.el7"
+        }
+      ],
+      "cve_keyword": "openssh"
+    }
+  },
+  {
+    "cve_num": "CVE-2017-3736",
+    "title": "OpenSSL 信息泄露漏洞（CVE-2017-3736）",
+    "level": "中",
+    "title_key": "openssl",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2017-3736",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "There is a carry propagating bug in the x86_64 Montgomery squaring procedure in OpenSSL before 1.0.2m and 1.1.0 before 1.1.0g. No EC algorithms are affected. Analysis suggests that attacks against RSA and DSA as a result of this defect would be very difficult to perform and are not believed likely. Attacks against DH are considered just feasible (although very difficult) because most of the work necessary to deduce information about a private key may be performed offline. The amount of resources required for such an attack would be very significant and likely only accessible to a limited number of attackers. An attacker would additionally need online access to an unpatched system using the target private key in a scenario with persistent DH parameters and a private key that is shared between multiple clients. This only affects processors that support the BMI1, BMI2 and ADX extensions like Intel Broadwell (5th generation) and later or AMD Ryzen.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2018:0998",
+          "errate_package_name": "openssl",
+          "fixed_rpms": [
+            "openssl-1.0.2k-12.el7.src.rpm",
+            "openssl-1.0.2k-12.el7.x86_64.rpm",
+            "openssl-debuginfo-1.0.2k-12.el7.i686.rpm",
+            "openssl-debuginfo-1.0.2k-12.el7.i686.rpm",
+            "openssl-debuginfo-1.0.2k-12.el7.x86_64.rpm",
+            "openssl-debuginfo-1.0.2k-12.el7.x86_64.rpm",
+            "openssl-devel-1.0.2k-12.el7.i686.rpm",
+            "openssl-devel-1.0.2k-12.el7.x86_64.rpm",
+            "openssl-libs-1.0.2k-12.el7.i686.rpm",
+            "openssl-libs-1.0.2k-12.el7.x86_64.rpm",
+            "openssl-perl-1.0.2k-12.el7.x86_64.rpm",
+            "openssl-static-1.0.2k-12.el7.i686.rpm",
+            "openssl-static-1.0.2k-12.el7.x86_64.rpm"
+          ],
+          "rpm_version": "openssl-1.0.2k-12.el7"
+        },
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "openssl098e"
+        },
+        {
+          "errate_state": "Under investigation",
+          "errate_url": null,
+          "errate_package_name": "OVMF"
+        }
+      ],
+      "cve_keyword": "未分类"
+    }
+  },
+  {
+    "cve_num": "CVE-2018-0739",
+    "title": "OpenSSL 拒绝服务漏洞（CVE-2018-0739）",
+    "level": "中",
+    "title_key": "openssl",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2018-0739",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "Constructed ASN.1 types with a recursive definition (such as can be found in PKCS7) could eventually exceed the stack given malicious input with excessive recursion. This could result in a Denial Of Service attack. There are no such structures used within SSL/TLS that come from untrusted sources so this is considered safe. Fixed in OpenSSL 1.1.0h (Affected 1.1.0-1.1.0g). Fixed in OpenSSL 1.0.2o (Affected 1.0.2b-1.0.2n).",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2018:3090",
+          "errate_package_name": "ovmf",
+          "fixed_rpms": [
+            "ovmf-20180508-3.gitee3198e672e2.el7.src.rpm",
+            "OVMF-20180508-3.gitee3198e672e2.el7.noarch.rpm"
+          ],
+          "rpm_version": "ovmf-20180508-3.gitee3198e672e2.el7"
+        },
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2018:3221",
+          "errate_package_name": "openssl",
+          "fixed_rpms": [
+            "openssl-1.0.2k-16.el7.src.rpm",
+            "openssl-1.0.2k-16.el7.x86_64.rpm",
+            "openssl-debuginfo-1.0.2k-16.el7.i686.rpm",
+            "openssl-debuginfo-1.0.2k-16.el7.i686.rpm",
+            "openssl-debuginfo-1.0.2k-16.el7.x86_64.rpm",
+            "openssl-debuginfo-1.0.2k-16.el7.x86_64.rpm",
+            "openssl-devel-1.0.2k-16.el7.i686.rpm",
+            "openssl-devel-1.0.2k-16.el7.x86_64.rpm",
+            "openssl-libs-1.0.2k-16.el7.i686.rpm",
+            "openssl-libs-1.0.2k-16.el7.x86_64.rpm",
+            "openssl-perl-1.0.2k-16.el7.x86_64.rpm",
+            "openssl-static-1.0.2k-16.el7.i686.rpm",
+            "openssl-static-1.0.2k-16.el7.x86_64.rpm"
+          ],
+          "rpm_version": "openssl-1.0.2k-16.el7"
+        },
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "openssl098e"
+        },
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "OVMF"
+        }
+      ],
+      "cve_keyword": "未分类"
+    }
+  },
+  {
+    "cve_num": "CVE-2019-9516",
+    "title": "nginx 安全漏洞(CVE-2019-9516)",
+    "level": "中",
+    "title_key": "nginx",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2019-9516",
+      "cve_state": "未找到相关修复：Red Hat Enterprise Linux 7",
+      "cve_threat_severity": "高",
+      "cve_detail": "A flaw was found in HTTP/2. An attacker, sending a stream of header with a 0-length header name and a 0-length header value, could cause some implementations to allocate memory for these headers and keep the allocations alive until the session dies. The can consume excess memory, potentially leading to a denial of service. The highest threat from this vulnerability is to system availability.",
+      "cve_statement": "This flaw has no available mitigation for nodejs package. It will be updated once the available fixes are released for Red Hat Enterprise Linux and Red Hat Software Collections.\n\nThe nodejs RPM shipped in OpenShift Container Platform 3.9 and 3.10 is not affected by this flaw as it does not contain the vulnerable code.",
+      "affect_products": [],
+      "cve_keyword": "未分类"
+    }
+  },
+  {
+    "cve_num": "CVE-2020-8492",
+    "title": "Python 资源管理错误漏洞(CVE-2020-8492)",
+    "level": "中",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2020-8492",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "Python 2.7 through 2.7.17, 3.5 through 3.5.9, 3.6 through 3.6.10, 3.7 through 3.7.6, and 3.8 through 3.8.1 allows an HTTP server to conduct Regular Expression Denial of Service (ReDoS) attacks against a client because of urllib.request.AbstractBasicAuthHandler catastrophic backtracking.",
+      "cve_statement": "Applications that use AbstractBasicAuthHandler, HTTPBasicAuthHandler and ProxyBasicAuthHandler may be affected by this flaw. Other classes may use the vulnerable method http_error_auth_reqed in AbstractBasicAuthHandler as well.\n\nVersions of python36:3.6/python36 as shipped with Red Hat Enterprise Linux 8 are marked as notaffected as they just provide \"symlinks\" to the main python3 component, which provides the actual interpreter of the Python programming language.",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2020:3888",
+          "errate_package_name": "python3",
+          "fixed_rpms": [
+            "python3-3.6.8-17.el7.src.rpm",
+            "python3-3.6.8-17.el7.i686.rpm",
+            "python3-3.6.8-17.el7.x86_64.rpm",
+            "python3-debug-3.6.8-17.el7.i686.rpm",
+            "python3-debug-3.6.8-17.el7.x86_64.rpm",
+            "python3-debuginfo-3.6.8-17.el7.i686.rpm",
+            "python3-debuginfo-3.6.8-17.el7.i686.rpm",
+            "python3-debuginfo-3.6.8-17.el7.x86_64.rpm",
+            "python3-debuginfo-3.6.8-17.el7.x86_64.rpm",
+            "python3-devel-3.6.8-17.el7.i686.rpm",
+            "python3-devel-3.6.8-17.el7.x86_64.rpm",
+            "python3-idle-3.6.8-17.el7.i686.rpm",
+            "python3-idle-3.6.8-17.el7.x86_64.rpm",
+            "python3-libs-3.6.8-17.el7.i686.rpm",
+            "python3-libs-3.6.8-17.el7.x86_64.rpm",
+            "python3-test-3.6.8-17.el7.i686.rpm",
+            "python3-test-3.6.8-17.el7.x86_64.rpm",
+            "python3-tkinter-3.6.8-17.el7.i686.rpm",
+            "python3-tkinter-3.6.8-17.el7.x86_64.rpm"
+          ],
+          "rpm_version": "python3-3.6.8-17.el7"
+        },
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "python"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  },
+  {
+    "cve_num": "CVE-2016-3115",
+    "title": "OpenSSH <=7.2p1 xauth命令注入漏洞(CVE-2016-3115)",
+    "level": "中",
+    "title_key": "ssh",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2016-3115",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "It was discovered that the OpenSSH server did not sanitize data received in requests to enable X11 forwarding. An authenticated client with restricted SSH access could possibly use this flaw to bypass intended restrictions.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2016:0465",
+          "errate_package_name": "openssh",
+          "fixed_rpms": [
+            "openssh-6.6.1p1-25.el7_2.src.rpm",
+            "openssh-6.6.1p1-25.el7_2.x86_64.rpm",
+            "openssh-askpass-6.6.1p1-25.el7_2.x86_64.rpm",
+            "openssh-clients-6.6.1p1-25.el7_2.x86_64.rpm",
+            "openssh-debuginfo-6.6.1p1-25.el7_2.i686.rpm",
+            "openssh-debuginfo-6.6.1p1-25.el7_2.x86_64.rpm",
+            "openssh-debuginfo-6.6.1p1-25.el7_2.x86_64.rpm",
+            "openssh-keycat-6.6.1p1-25.el7_2.x86_64.rpm",
+            "openssh-ldap-6.6.1p1-25.el7_2.x86_64.rpm",
+            "openssh-server-6.6.1p1-25.el7_2.x86_64.rpm",
+            "openssh-server-sysvinit-6.6.1p1-25.el7_2.x86_64.rpm",
+            "pam_ssh_agent_auth-0.9.3-9.25.el7_2.i686.rpm",
+            "pam_ssh_agent_auth-0.9.3-9.25.el7_2.x86_64.rpm"
+          ],
+          "rpm_version": "openssh-6.6.1p1-25.el7_2"
+        }
+      ],
+      "cve_keyword": "openssh"
+    }
+  },
+  {
+    "cve_num": "CVE-2014-7185",
+    "title": "Python‘bufferobject.c’整数溢出漏洞(CVE-2014-7185)",
+    "level": "中",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2014-7185",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "低",
+      "cve_detail": "An integer overflow flaw was found in the way the buffer() function handled its offset and size arguments. An attacker able to control those arguments could use this flaw to disclose portions of the application memory or cause it to crash.",
+      "cve_statement": "This issue affects the versions of python as shipped with Red Hat Enterprise Linux 7. A future update may address this issue.\n\nRed Hat Enterprise Linux 5 is now in Production 3 Phase of the support and maintenance life cycle. This has been rated as having Low security impact and is not currently planned to be addressed in future updates. For additional information, refer to the Red Hat Enterprise Linux Life Cycle: https://access.redhat.com/support/policy/updates/errata/.",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2015:2101",
+          "errate_package_name": "python",
+          "fixed_rpms": [
+            "python-2.7.5-34.el7.src.rpm",
+            "python-2.7.5-34.el7.x86_64.rpm",
+            "python-debug-2.7.5-34.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-34.el7.i686.rpm",
+            "python-debuginfo-2.7.5-34.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-34.el7.x86_64.rpm",
+            "python-devel-2.7.5-34.el7.x86_64.rpm",
+            "python-libs-2.7.5-34.el7.i686.rpm",
+            "python-libs-2.7.5-34.el7.x86_64.rpm",
+            "python-test-2.7.5-34.el7.x86_64.rpm",
+            "python-tools-2.7.5-34.el7.x86_64.rpm",
+            "tkinter-2.7.5-34.el7.x86_64.rpm"
+          ],
+          "rpm_version": "python-2.7.5-34.el7"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  },
+  {
+    "cve_num": "CVE-2019-10092",
+    "title": "Apache httpd 跨站脚本漏洞(CVE-2019-10092)",
+    "level": "中",
+    "title_key": "apache",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2019-10092",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "低",
+      "cve_detail": "A cross-site scripting vulnerability was found in Apache httpd, affecting the mod_proxy error page. Under certain circumstances, a crafted link could inject content into the HTML displayed in the error page, potentially leading to client-side exploitation.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "httpd"
+        }
+      ],
+      "cve_keyword": "httpd"
+    }
+  },
+  {
+    "cve_num": "CVE-2018-16845",
+    "title": "nginx 安全漏洞（CVE-2018-16845）",
+    "level": "中",
+    "title_key": "nginx",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2018-16845",
+      "cve_state": "未找到相关修复：Red Hat Enterprise Linux 7",
+      "cve_threat_severity": "高",
+      "cve_detail": "An instance of missing input sanitization was found in the mp4 module for nginx. A local attacker could create a specially crafted video file that, when streamed by the server, would cause a denial of service (server crash or hang) and, possibly, information disclosure.",
+      "cve_statement": "",
+      "affect_products": [],
+      "cve_keyword": "未分类"
+    }
+  },
+  {
+    "cve_num": "CVE-2019-9740",
+    "title": "python Redis Labs Redis和Python 注入漏洞(CVE-2019-9740)",
+    "level": "中",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2019-9740",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "An issue was discovered in urllib2 in Python 2.x through 2.7.16 and urllib in Python 3.x through 3.7.3. CRLF injection is possible if the attacker controls a url parameter, as demonstrated by the first argument to urllib.request.urlopen with \\r\\n (specifically in the query string after a ? character) followed by an HTTP header or a Redis command. This is fixed in: v2.7.17, v2.7.17rc1, v2.7.18, v2.7.18rc1; v3.5.10, v3.5.10rc1, v3.5.8, v3.5.8rc1, v3.5.8rc2, v3.5.9; v3.6.10, v3.6.10rc1, v3.6.11, v3.6.11rc1, v3.6.12, v3.6.9, v3.6.9rc1; v3.7.4, v3.7.4rc1, v3.7.4rc2, v3.7.5, v3.7.5rc1, v3.7.6, v3.7.6rc1, v3.7.7, v3.7.7rc1, v3.7.8, v3.7.8rc1, v3.7.9.",
+      "cve_statement": "This issue affects:\n* All current versions of Red Hat OpenStack Platform. However, version 8 is due to retire on the 20th of April 2019, there are no more planned releases prior to this date.",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2019:2030",
+          "errate_package_name": "python",
+          "fixed_rpms": [
+            "python-2.7.5-86.el7.src.rpm",
+            "python-2.7.5-86.el7.x86_64.rpm",
+            "python-debug-2.7.5-86.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-86.el7.i686.rpm",
+            "python-debuginfo-2.7.5-86.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-86.el7.x86_64.rpm",
+            "python-devel-2.7.5-86.el7.x86_64.rpm",
+            "python-libs-2.7.5-86.el7.i686.rpm",
+            "python-libs-2.7.5-86.el7.x86_64.rpm",
+            "python-test-2.7.5-86.el7.x86_64.rpm",
+            "python-tools-2.7.5-86.el7.x86_64.rpm",
+            "tkinter-2.7.5-86.el7.x86_64.rpm"
+          ],
+          "rpm_version": "python-2.7.5-86.el7"
+        },
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "python3"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  },
+  {
+    "cve_num": "CVE-2019-16935",
+    "title": "Python 跨站脚本漏洞(CVE-2019-16935)",
+    "level": "中",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2019-16935",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "A reflected cross-site scripting (XSS) vulnerability was found in Python XML-RPC server. The `server_title` field is not sufficiently sanitized allowing malicious JavaScript to be injected. Successful exploitation would allow a remote attacker to execute JavaScript code within the context of the affected user.",
+      "cve_statement": "This flaw does not affect the versions of python27-python as shipped with Red Hat Software Collections 3 as they already include the fix.\nThis flaw does not affect the versions of python36:3.6/python36 as shipped with Red Hat Enterprise Linux 8 as they are \"symlinks\" to the main python3 component, which provides the actual interpreter of the Python programming language.",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2020:3888",
+          "errate_package_name": "python3",
+          "fixed_rpms": [
+            "python3-3.6.8-17.el7.src.rpm",
+            "python3-3.6.8-17.el7.i686.rpm",
+            "python3-3.6.8-17.el7.x86_64.rpm",
+            "python3-debug-3.6.8-17.el7.i686.rpm",
+            "python3-debug-3.6.8-17.el7.x86_64.rpm",
+            "python3-debuginfo-3.6.8-17.el7.i686.rpm",
+            "python3-debuginfo-3.6.8-17.el7.i686.rpm",
+            "python3-debuginfo-3.6.8-17.el7.x86_64.rpm",
+            "python3-debuginfo-3.6.8-17.el7.x86_64.rpm",
+            "python3-devel-3.6.8-17.el7.i686.rpm",
+            "python3-devel-3.6.8-17.el7.x86_64.rpm",
+            "python3-idle-3.6.8-17.el7.i686.rpm",
+            "python3-idle-3.6.8-17.el7.x86_64.rpm",
+            "python3-libs-3.6.8-17.el7.i686.rpm",
+            "python3-libs-3.6.8-17.el7.x86_64.rpm",
+            "python3-test-3.6.8-17.el7.i686.rpm",
+            "python3-test-3.6.8-17.el7.x86_64.rpm",
+            "python3-tkinter-3.6.8-17.el7.i686.rpm",
+            "python3-tkinter-3.6.8-17.el7.x86_64.rpm"
+          ],
+          "rpm_version": "python3-3.6.8-17.el7"
+        },
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2020:3911",
+          "errate_package_name": "python",
+          "fixed_rpms": [
+            "python-2.7.5-89.el7.src.rpm",
+            "python-2.7.5-89.el7.x86_64.rpm",
+            "python-debug-2.7.5-89.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-89.el7.i686.rpm",
+            "python-debuginfo-2.7.5-89.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-89.el7.x86_64.rpm",
+            "python-devel-2.7.5-89.el7.x86_64.rpm",
+            "python-libs-2.7.5-89.el7.i686.rpm",
+            "python-libs-2.7.5-89.el7.x86_64.rpm",
+            "python-test-2.7.5-89.el7.x86_64.rpm",
+            "python-tools-2.7.5-89.el7.x86_64.rpm",
+            "tkinter-2.7.5-89.el7.x86_64.rpm"
+          ],
+          "rpm_version": "python-2.7.5-89.el7"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  },
+  {
+    "cve_num": "CVE-2020-1927",
+    "title": "Apache HTTP Server 输入验证错误漏洞(CVE-2020-1927)",
+    "level": "中",
+    "title_key": "apache",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2020-1927",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "A flaw was found in Apache HTTP Server (httpd) versions 2.4.0 to 2.4.41. Redirects configured with mod_rewrite that were intended to be self-referential might be fooled by encoded newlines and redirected instead to an unexpected URL within the request URL.",
+      "cve_statement": "This issue only affects httpd versions between 2.4.0 and 2.4.41. Therefore Red Hat Enterprise Linux 5 and 6 are not affected by this flaw.",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2020:3958",
+          "errate_package_name": "httpd",
+          "fixed_rpms": [
+            "httpd-2.4.6-95.el7.src.rpm",
+            "httpd-2.4.6-95.el7.x86_64.rpm",
+            "httpd-debuginfo-2.4.6-95.el7.x86_64.rpm",
+            "httpd-debuginfo-2.4.6-95.el7.x86_64.rpm",
+            "httpd-devel-2.4.6-95.el7.x86_64.rpm",
+            "httpd-manual-2.4.6-95.el7.noarch.rpm",
+            "httpd-tools-2.4.6-95.el7.x86_64.rpm",
+            "mod_ldap-2.4.6-95.el7.x86_64.rpm",
+            "mod_proxy_html-2.4.6-95.el7.x86_64.rpm",
+            "mod_session-2.4.6-95.el7.x86_64.rpm",
+            "mod_ssl-2.4.6-95.el7.x86_64.rpm"
+          ],
+          "rpm_version": "httpd-2.4.6-95.el7"
+        }
+      ],
+      "cve_keyword": "httpd"
+    }
+  },
+  {
+    "cve_num": "CVE-2019-9947",
+    "title": "python Redis Labs Redis和Python 注入漏洞(CVE-2019-9947)",
+    "level": "中",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2019-9947",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "An issue was discovered in urllib2 in Python 2.x through 2.7.16 and urllib in Python 3.x through 3.7.3. CRLF injection is possible if the attacker controls a url parameter, as demonstrated by the first argument to urllib.request.urlopen with \\r\\n (specifically in the path component of a URL that lacks a ? character) followed by an HTTP header or a Redis command. This is similar to the CVE-2019-9740 query string issue. This is fixed in: v2.7.17, v2.7.17rc1, v2.7.18, v2.7.18rc1; v3.5.10, v3.5.10rc1, v3.5.8, v3.5.8rc1, v3.5.8rc2, v3.5.9; v3.6.10, v3.6.10rc1, v3.6.11, v3.6.11rc1, v3.6.12, v3.6.9, v3.6.9rc1; v3.7.4, v3.7.4rc1, v3.7.4rc2, v3.7.5, v3.7.5rc1, v3.7.6, v3.7.6rc1, v3.7.7, v3.7.7rc1, v3.7.8, v3.7.8rc1, v3.7.9.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2019:2030",
+          "errate_package_name": "python",
+          "fixed_rpms": [
+            "python-2.7.5-86.el7.src.rpm",
+            "python-2.7.5-86.el7.x86_64.rpm",
+            "python-debug-2.7.5-86.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-86.el7.i686.rpm",
+            "python-debuginfo-2.7.5-86.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-86.el7.x86_64.rpm",
+            "python-devel-2.7.5-86.el7.x86_64.rpm",
+            "python-libs-2.7.5-86.el7.i686.rpm",
+            "python-libs-2.7.5-86.el7.x86_64.rpm",
+            "python-test-2.7.5-86.el7.x86_64.rpm",
+            "python-tools-2.7.5-86.el7.x86_64.rpm",
+            "tkinter-2.7.5-86.el7.x86_64.rpm"
+          ],
+          "rpm_version": "python-2.7.5-86.el7"
+        },
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "python3"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  },
+  {
+    "cve_num": "CVE-2019-18348",
+    "title": "Python 注入漏洞(CVE-2019-18348)",
+    "level": "中",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2019-18348",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "A CRLF injection flaw was discovered in python in the way URLs are handled when doing an HTTP/HTTPS connection (e.g. through urlopen() or HTTPConnection). An attacker who can control the url parameter passed to urlopen method in the urllib/urllib2 modules can inject CRLF sequences and HTTP headers by abusing the \"host\" part of the URL.",
+      "cve_statement": "This issue does not affect the versions of python and python3 as shipped with Red Hat Enterprise Linux 7.7 and above because glibc flaw CVE-2016-10739 was fixed in RHSA-2019:2118-03, which makes this bug not exploitable.\n\nThis issue does not affect the versions of python and python3 as shipped with Red Hat Enterprise Linux 8 because glibc is not vulnerable to CVE-2016-10739, making this bug not exploitable.",
+      "affect_products": [
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "python"
+        },
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "python3"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  },
+  {
+    "cve_num": "CVE-2016-1000110",
+    "title": "Python CGIHandler httpoxy 安全漏洞(CVE-2016-1000110)",
+    "level": "中",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2016-1000110",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "It was discovered that the Python CGIHandler class did not properly protect against the HTTP_PROXY variable name clash in a CGI context. A remote attacker could possibly use this flaw to redirect HTTP requests performed by a Python CGI script to an attacker-controlled proxy via a malicious HTTP request.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2016:1626",
+          "errate_package_name": "python",
+          "fixed_rpms": [
+            "python-2.7.5-38.el7_2.src.rpm",
+            "python-2.7.5-38.el7_2.x86_64.rpm",
+            "python-debug-2.7.5-38.el7_2.x86_64.rpm",
+            "python-debuginfo-2.7.5-38.el7_2.i686.rpm",
+            "python-debuginfo-2.7.5-38.el7_2.x86_64.rpm",
+            "python-debuginfo-2.7.5-38.el7_2.x86_64.rpm",
+            "python-devel-2.7.5-38.el7_2.x86_64.rpm",
+            "python-libs-2.7.5-38.el7_2.i686.rpm",
+            "python-libs-2.7.5-38.el7_2.x86_64.rpm",
+            "python-test-2.7.5-38.el7_2.x86_64.rpm",
+            "python-tools-2.7.5-38.el7_2.x86_64.rpm",
+            "tkinter-2.7.5-38.el7_2.x86_64.rpm"
+          ],
+          "rpm_version": "python-2.7.5-38.el7_2"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  },
+  {
+    "cve_num": "CVE-2016-5699",
+    "title": "Python 'urrlib2/urllib/httplib/http.client' HTTP标头注入漏洞(CVE-2016-5699)",
+    "level": "中",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2016-5699",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "It was found that the Python's httplib library (used by urllib, urllib2 and others) did not properly check HTTPConnection.putheader() function arguments. An attacker could use this flaw to inject additional headers in a Python application that allowed user provided header names or values.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2016:1626",
+          "errate_package_name": "python",
+          "fixed_rpms": [
+            "python-2.7.5-38.el7_2.src.rpm",
+            "python-2.7.5-38.el7_2.x86_64.rpm",
+            "python-debug-2.7.5-38.el7_2.x86_64.rpm",
+            "python-debuginfo-2.7.5-38.el7_2.i686.rpm",
+            "python-debuginfo-2.7.5-38.el7_2.x86_64.rpm",
+            "python-debuginfo-2.7.5-38.el7_2.x86_64.rpm",
+            "python-devel-2.7.5-38.el7_2.x86_64.rpm",
+            "python-libs-2.7.5-38.el7_2.i686.rpm",
+            "python-libs-2.7.5-38.el7_2.x86_64.rpm",
+            "python-test-2.7.5-38.el7_2.x86_64.rpm",
+            "python-tools-2.7.5-38.el7_2.x86_64.rpm",
+            "tkinter-2.7.5-38.el7_2.x86_64.rpm"
+          ],
+          "rpm_version": "python-2.7.5-38.el7_2"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  },
+  {
+    "cve_num": "CVE-2019-10098",
+    "title": "Apache httpd 输入验证错误漏洞(CVE-2019-10098)",
+    "level": "中",
+    "title_key": "apache",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2019-10098",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "低",
+      "cve_detail": "A vulnerability was discovered in Apache httpd, in mod_rewrite. Certain self-referential mod_rewrite rules could be fooled by encoded newlines, causing them to redirect to an unexpected location. An attacker could abuse this flaw in a phishing attack or as part of a client-side attack on browsers.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2020:3958",
+          "errate_package_name": "httpd",
+          "fixed_rpms": [
+            "httpd-2.4.6-95.el7.src.rpm",
+            "httpd-2.4.6-95.el7.x86_64.rpm",
+            "httpd-debuginfo-2.4.6-95.el7.x86_64.rpm",
+            "httpd-debuginfo-2.4.6-95.el7.x86_64.rpm",
+            "httpd-devel-2.4.6-95.el7.x86_64.rpm",
+            "httpd-manual-2.4.6-95.el7.noarch.rpm",
+            "httpd-tools-2.4.6-95.el7.x86_64.rpm",
+            "mod_ldap-2.4.6-95.el7.x86_64.rpm",
+            "mod_proxy_html-2.4.6-95.el7.x86_64.rpm",
+            "mod_session-2.4.6-95.el7.x86_64.rpm",
+            "mod_ssl-2.4.6-95.el7.x86_64.rpm"
+          ],
+          "rpm_version": "httpd-2.4.6-95.el7"
+        }
+      ],
+      "cve_keyword": "httpd"
+    }
+  },
+  {
+    "cve_num": "CVE-2021-23841",
+    "title": "OpenSSL 安全漏洞(CVE-2021-23841)",
+    "level": "中",
+    "title_key": "openssl",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2021-23841",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "The OpenSSL public API function X509_issuer_and_serial_hash() attempts to create a unique hash value based on the issuer and serial number data contained within an X509 certificate. However it fails to correctly handle any errors that may occur while parsing the issuer field (which might occur if the issuer field is maliciously constructed). This may subsequently result in a NULL pointer deref and a crash leading to a potential denial of service attack.",
+      "cve_statement": "This is a a null pointer dereference in the X509_issuer_and_serial_hash()  function, which can result in crash if called by an application compiled with OpenSSL, by passing a specially-crafted certificate. OpenSSL internally does not use this function.",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2021:3798",
+          "errate_package_name": "openssl",
+          "fixed_rpms": [
+            "openssl-1.0.2k-22.el7_9.src.rpm",
+            "openssl-1.0.2k-22.el7_9.x86_64.rpm",
+            "openssl-debuginfo-1.0.2k-22.el7_9.i686.rpm",
+            "openssl-debuginfo-1.0.2k-22.el7_9.i686.rpm",
+            "openssl-debuginfo-1.0.2k-22.el7_9.x86_64.rpm",
+            "openssl-debuginfo-1.0.2k-22.el7_9.x86_64.rpm",
+            "openssl-devel-1.0.2k-22.el7_9.i686.rpm",
+            "openssl-devel-1.0.2k-22.el7_9.x86_64.rpm",
+            "openssl-libs-1.0.2k-22.el7_9.i686.rpm",
+            "openssl-libs-1.0.2k-22.el7_9.x86_64.rpm",
+            "openssl-perl-1.0.2k-22.el7_9.x86_64.rpm",
+            "openssl-static-1.0.2k-22.el7_9.i686.rpm",
+            "openssl-static-1.0.2k-22.el7_9.x86_64.rpm"
+          ],
+          "rpm_version": "openssl-1.0.2k-22.el7_9"
+        },
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "openssl098e"
+        },
+        {
+          "errate_state": "Affected",
+          "errate_url": null,
+          "errate_package_name": "ovmf"
+        }
+      ],
+      "cve_keyword": "o"
+    }
+  },
+  {
+    "cve_num": "CVE-2014-4616",
+    "title": "Python和simplejson _json模块信息泄露漏洞(CVE-2014-4616)",
+    "level": "低",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2014-4616",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "A flaw was found in the way the json module handled negative index argument passed to certain functions (such as raw_decode()). An attacker able to control index value passed to one of the affected functions could possibly use this flaw to disclose portions of the application memory.",
+      "cve_statement": "This issue affects the versions of python as shipped with Red Hat Enterprise Linux 7, the versions of python-simplejson as shipped with Red Hat Enterprise Linux 5 and 6, and the versions of python33-python and python33-python-simplejson as shipped with Red Hat Software Collections. Red Hat Product Security has rated this issue as having Moderate security impact. Future updates may address this issue. For additional information, refer to the Issue Severity Classification: https://access.redhat.com/security/updates/classification/.",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2015:2101",
+          "errate_package_name": "python",
+          "fixed_rpms": [
+            "python-2.7.5-34.el7.src.rpm",
+            "python-2.7.5-34.el7.x86_64.rpm",
+            "python-debug-2.7.5-34.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-34.el7.i686.rpm",
+            "python-debuginfo-2.7.5-34.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-34.el7.x86_64.rpm",
+            "python-devel-2.7.5-34.el7.x86_64.rpm",
+            "python-libs-2.7.5-34.el7.i686.rpm",
+            "python-libs-2.7.5-34.el7.x86_64.rpm",
+            "python-test-2.7.5-34.el7.x86_64.rpm",
+            "python-tools-2.7.5-34.el7.x86_64.rpm",
+            "tkinter-2.7.5-34.el7.x86_64.rpm"
+          ],
+          "rpm_version": "python-2.7.5-34.el7"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  },
+  {
+    "cve_num": "CVE-2018-0734",
+    "title": "OpenSSL 旁道攻击信息泄露漏洞（CVE-2018-0734）",
+    "level": "中",
+    "title_key": "openssl",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2018-0734",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "低",
+      "cve_detail": "The OpenSSL DSA signature algorithm has been shown to be vulnerable to a timing side channel attack. An attacker could use variations in the signing algorithm to recover the private key. Fixed in OpenSSL 1.1.1a (Affected 1.1.1). Fixed in OpenSSL 1.1.0j (Affected 1.1.0-1.1.0i). Fixed in OpenSSL 1.0.2q (Affected 1.0.2-1.0.2p).",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2019:2304",
+          "errate_package_name": "openssl",
+          "fixed_rpms": [
+            "openssl-1.0.2k-19.el7.src.rpm",
+            "openssl-1.0.2k-19.el7.x86_64.rpm",
+            "openssl-debuginfo-1.0.2k-19.el7.i686.rpm",
+            "openssl-debuginfo-1.0.2k-19.el7.i686.rpm",
+            "openssl-debuginfo-1.0.2k-19.el7.x86_64.rpm",
+            "openssl-debuginfo-1.0.2k-19.el7.x86_64.rpm",
+            "openssl-devel-1.0.2k-19.el7.i686.rpm",
+            "openssl-devel-1.0.2k-19.el7.x86_64.rpm",
+            "openssl-libs-1.0.2k-19.el7.i686.rpm",
+            "openssl-libs-1.0.2k-19.el7.x86_64.rpm",
+            "openssl-perl-1.0.2k-19.el7.x86_64.rpm",
+            "openssl-static-1.0.2k-19.el7.i686.rpm",
+            "openssl-static-1.0.2k-19.el7.x86_64.rpm"
+          ],
+          "rpm_version": "openssl-1.0.2k-19.el7"
+        },
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "openssl098e"
+        },
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "OVMF"
+        }
+      ],
+      "cve_keyword": "未分类"
+    }
+  },
+  {
+    "cve_num": "CVE-2017-3737",
+    "title": "OpenSSL 安全限制绕过漏洞（CVE-2017-3737）",
+    "level": "中",
+    "title_key": "openssl",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2017-3737",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "OpenSSL 1.0.2 (starting from version 1.0.2b) introduced an \"error state\" mechanism. The intent was that if a fatal error occurred during a handshake then OpenSSL would move into the error state and would immediately fail if you attempted to continue the handshake. This works as designed for the explicit handshake functions (SSL_do_handshake(), SSL_accept() and SSL_connect()), however due to a bug it does not work correctly if SSL_read() or SSL_write() is called directly. In that scenario, if the handshake fails then a fatal error will be returned in the initial function call. If SSL_read()/SSL_write() is subsequently called by the application for the same SSL object then it will succeed and the data is passed without being decrypted/encrypted directly from the SSL/TLS record layer. In order to exploit this issue an application bug would have to be present that resulted in a call to SSL_read()/SSL_write() being issued after having already received a fatal error. OpenSSL version 1.0.2b-1.0.2m are affected. Fixed in OpenSSL 1.0.2n. OpenSSL 1.1.0 is not affected.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2018:0998",
+          "errate_package_name": "openssl",
+          "fixed_rpms": [
+            "openssl-1.0.2k-12.el7.src.rpm",
+            "openssl-1.0.2k-12.el7.x86_64.rpm",
+            "openssl-debuginfo-1.0.2k-12.el7.i686.rpm",
+            "openssl-debuginfo-1.0.2k-12.el7.i686.rpm",
+            "openssl-debuginfo-1.0.2k-12.el7.x86_64.rpm",
+            "openssl-debuginfo-1.0.2k-12.el7.x86_64.rpm",
+            "openssl-devel-1.0.2k-12.el7.i686.rpm",
+            "openssl-devel-1.0.2k-12.el7.x86_64.rpm",
+            "openssl-libs-1.0.2k-12.el7.i686.rpm",
+            "openssl-libs-1.0.2k-12.el7.x86_64.rpm",
+            "openssl-perl-1.0.2k-12.el7.x86_64.rpm",
+            "openssl-static-1.0.2k-12.el7.i686.rpm",
+            "openssl-static-1.0.2k-12.el7.x86_64.rpm"
+          ],
+          "rpm_version": "openssl-1.0.2k-12.el7"
+        },
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "openssl098e"
+        },
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "OVMF"
+        }
+      ],
+      "cve_keyword": "未分类"
+    }
+  },
+  {
+    "cve_num": "CVE-2017-3738",
+    "title": "OpenSSL rsaz_1024_mul_avx2溢出信息泄露漏洞(CVE-2017-3738)",
+    "level": "中",
+    "title_key": "openssl",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2017-3738",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "低",
+      "cve_detail": "There is an overflow bug in the AVX2 Montgomery multiplication procedure used in exponentiation with 1024-bit moduli. No EC algorithms are affected. Analysis suggests that attacks against RSA and DSA as a result of this defect would be very difficult to perform and are not believed likely. Attacks against DH1024 are considered just feasible, because most of the work necessary to deduce information about a private key may be performed offline. The amount of resources required for such an attack would be significant. However, for an attack on TLS to be meaningful, the server would have to share the DH1024 private key among multiple clients, which is no longer an option since CVE-2016-0701. This only affects processors that support the AVX2 but not ADX extensions like Intel Haswell (4th generation). Note: The impact from this issue is similar to CVE-2017-3736, CVE-2017-3732 and CVE-2015-3193. OpenSSL version 1.0.2-1.0.2m and 1.1.0-1.1.0g are affected. Fixed in OpenSSL 1.0.2n. Due to the low severity of this issue we are not issuing a new release of OpenSSL 1.1.0 at this time. The fix will be included in OpenSSL 1.1.0h when it becomes available. The fix is also available in commit e502cc86d in the OpenSSL git repository.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2018:0998",
+          "errate_package_name": "openssl",
+          "fixed_rpms": [
+            "openssl-1.0.2k-12.el7.src.rpm",
+            "openssl-1.0.2k-12.el7.x86_64.rpm",
+            "openssl-debuginfo-1.0.2k-12.el7.i686.rpm",
+            "openssl-debuginfo-1.0.2k-12.el7.i686.rpm",
+            "openssl-debuginfo-1.0.2k-12.el7.x86_64.rpm",
+            "openssl-debuginfo-1.0.2k-12.el7.x86_64.rpm",
+            "openssl-devel-1.0.2k-12.el7.i686.rpm",
+            "openssl-devel-1.0.2k-12.el7.x86_64.rpm",
+            "openssl-libs-1.0.2k-12.el7.i686.rpm",
+            "openssl-libs-1.0.2k-12.el7.x86_64.rpm",
+            "openssl-perl-1.0.2k-12.el7.x86_64.rpm",
+            "openssl-static-1.0.2k-12.el7.i686.rpm",
+            "openssl-static-1.0.2k-12.el7.x86_64.rpm"
+          ],
+          "rpm_version": "openssl-1.0.2k-12.el7"
+        },
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "openssl098e"
+        },
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "OVMF"
+        }
+      ],
+      "cve_keyword": "未分类"
+    }
+  },
+  {
+    "cve_num": "CVE-2016-6210",
+    "title": "OpenSSH SSH守护进程安全漏洞(CVE-2016-6210)",
+    "level": "中",
+    "title_key": "ssh",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2016-6210",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "A covert timing channel flaw was found in the way OpenSSH handled authentication of non-existent users. A remote unauthenticated attacker could possibly use this flaw to determine valid user names by measuring the timing of server responses.",
+      "cve_statement": "This issue in OpenSSH is mitigated by the usage of SELinux in Red Hat Enterprise Linux 6 and Red Hat Enterprise Linux 7.",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2017:2029",
+          "errate_package_name": "openssh",
+          "fixed_rpms": [
+            "openssh-7.4p1-11.el7.src.rpm",
+            "openssh-7.4p1-11.el7.x86_64.rpm",
+            "openssh-askpass-7.4p1-11.el7.x86_64.rpm",
+            "openssh-cavs-7.4p1-11.el7.x86_64.rpm",
+            "openssh-clients-7.4p1-11.el7.x86_64.rpm",
+            "openssh-debuginfo-7.4p1-11.el7.i686.rpm",
+            "openssh-debuginfo-7.4p1-11.el7.x86_64.rpm",
+            "openssh-debuginfo-7.4p1-11.el7.x86_64.rpm",
+            "openssh-keycat-7.4p1-11.el7.x86_64.rpm",
+            "openssh-ldap-7.4p1-11.el7.x86_64.rpm",
+            "openssh-server-7.4p1-11.el7.x86_64.rpm",
+            "openssh-server-sysvinit-7.4p1-11.el7.x86_64.rpm",
+            "pam_ssh_agent_auth-0.10.3-1.11.el7.i686.rpm",
+            "pam_ssh_agent_auth-0.10.3-1.11.el7.x86_64.rpm"
+          ],
+          "rpm_version": "openssh-7.4p1-11.el7"
+        }
+      ],
+      "cve_keyword": "openssh"
+    }
+  },
+  {
+    "cve_num": "CVE-2018-0737",
+    "title": "OpenSSL旁道攻击信息泄露漏洞（CVE-2018-0737）",
+    "level": "中",
+    "title_key": "openssl",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2018-0737",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "低",
+      "cve_detail": "OpenSSL RSA key generation was found to be vulnerable to cache side-channel attacks. An attacker with sufficient access to mount cache timing attacks during the RSA key generation process could recover parts of the private key.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2018:3221",
+          "errate_package_name": "openssl",
+          "fixed_rpms": [
+            "openssl-1.0.2k-16.el7.src.rpm",
+            "openssl-1.0.2k-16.el7.x86_64.rpm",
+            "openssl-debuginfo-1.0.2k-16.el7.i686.rpm",
+            "openssl-debuginfo-1.0.2k-16.el7.i686.rpm",
+            "openssl-debuginfo-1.0.2k-16.el7.x86_64.rpm",
+            "openssl-debuginfo-1.0.2k-16.el7.x86_64.rpm",
+            "openssl-devel-1.0.2k-16.el7.i686.rpm",
+            "openssl-devel-1.0.2k-16.el7.x86_64.rpm",
+            "openssl-libs-1.0.2k-16.el7.i686.rpm",
+            "openssl-libs-1.0.2k-16.el7.x86_64.rpm",
+            "openssl-perl-1.0.2k-16.el7.x86_64.rpm",
+            "openssl-static-1.0.2k-16.el7.i686.rpm",
+            "openssl-static-1.0.2k-16.el7.x86_64.rpm"
+          ],
+          "rpm_version": "openssl-1.0.2k-16.el7"
+        },
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "openssl098e"
+        },
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "OVMF"
+        }
+      ],
+      "cve_keyword": "未分类"
+    }
+  },
+  {
+    "cve_num": "CVE-2020-1971",
+    "title": "OpenSSL 拒绝服务漏洞(CVE-2020-1971)",
+    "level": "中",
+    "title_key": "openssl",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2020-1971",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "高",
+      "cve_detail": "A null pointer dereference flaw was found in openssl. A remote attacker, able to control the arguments of the GENERAL_NAME_cmp function, could cause the application, compiled with openssl to crash resulting in a denial of service. The highest threat from this vulnerability is to system availability.",
+      "cve_statement": "This is a flaw in the GENERAL_NAME_cmp function of openssl which can be triggered when both its arguments are of the same type i.e. EDIPARTYNAME. \n\n1. Red Hat does not ship any applications compiled with openssl, which used the above function in a vulnerable way.\n\n2. OpenSSL itself uses the GENERAL_NAME_cmp function for two purposes, when comparing CRL distribution point names between an available CRL and a CRL distribution point embedded in an X509 certificate and when verifying that a timestamp response token signer matches the timestamp authority name (exposed via the API functions TS_RESP_verify_response and TS_RESP_verify_token). If an attacker can control both items being compared then that attacker could trigger a crash. For example, if the attacker can trick a client or server into checking a malicious certificate against a malicious CRL then a crash may be triggered.\n\nThird party applications compiled with openssl using the function GENERAL_NAME_cmp in a vulnerable way are affected by this flaw.\n\nGENERAL_NAME_cmp was added in 0.9.8k, therefore older versions of openssl are not affected by this flaw.",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2020:5566",
+          "errate_package_name": "openssl",
+          "fixed_rpms": [
+            "openssl-1.0.2k-21.el7_9.src.rpm",
+            "openssl-1.0.2k-21.el7_9.x86_64.rpm",
+            "openssl-debuginfo-1.0.2k-21.el7_9.i686.rpm",
+            "openssl-debuginfo-1.0.2k-21.el7_9.i686.rpm",
+            "openssl-debuginfo-1.0.2k-21.el7_9.x86_64.rpm",
+            "openssl-debuginfo-1.0.2k-21.el7_9.x86_64.rpm",
+            "openssl-devel-1.0.2k-21.el7_9.i686.rpm",
+            "openssl-devel-1.0.2k-21.el7_9.x86_64.rpm",
+            "openssl-libs-1.0.2k-21.el7_9.i686.rpm",
+            "openssl-libs-1.0.2k-21.el7_9.x86_64.rpm",
+            "openssl-perl-1.0.2k-21.el7_9.x86_64.rpm",
+            "openssl-static-1.0.2k-21.el7_9.i686.rpm",
+            "openssl-static-1.0.2k-21.el7_9.x86_64.rpm"
+          ],
+          "rpm_version": "openssl-1.0.2k-21.el7_9"
+        },
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "openssl098e"
+        }
+      ],
+      "cve_keyword": "openssl"
+    }
+  },
+  {
+    "cve_num": "CVE-2019-1559",
+    "title": "OpenSSL 信息泄露安全漏洞 (CVE-2019-1559)",
+    "level": "中",
+    "title_key": "openssl",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2019-1559",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "If an application encounters a fatal protocol error and then calls SSL_shutdown() twice (once to send a close_notify, and once to receive one) then OpenSSL can respond differently to the calling application if a 0 byte record is received with invalid padding compared to if a 0 byte record is received with an invalid MAC. If the application then behaves differently based on that in a way that is detectable to the remote peer, then this amounts to a padding oracle that could be used to decrypt data. In order for this to be exploitable \"non-stitched\" ciphersuites must be in use. Stitched ciphersuites are optimised implementations of certain commonly used ciphersuites. Also the application must call SSL_shutdown() twice even if a protocol error has occurred (applications should not do this but some do anyway). Fixed in OpenSSL 1.0.2r (Affected 1.0.2-1.0.2q).",
+      "cve_statement": "1 For this issue to be exploitable, the (server) application using the OpenSSL library needs to use it incorrectly.\n2. There are multiple other requirements for the attack to succeed: \n    - The ciphersuite used must be obsolete CBC cipher without a stitched implementation (or the system be in FIPS mode)\n    - the attacker has to be a MITM\n    - the attacker has to be able to control the client side to send requests to the buggy server on demand",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2019:2304",
+          "errate_package_name": "openssl",
+          "fixed_rpms": [
+            "openssl-1.0.2k-19.el7.src.rpm",
+            "openssl-1.0.2k-19.el7.x86_64.rpm",
+            "openssl-debuginfo-1.0.2k-19.el7.i686.rpm",
+            "openssl-debuginfo-1.0.2k-19.el7.i686.rpm",
+            "openssl-debuginfo-1.0.2k-19.el7.x86_64.rpm",
+            "openssl-debuginfo-1.0.2k-19.el7.x86_64.rpm",
+            "openssl-devel-1.0.2k-19.el7.i686.rpm",
+            "openssl-devel-1.0.2k-19.el7.x86_64.rpm",
+            "openssl-libs-1.0.2k-19.el7.i686.rpm",
+            "openssl-libs-1.0.2k-19.el7.x86_64.rpm",
+            "openssl-perl-1.0.2k-19.el7.x86_64.rpm",
+            "openssl-static-1.0.2k-19.el7.i686.rpm",
+            "openssl-static-1.0.2k-19.el7.x86_64.rpm"
+          ],
+          "rpm_version": "openssl-1.0.2k-19.el7"
+        },
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "openssl098e"
+        },
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "OVMF"
+        }
+      ],
+      "cve_keyword": "未分类"
+    }
+  },
+  {
+    "cve_num": "CVE-2017-3735",
+    "title": "OpenSSL 安全漏洞(CVE-2017-3735)",
+    "level": "中",
+    "title_key": "openssl",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2017-3735",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "低",
+      "cve_detail": "While parsing an IPAddressFamily extension in an X.509 certificate, it is possible to do a one-byte overread. This would result in an incorrect text display of the certificate. This bug has been present since 2006 and is present in all versions of OpenSSL before 1.0.2m and 1.1.0g.",
+      "cve_statement": "This flaw only exhibits itself when:\n1. OpenSSL is used to display details of a local or a remote certificate.\n2. The certificate contains the uncommon RFC 3779 IPAddressFamily extension.\n\nThe maximum impact of this flaw is garbled information being displayed, there is no impact on the availability of service using such a certificate. Also this flaw can NOT be used to create specially-crafted certificates. Red Hat Product Security has rated this issue as having Low security impact. This issue is not currently planned to be addressed in future updates. For additional information, refer to the Issue Severity Classification: https://access.redhat.com/security/updates/classification/.",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2018:3221",
+          "errate_package_name": "openssl",
+          "fixed_rpms": [
+            "openssl-1.0.2k-16.el7.src.rpm",
+            "openssl-1.0.2k-16.el7.x86_64.rpm",
+            "openssl-debuginfo-1.0.2k-16.el7.i686.rpm",
+            "openssl-debuginfo-1.0.2k-16.el7.i686.rpm",
+            "openssl-debuginfo-1.0.2k-16.el7.x86_64.rpm",
+            "openssl-debuginfo-1.0.2k-16.el7.x86_64.rpm",
+            "openssl-devel-1.0.2k-16.el7.i686.rpm",
+            "openssl-devel-1.0.2k-16.el7.x86_64.rpm",
+            "openssl-libs-1.0.2k-16.el7.i686.rpm",
+            "openssl-libs-1.0.2k-16.el7.x86_64.rpm",
+            "openssl-perl-1.0.2k-16.el7.x86_64.rpm",
+            "openssl-static-1.0.2k-16.el7.i686.rpm",
+            "openssl-static-1.0.2k-16.el7.x86_64.rpm"
+          ],
+          "rpm_version": "openssl-1.0.2k-16.el7"
+        },
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "openssl098e"
+        },
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "OVMF"
+        }
+      ],
+      "cve_keyword": "未分类"
+    }
+  },
+  {
+    "cve_num": "CVE-2018-15473",
+    "title": "OpenSSH 用户枚举漏洞(CVE-2018-15473)【原理扫描】",
+    "level": "中",
+    "title_key": "ssh",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2018-15473",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "低",
+      "cve_detail": "A user enumeration vulnerability flaw was found in OpenSSH, though version 7.7. The vulnerability occurs by not delaying bailout for an invalid authenticated user until after the packet containing the request has been fully parsed. The highest threat from this vulnerability is to data confidentiality.",
+      "cve_statement": "Red Hat Product Security has rated this issue as having Low severity. An attacker could use this flaw to determine whether given usernames exist or not on the server, but no further information is disclosed and there is no availability or integrity impact. A future update may address this issue.",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2019:2143",
+          "errate_package_name": "openssh",
+          "fixed_rpms": [
+            "openssh-7.4p1-21.el7.src.rpm",
+            "openssh-7.4p1-21.el7.x86_64.rpm",
+            "openssh-askpass-7.4p1-21.el7.x86_64.rpm",
+            "openssh-cavs-7.4p1-21.el7.x86_64.rpm",
+            "openssh-clients-7.4p1-21.el7.x86_64.rpm",
+            "openssh-debuginfo-7.4p1-21.el7.i686.rpm",
+            "openssh-debuginfo-7.4p1-21.el7.x86_64.rpm",
+            "openssh-debuginfo-7.4p1-21.el7.x86_64.rpm",
+            "openssh-keycat-7.4p1-21.el7.x86_64.rpm",
+            "openssh-ldap-7.4p1-21.el7.x86_64.rpm",
+            "openssh-server-7.4p1-21.el7.x86_64.rpm",
+            "openssh-server-sysvinit-7.4p1-21.el7.x86_64.rpm",
+            "pam_ssh_agent_auth-0.10.3-2.21.el7.i686.rpm",
+            "pam_ssh_agent_auth-0.10.3-2.21.el7.x86_64.rpm"
+          ],
+          "rpm_version": "openssh-7.4p1-21.el7"
+        }
+      ],
+      "cve_keyword": "openssh"
+    }
+  },
+  {
+    "cve_num": "CVE-2016-1907",
+    "title": "OpenSSH 拒绝服务漏洞(CVE-2016-1907)",
+    "level": "中",
+    "title_key": "ssh",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2016-1907",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "The ssh_packet_read_poll2 function in packet.c in OpenSSH before 7.1p2 allows remote attackers to cause a denial of service (out-of-bounds read and application crash) via crafted network traffic.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "openssh"
+        }
+      ],
+      "cve_keyword": "openssh"
+    }
+  },
+  {
+    "cve_num": "CVE-2020-1934",
+    "title": "Apache HTTP Server 安全漏洞(CVE-2020-1934)",
+    "level": "中",
+    "title_key": "apache",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2020-1934",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "低",
+      "cve_detail": "A flaw was found in Apache's HTTP server (httpd) .The mod_proxy_ftp module may use uninitialized memory with proxying to a malicious FTP server. The highest threat from this vulnerability is to data confidentiality.",
+      "cve_statement": "This flaw is caused by use of an uninitialized memory variable. Practically this has no impact, but in some corner cases it is possible that the contents of this variable could be read by a remote process, causing loss of confidentiality as a result of this. There is no evidence of code execution.",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2020:3958",
+          "errate_package_name": "httpd",
+          "fixed_rpms": [
+            "httpd-2.4.6-95.el7.src.rpm",
+            "httpd-2.4.6-95.el7.x86_64.rpm",
+            "httpd-debuginfo-2.4.6-95.el7.x86_64.rpm",
+            "httpd-debuginfo-2.4.6-95.el7.x86_64.rpm",
+            "httpd-devel-2.4.6-95.el7.x86_64.rpm",
+            "httpd-manual-2.4.6-95.el7.noarch.rpm",
+            "httpd-tools-2.4.6-95.el7.x86_64.rpm",
+            "mod_ldap-2.4.6-95.el7.x86_64.rpm",
+            "mod_proxy_html-2.4.6-95.el7.x86_64.rpm",
+            "mod_session-2.4.6-95.el7.x86_64.rpm",
+            "mod_ssl-2.4.6-95.el7.x86_64.rpm"
+          ],
+          "rpm_version": "httpd-2.4.6-95.el7"
+        }
+      ],
+      "cve_keyword": "httpd"
+    }
+  },
+  {
+    "cve_num": "CVE-2018-20852",
+    "title": "Python 输入验证错误漏洞(CVE-2018-20852)",
+    "level": "中",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2018-20852",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "http.cookiejar.DefaultPolicy.domain_return_ok in Lib/http/cookiejar.py in Python before 3.7.3 does not correctly validate the domain: it can be tricked into sending existing cookies to the wrong server. An attacker may abuse this flaw by using a server with a hostname that has another valid hostname as a suffix (e.g., pythonicexample.com to steal cookies for example.com). When a program uses http.cookiejar.DefaultPolicy and tries to do an HTTP connection to an attacker-controlled server, existing cookies can be leaked to the attacker. This affects 2.x through 2.7.16, 3.x before 3.4.10, 3.5.x before 3.5.7, 3.6.x before 3.6.9, and 3.7.x before 3.7.3.",
+      "cve_statement": "This issue affects the versions of python as shipped with Red Hat Enterprise Linux 5, 6, and 7. This issue affects the versions of python3 as shipped with Red Hat Enterprise Linux 7 and 8. This issue affects the versions of python2 and python36 as shipped with Red Hat Enterprise Linux 8.\n\nRed Hat Enterprise Linux 5 is now in Extended Life Phase of the support and maintenance life cycle. This issue is not currently planned to be addressed in future updates. For additional information, refer to the Red Hat Enterprise Linux Life Cycle: https://access.redhat.com/support/policy/updates/errata/.\n\nRed Hat Enterprise Linux 6 is now in Maintenance Support 2 Phase of the support and maintenance life cycle. This has been rated as having a security impact of Moderate, and is not currently planned to be addressed in future updates. For additional information, refer to the Red Hat Enterprise Linux Life Cycle: https://access.redhat.com/support/policy/updates/errata/.",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2020:1131",
+          "errate_package_name": "python",
+          "fixed_rpms": [
+            "python-2.7.5-88.el7.src.rpm",
+            "python-2.7.5-88.el7.x86_64.rpm",
+            "python-debug-2.7.5-88.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-88.el7.i686.rpm",
+            "python-debuginfo-2.7.5-88.el7.x86_64.rpm",
+            "python-debuginfo-2.7.5-88.el7.x86_64.rpm",
+            "python-devel-2.7.5-88.el7.x86_64.rpm",
+            "python-libs-2.7.5-88.el7.i686.rpm",
+            "python-libs-2.7.5-88.el7.x86_64.rpm",
+            "python-test-2.7.5-88.el7.x86_64.rpm",
+            "python-tools-2.7.5-88.el7.x86_64.rpm",
+            "tkinter-2.7.5-88.el7.x86_64.rpm"
+          ],
+          "rpm_version": "python-2.7.5-88.el7"
+        },
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2020:1132",
+          "errate_package_name": "python3",
+          "fixed_rpms": [
+            "python3-3.6.8-13.el7.src.rpm",
+            "python3-3.6.8-13.el7.i686.rpm",
+            "python3-3.6.8-13.el7.x86_64.rpm",
+            "python3-debug-3.6.8-13.el7.i686.rpm",
+            "python3-debug-3.6.8-13.el7.x86_64.rpm",
+            "python3-debuginfo-3.6.8-13.el7.i686.rpm",
+            "python3-debuginfo-3.6.8-13.el7.i686.rpm",
+            "python3-debuginfo-3.6.8-13.el7.x86_64.rpm",
+            "python3-debuginfo-3.6.8-13.el7.x86_64.rpm",
+            "python3-devel-3.6.8-13.el7.i686.rpm",
+            "python3-devel-3.6.8-13.el7.x86_64.rpm",
+            "python3-idle-3.6.8-13.el7.i686.rpm",
+            "python3-idle-3.6.8-13.el7.x86_64.rpm",
+            "python3-libs-3.6.8-13.el7.i686.rpm",
+            "python3-libs-3.6.8-13.el7.x86_64.rpm",
+            "python3-test-3.6.8-13.el7.i686.rpm",
+            "python3-test-3.6.8-13.el7.x86_64.rpm",
+            "python3-tkinter-3.6.8-13.el7.i686.rpm",
+            "python3-tkinter-3.6.8-13.el7.x86_64.rpm"
+          ],
+          "rpm_version": "python3-3.6.8-13.el7"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  },
+  {
+    "cve_num": "CVE-2017-15906",
+    "title": "OpenSSH 安全漏洞(CVE-2017-15906)",
+    "level": "中",
+    "title_key": "ssh",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2017-15906",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "低",
+      "cve_detail": "The process_open function in sftp-server.c in OpenSSH before 7.6 does not properly prevent write operations in readonly mode, which allows attackers to create zero-length files.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2018:0980",
+          "errate_package_name": "openssh",
+          "fixed_rpms": [
+            "openssh-7.4p1-16.el7.src.rpm",
+            "openssh-7.4p1-16.el7.x86_64.rpm",
+            "openssh-askpass-7.4p1-16.el7.x86_64.rpm",
+            "openssh-cavs-7.4p1-16.el7.x86_64.rpm",
+            "openssh-clients-7.4p1-16.el7.x86_64.rpm",
+            "openssh-debuginfo-7.4p1-16.el7.i686.rpm",
+            "openssh-debuginfo-7.4p1-16.el7.x86_64.rpm",
+            "openssh-debuginfo-7.4p1-16.el7.x86_64.rpm",
+            "openssh-keycat-7.4p1-16.el7.x86_64.rpm",
+            "openssh-ldap-7.4p1-16.el7.x86_64.rpm",
+            "openssh-server-7.4p1-16.el7.x86_64.rpm",
+            "openssh-server-sysvinit-7.4p1-16.el7.x86_64.rpm",
+            "pam_ssh_agent_auth-0.10.3-2.16.el7.i686.rpm",
+            "pam_ssh_agent_auth-0.10.3-2.16.el7.x86_64.rpm"
+          ],
+          "rpm_version": "openssh-7.4p1-16.el7"
+        }
+      ],
+      "cve_keyword": "openssh"
+    }
+  },
+  {
+    "cve_num": "CVE-2019-1551",
+    "title": "OpenSSL 缓冲区错误漏洞(CVE-2019-1551)",
+    "level": "中",
+    "title_key": "openssl",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2019-1551",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "低",
+      "cve_detail": "An integer overflow was found in the x64_64 Montgomery squaring procedure used in exponentiation with 512-bit moduli.  As per upstream:\n\n* No EC algorithms are affected. \n\n* Attacks against 2-prime RSA1024, 3-prime RSA1536, and DSA1024 as a result of this defect would be very difficult to perform and are not believed likely. \n\n* Attacks against DH512 are considered just feasible. However, for an attack the target would have to re-use the DH512 private key, which is not recommended anyway.\n\n* Also applications directly using the low level API BN_mod_exp may be affected if they use BN_FLG_CONSTTIME",
+      "cve_statement": "Accelerated modular exponentiation for Intel processors (RSAZ) was introduced in openssl-1.0.2, therefore older versions of OpenSSL are not affected by this flaw.",
+      "affect_products": [
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "openssl"
+        },
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "openssl098e"
+        }
+      ],
+      "cve_keyword": "openssl"
+    }
+  },
+  {
+    "cve_num": "CVE-2018-15919",
+    "title": "OpenSSH 用户枚举漏洞(CVE-2018-15919)",
+    "level": "中",
+    "title_key": "ssh",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2018-15919",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "低",
+      "cve_detail": "OpenSSH server was found to respond differently to failed GSSAPI authentication attempts when the target user existed versus when that user did not exist. A remote attacker could use this bug to test for the existence of particular usernames on a target system.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "openssh"
+        }
+      ],
+      "cve_keyword": "openssh"
+    }
+  },
+  {
+    "cve_num": "CVE-2010-3492",
+    "title": "Python asyncore模块设计错误漏洞(CVE-2010-3492)",
+    "level": "中",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2010-3492",
+      "cve_state": "未找到相关修复：Red Hat Enterprise Linux 7",
+      "cve_threat_severity": "低",
+      "cve_detail": "The asyncore module in Python before 3.2 does not properly handle unsuccessful calls to the accept function, and does not have accompanying documentation describing how daemon applications should handle unsuccessful calls to the accept function, which makes it easier for remote attackers to conduct denial of service attacks that terminate these applications via network connections.",
+      "cve_statement": "This issue affects the version of the python package as shipped with Red Hat Enterprise Linux 4, 5, and 6. Due to the nature of this flaw, it cannot be fixed in the python language, but must be addressed in each module which calls accept().",
+      "affect_products": [],
+      "cve_keyword": "未分类"
+    }
+  },
+  {
+    "cve_num": "CVE-2019-1547",
+    "title": "OpenSSL 安全漏洞(CVE-2019-1547)",
+    "level": "中",
+    "title_key": "openssl",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2019-1547",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "Normally in OpenSSL EC groups always have a co-factor present and this is used in side channel resistant code paths. However, in some cases, it is possible to construct a group using explicit parameters (instead of using a named curve). In those cases it is possible that such a group does not have the cofactor present. This can occur even where all the parameters match a known named curve. If such a curve is used then OpenSSL falls back to non-side channel resistant code paths which may result in full key recovery during an ECDSA signature operation. In order to be vulnerable an attacker would have to have the ability to time the creation of a large number of signatures where explicit parameters with no co-factor present are in use by an application using libcrypto. For the avoidance of doubt libssl is not vulnerable because explicit parameters are never used. Fixed in OpenSSL 1.1.1d (Affected 1.1.1-1.1.1c). Fixed in OpenSSL 1.1.0l (Affected 1.1.0-1.1.0k). Fixed in OpenSSL 1.0.2t (Affected 1.0.2-1.0.2s).",
+      "cve_statement": "As per upstream: In order to be vulnerable an attacker would have to have the ability to time the creation of a large number of signatures where explicit parameters with no co-factor present are in use by an application using libcrypto. Also libssl is not vulnerable because explicit parameters are never used.",
+      "affect_products": [
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "openssl"
+        },
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "openssl098e"
+        }
+      ],
+      "cve_keyword": "openssl"
+    }
+  },
+  {
+    "cve_num": "CVE-2018-5407",
+    "title": "OpenSSL 信息泄露漏洞(CVE-2018-5407)",
+    "level": "中",
+    "title_key": "openssl",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2018-5407",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "A microprocessor side-channel vulnerability was found on SMT (e.g, Hyper-Threading) architectures. An attacker running a malicious process on the same core of the processor as the victim process can extract certain secret information.",
+      "cve_statement": "This is a timing side-channel flaw on processors which implement SMT/Hyper-Threading architectures. It can result in leakage of secret data in applications such as OpenSSL that has secret dependent control flow at any granularity level. In order to exploit this flaw, the attacker needs to run a malicious process on the same core of the processor as the victim process.",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2019:0483",
+          "errate_package_name": "openssl",
+          "fixed_rpms": [
+            "openssl-1.0.2k-16.el7_6.1.src.rpm",
+            "openssl-1.0.2k-16.el7_6.1.x86_64.rpm",
+            "openssl-debuginfo-1.0.2k-16.el7_6.1.i686.rpm",
+            "openssl-debuginfo-1.0.2k-16.el7_6.1.i686.rpm",
+            "openssl-debuginfo-1.0.2k-16.el7_6.1.x86_64.rpm",
+            "openssl-debuginfo-1.0.2k-16.el7_6.1.x86_64.rpm",
+            "openssl-devel-1.0.2k-16.el7_6.1.i686.rpm",
+            "openssl-devel-1.0.2k-16.el7_6.1.x86_64.rpm",
+            "openssl-libs-1.0.2k-16.el7_6.1.i686.rpm",
+            "openssl-libs-1.0.2k-16.el7_6.1.x86_64.rpm",
+            "openssl-perl-1.0.2k-16.el7_6.1.x86_64.rpm",
+            "openssl-static-1.0.2k-16.el7_6.1.i686.rpm",
+            "openssl-static-1.0.2k-16.el7_6.1.x86_64.rpm"
+          ],
+          "rpm_version": "openssl-1.0.2k-16.el7_6.1"
+        },
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2019:2125",
+          "errate_package_name": "ovmf",
+          "fixed_rpms": [
+            "ovmf-20180508-6.gitee3198e672e2.el7.src.rpm",
+            "OVMF-20180508-6.gitee3198e672e2.el7.noarch.rpm"
+          ],
+          "rpm_version": "ovmf-20180508-6.gitee3198e672e2.el7"
+        },
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "openssl098e"
+        }
+      ],
+      "cve_keyword": "o"
+    }
+  },
+  {
+    "cve_num": "CVE-2012-0876",
+    "title": "python Expat library多个拒绝服务漏洞(CVE-2012-0876)",
+    "level": "中",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2012-0876",
+      "cve_state": "未找到相关修复：Red Hat Enterprise Linux 7",
+      "cve_threat_severity": "中",
+      "cve_detail": "A denial of service flaw was found in the implementation of hash arrays in Expat. An attacker could use this flaw to make an application using Expat consume an excessive amount of CPU time by providing a specially crafted XML file that triggers multiple hash function collisions. To mitigate this issue, randomization has been added to the hash function to reduce the chance of an attacker successfully causing intentional collisions.",
+      "cve_statement": "",
+      "affect_products": [],
+      "cve_keyword": "未分类"
+    }
+  },
+  {
+    "cve_num": "CVE-2013-7040",
+    "title": "Python 加密问题漏洞(CVE-2013-7040)",
+    "level": "中",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2013-7040",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "Python 2.7 before 3.4 only uses the last eight bits of the prefix to randomize hash values, which causes it to compute hash values without restricting the ability to trigger hash collisions predictably and makes it easier for context-dependent attackers to cause a denial of service (CPU consumption) via crafted input to an application that maintains a hash table.  NOTE: this vulnerability exists because of an incomplete fix for CVE-2012-1150.",
+      "cve_statement": "This issue affects the version of python as shipped with Red Hat Enterprise Linux 5 and 6. There are currently no plans to fix this issue. For more details please refer to  https://bugzilla.redhat.com/show_bug.cgi?id=1039915#c4",
+      "affect_products": [
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "python"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  },
+  {
+    "cve_num": null,
+    "title": "SSH 服务支持弱加密算法【原理扫描】",
+    "level": "中",
+    "title_key": "ssh"
+  },
+  {
+    "cve_num": "CVE-2013-4238",
+    "title": "Python SSL模块安全绕过漏洞(CVE-2013-4238)",
+    "level": "中",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2013-4238",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "The ssl.match_hostname function in the SSL module in Python 2.6 through 3.4 does not properly handle a '\\0' character in a domain name in the Subject Alternative Name field of an X.509 certificate, which allows man-in-the-middle attackers to spoof arbitrary SSL servers via a crafted certificate issued by a legitimate Certification Authority, a related issue to CVE-2009-2408.",
+      "cve_statement": "This issue does not affect the version of python as shipped with Red Hat Enterprise Linux 5. The Red Hat Security Response Team has rated this issue as having moderate security impact, a future update may address this flaw.",
+      "affect_products": [
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "python"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  },
+  {
+    "cve_num": "CVE-2015-5352",
+    "title": "OpenSSH 'x11_open_helper()'函数安全限制绕过漏洞(CVE-2015-5352)",
+    "level": "中",
+    "title_key": "ssh",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2015-5352",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "It was found that the OpenSSH client did not properly enforce the ForwardX11Timeout setting. A malicious or compromised remote X application could possibly use this flaw to establish a trusted connection to the local X server, even if only untrusted X11 forwarding was requested.",
+      "cve_statement": "This issue does not affect the version of openssh package as shipped with Red Hat Enterprise Linux 7. This issue affects the version of openssh package as shipped with Red Hat Enterprise Linux 5 and 6.\n\nRed Hat Product Security has rated this issue as having Moderate security impact. This issue is not currently planned to be addressed in future updates.",
+      "affect_products": [
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "openssh"
+        }
+      ],
+      "cve_keyword": "openssh"
+    }
+  },
+  {
+    "cve_num": "CVE-2019-1563",
+    "title": "OpenSSL 安全漏洞(CVE-2019-1563)",
+    "level": "低",
+    "title_key": "openssl",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2019-1563",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "低",
+      "cve_detail": "In situations where an attacker receives automated notification of the success or failure of a decryption attempt an attacker, after sending a very large number of messages to be decrypted, can recover a CMS/PKCS7 transported encryption key or decrypt any RSA encrypted message that was encrypted with the public RSA key, using a Bleichenbacher padding oracle attack. Applications are not affected if they use a certificate together with the private RSA key to the CMS_decrypt or PKCS7_decrypt functions to select the correct recipient info to decrypt. Fixed in OpenSSL 1.1.1d (Affected 1.1.1-1.1.1c). Fixed in OpenSSL 1.1.0l (Affected 1.1.0-1.1.0k). Fixed in OpenSSL 1.0.2t (Affected 1.0.2-1.0.2s).",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "openssl"
+        }
+      ],
+      "cve_keyword": "openssl"
+    }
+  },
+  {
+    "cve_num": "CVE-2018-1000030",
+    "title": "Python 缓冲区错误漏洞(CVE-2018-1000030)",
+    "level": "低",
+    "title_key": "python",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2018-1000030",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "低",
+      "cve_detail": "Python 2.7.14 is vulnerable to a Heap-Buffer-Overflow as well as a Heap-Use-After-Free. Python versions prior to 2.7.14 may also be vulnerable and it appears that Python 2.7.17 and prior may also be vulnerable however this has not been confirmed. The vulnerability lies when multiply threads are handling large amounts of data. In both cases there is essentially a race condition that occurs. For the Heap-Buffer-Overflow, Thread 2 is creating the size for a buffer, but Thread1 is already writing to the buffer without knowing how much to write. So when a large amount of data is being processed, it is very easy to cause memory corruption using a Heap-Buffer-Overflow. As for the Use-After-Free, Thread3->Malloc->Thread1->Free's->Thread2-Re-uses-Free'd Memory. The PSRT has stated that this is not a security vulnerability due to the fact that the attacker must be able to run code, however in some situations, such as function as a service, this vulnerability can potentially be used by an attacker to violate a trust boundary, as such the DWF feels this issue deserves a CVE.",
+      "cve_statement": "Versions of Python 2 included in Red Hat Enterprise Linux 6 and 7 are affected by this issue. Reading concurrently from the same file handle in multiple threads is inherently unstable, and should not be relied upon in any real program. This issue is not planned to be fixed in future releases.\n\nThis CVE assignment was disputed by upstream. While an attack is theoretically possible, it relies on a programming pattern in the vulnerable Python program that is generally considered bad practice if not an outright bug.",
+      "affect_products": [
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "python"
+        }
+      ],
+      "cve_keyword": "python"
+    }
+  },
+  {
+    "cve_num": "CVE-2019-15526",
+    "title": "OpenSSL 信任管理问题漏洞 (CVE-2019-15526)",
+    "level": "低",
+    "title_key": "openssl",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2019-15526",
+      "cve_state": "红帽未收录",
+      "cve_threat_severity": "",
+      "cve_detail": "",
+      "cve_statement": "",
+      "affect_products": [],
+      "cve_keyword": "未分类"
+    }
+  },
+  {
+    "cve_num": "CVE-2008-5161",
+    "title": "OpenSSH CBC模式信息泄露漏洞(CVE-2008-5161)【原理扫描】",
+    "level": "低",
+    "title_key": "ssh",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2008-5161",
+      "cve_state": "未找到相关修复：Red Hat Enterprise Linux 7",
+      "cve_threat_severity": "低",
+      "cve_detail": "Error handling in the SSH protocol in (1) SSH Tectia Client and Server and Connector 4.0 through 4.4.11, 5.0 through 5.2.4, and 5.3 through 5.3.8; Client and Server and ConnectSecure 6.0 through 6.0.4; Server for Linux on IBM System z 6.0.4; Server for IBM z/OS 5.5.1 and earlier, 6.0.0, and 6.0.1; and Client 4.0-J through 4.3.3-J and 4.0-K through 4.3.10-K; and (2) OpenSSH 4.7p1 and possibly other versions, when using a block cipher algorithm in Cipher Block Chaining (CBC) mode, makes it easier for remote attackers to recover certain plaintext data from an arbitrary block of ciphertext in an SSH session via unknown vectors.",
+      "cve_statement": "This issue was addressed for Red Hat Enterprise Linux 5 by\nhttps://rhn.redhat.com/errata/RHSA-2009-1287.html\n\nAfter reviewing the upstream fix for this issue, Red Hat does not intend to address this flaw in Red Hat Enterprise Linux 4.",
+      "affect_products": [],
+      "cve_keyword": "未分类"
+    }
+  },
+  {
+    "cve_num": null,
+    "title": "ICMP timestamp请求响应漏洞",
+    "level": "低",
+    "title_key": "未分类"
+  },
+  {
+    "cve_num": "CVE-2016-10011",
+    "title": "OpenSSH 本地信息泄露漏洞(CVE-2016-10011)",
+    "level": "低",
+    "title_key": "ssh",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2016-10011",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "低",
+      "cve_detail": "It was found that the host private key material could possibly leak to the privilege-separated child processes via re-allocated memory. An attacker able to compromise the privilege-separated process could therefore obtain the leaked key information.",
+      "cve_statement": "It seems that this flaw is not practically exploitable, the leak of host private key material to the privilege-separated child processes is theoretical. No such leak was observed in practice for normal-sized keys, nor does a leak to the child processes directly expose key material to unprivileged users. Because of the this restriction for successful exploitation, this issue has been rated as having Low security impact. A future update may address this flaw.",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2017:2029",
+          "errate_package_name": "openssh",
+          "fixed_rpms": [
+            "openssh-7.4p1-11.el7.src.rpm",
+            "openssh-7.4p1-11.el7.x86_64.rpm",
+            "openssh-askpass-7.4p1-11.el7.x86_64.rpm",
+            "openssh-cavs-7.4p1-11.el7.x86_64.rpm",
+            "openssh-clients-7.4p1-11.el7.x86_64.rpm",
+            "openssh-debuginfo-7.4p1-11.el7.i686.rpm",
+            "openssh-debuginfo-7.4p1-11.el7.x86_64.rpm",
+            "openssh-debuginfo-7.4p1-11.el7.x86_64.rpm",
+            "openssh-keycat-7.4p1-11.el7.x86_64.rpm",
+            "openssh-ldap-7.4p1-11.el7.x86_64.rpm",
+            "openssh-server-7.4p1-11.el7.x86_64.rpm",
+            "openssh-server-sysvinit-7.4p1-11.el7.x86_64.rpm",
+            "pam_ssh_agent_auth-0.10.3-1.11.el7.i686.rpm",
+            "pam_ssh_agent_auth-0.10.3-1.11.el7.x86_64.rpm"
+          ],
+          "rpm_version": "openssh-7.4p1-11.el7"
+        }
+      ],
+      "cve_keyword": "openssh"
+    }
+  },
+  {
+    "cve_num": "CVE-2015-6563",
+    "title": "OpenSSH sshd monitor组件欺骗漏洞(CVE-2015-6563)",
+    "level": "低",
+    "title_key": "ssh",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2015-6563",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "A flaw was found in the way OpenSSH handled PAM authentication when using privilege separation. An attacker with valid credentials on the system and able to fully compromise a non-privileged pre-authentication process using a different flaw could use this flaw to authenticate as other users.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2015:2088",
+          "errate_package_name": "openssh",
+          "fixed_rpms": [
+            "openssh-6.6.1p1-22.el7.src.rpm",
+            "openssh-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-askpass-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-clients-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-debuginfo-6.6.1p1-22.el7.i686.rpm",
+            "openssh-debuginfo-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-debuginfo-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-keycat-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-ldap-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-server-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-server-sysvinit-6.6.1p1-22.el7.x86_64.rpm",
+            "pam_ssh_agent_auth-0.9.3-9.22.el7.i686.rpm",
+            "pam_ssh_agent_auth-0.9.3-9.22.el7.x86_64.rpm"
+          ],
+          "rpm_version": "openssh-6.6.1p1-22.el7"
+        }
+      ],
+      "cve_keyword": "openssh"
+    }
+  },
+  {
+    "cve_num": null,
+    "title": "远程WEB主机没有正确返回“404”错误页面",
+    "level": "低",
+    "title_key": "未分类"
+  },
+  {
+    "cve_num": null,
+    "title": "远端VNC服务正在运行",
+    "level": "低",
+    "title_key": "未分类"
+  },
+  {
+    "cve_num": null,
+    "title": "允许Traceroute探测",
+    "level": "低",
+    "title_key": "未分类"
+  },
+  {
+    "cve_num": "CVE-1999-0632",
+    "title": "检测到远端RPCBIND/PORTMAP正在运行中(CVE-1999-0632)",
+    "level": "低",
+    "title_key": "未分类",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-1999-0632",
+      "cve_state": "红帽未收录",
+      "cve_threat_severity": "",
+      "cve_detail": "",
+      "cve_statement": "",
+      "affect_products": [],
+      "cve_keyword": "未分类"
+    }
+  },
+  {
+    "cve_num": null,
+    "title": "探测到SSH服务器支持的算法",
+    "level": "低",
+    "title_key": "ssh"
+  },
+  {
+    "cve_num": null,
+    "title": "SSH版本信息可被获取",
+    "level": "低",
+    "title_key": "ssh"
+  },
+  {
+    "cve_num": null,
+    "title": "可通过HTTP获取远端WWW服务信息",
+    "level": "低",
+    "title_key": "未分类"
+  },
+  {
+    "cve_num": null,
+    "title": "探测到服务器支持的SSL加密协议【原理扫描】",
+    "level": "低",
+    "title_key": "未分类"
+  }
+]

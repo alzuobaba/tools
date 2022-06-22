@@ -1,0 +1,92 @@
+[
+  {
+    "cve_num": "CVE-2019-9513",
+    "title": "nginx 安全漏洞(CVE-2019-9513)",
+    "level": "高",
+    "title_key": "nginx",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2019-9513",
+      "cve_state": "未找到相关修复：Red Hat Enterprise Linux 7",
+      "cve_threat_severity": "高",
+      "cve_detail": "A flaw was found in HTTP/2. An attacker, using PRIORITY frames to flood the system, could cause excessive CPU usage and starvation of other clients. The largest threat from this vulnerability is to system availability.",
+      "cve_statement": "This flaw has no available mitigation for packages nghttp2 and nodejs. Both packages will be updated once the available fixes are released for Red Hat Enterprise Linux and Red Hat Software Collections.\n\nThe nodejs RPM shipped in OpenShift Container Platform 3.9 and 3.10 is not affected by this flaw as it does not contain the vulnerable code.",
+      "affect_products": [],
+      "cve_keyword": "未分类"
+    }
+  },
+  {
+    "cve_num": "CVE-2019-9511",
+    "title": "nginx 安全漏洞(CVE-2019-9511)",
+    "level": "高",
+    "title_key": "nginx",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2019-9511",
+      "cve_state": "未找到相关修复：Red Hat Enterprise Linux 7",
+      "cve_threat_severity": "高",
+      "cve_detail": "A flaw was found in HTTP/2. An attacker can request a large amount of data by manipulating window size and stream priority to force the server to queue the data in 1-byte chunks. Depending on how efficiently this data is queued, this queue can consume excess CPU, memory, or both, leading to a denial of service. The highest threat from this vulnerability is to system availability.",
+      "cve_statement": "There are no mitigations available for nghttp2 and nodejs. Both packages will be updated once the available fixes are released for Red Hat Enterprise Linux and Red Hat Software Collections.\n\nThe nodejs RPM shipped in OpenShift Container Platform 3.9 and 3.10 is not affected by this flaw as it does not contain the vulnerable code.",
+      "affect_products": [],
+      "cve_keyword": "未分类"
+    }
+  },
+  {
+    "cve_num": "CVE-2018-16843",
+    "title": "nginx 安全漏洞（CVE-2018-16843）",
+    "level": "高",
+    "title_key": "nginx",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2018-16843",
+      "cve_state": "未找到相关修复：Red Hat Enterprise Linux 7",
+      "cve_threat_severity": "中",
+      "cve_detail": "nginx before versions 1.15.6 and 1.14.1 has a vulnerability in the implementation of HTTP/2 that can allow for excessive memory consumption. This issue affects nginx compiled with the ngx_http_v2_module (not compiled by default) if the 'http2' option of the 'listen' directive is used in a configuration file.",
+      "cve_statement": "This issue did not affect the versions of rh-nginx18-nginx as shipped with Red Hat Software Collections as they did not include the vulnerable module ngx_http_v2_module.",
+      "affect_products": [],
+      "cve_keyword": "未分类"
+    }
+  },
+  {
+    "cve_num": "CVE-2018-16844",
+    "title": "nginx 安全漏洞（CVE-2018-16844）",
+    "level": "高",
+    "title_key": "nginx",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2018-16844",
+      "cve_state": "未找到相关修复：Red Hat Enterprise Linux 7",
+      "cve_threat_severity": "中",
+      "cve_detail": "nginx before versions 1.15.6 and 1.14.1 has a vulnerability in the implementation of HTTP/2 that can allow for excessive CPU usage. This issue affects nginx compiled with the ngx_http_v2_module (not compiled by default) if the 'http2' option of the 'listen' directive is used in a configuration file.",
+      "cve_statement": "This issue did not affect the versions of rh-nginx18-nginx as shipped with Red Hat Software Collections as they did not include the vulnerable module ngx_http_v2_module.",
+      "affect_products": [],
+      "cve_keyword": "未分类"
+    }
+  },
+  {
+    "cve_num": "CVE-2019-9516",
+    "title": "nginx 安全漏洞(CVE-2019-9516)",
+    "level": "中",
+    "title_key": "nginx",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2019-9516",
+      "cve_state": "未找到相关修复：Red Hat Enterprise Linux 7",
+      "cve_threat_severity": "高",
+      "cve_detail": "A flaw was found in HTTP/2. An attacker, sending a stream of header with a 0-length header name and a 0-length header value, could cause some implementations to allocate memory for these headers and keep the allocations alive until the session dies. The can consume excess memory, potentially leading to a denial of service. The highest threat from this vulnerability is to system availability.",
+      "cve_statement": "This flaw has no available mitigation for nodejs package. It will be updated once the available fixes are released for Red Hat Enterprise Linux and Red Hat Software Collections.\n\nThe nodejs RPM shipped in OpenShift Container Platform 3.9 and 3.10 is not affected by this flaw as it does not contain the vulnerable code.",
+      "affect_products": [],
+      "cve_keyword": "未分类"
+    }
+  },
+  {
+    "cve_num": "CVE-2018-16845",
+    "title": "nginx 安全漏洞（CVE-2018-16845）",
+    "level": "中",
+    "title_key": "nginx",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2018-16845",
+      "cve_state": "未找到相关修复：Red Hat Enterprise Linux 7",
+      "cve_threat_severity": "高",
+      "cve_detail": "An instance of missing input sanitization was found in the mp4 module for nginx. A local attacker could create a specially crafted video file that, when streamed by the server, would cause a denial of service (server crash or hang) and, possibly, information disclosure.",
+      "cve_statement": "",
+      "affect_products": [],
+      "cve_keyword": "未分类"
+    }
+  }
+]

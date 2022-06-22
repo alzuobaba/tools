@@ -281,5 +281,53 @@ def sort_lamba(cve):
         return ''
 
 
+def print_no_resolve_cve(filename, packagename):
+    from googletrans import Translator
+    translator = Translator(service_urls=['translate.google.com'])
+
+    cves = read_from_file(filename)
+    index = 0
+    for cve in cves:
+        if not cve['detail']['affect_products']:
+            index += 1
+            print('{}.'.format(index), cve['title'], '[{}]'.format(cve['level']), ':', cve['detail']['cve_state'])
+            print(cve['detail']['cve_url'])
+            print('详情：')
+            print(":::")
+            if cve['detail']['cve_detail']:
+                print('  ',translator.translate(cve['detail']['cve_detail'], dest='zh-cn').text)
+            print('处理意见：')
+            print(":::")
+            if cve['detail']['cve_statement']:
+                print("处理意见：")
+                print('  ', translator.translate(cve['detail']['cve_statement'], dest='zh-cn').text)
+            continue
+        target = None
+        for product in cve['detail']['affect_products']:
+            if product['errate_package_name'] == packagename:
+                target = product
+                if product.get('fixed_rpms'):
+                    break
+        else:
+            index += 1
+            if not target:
+                print('{}.'.format(index), cve['title'], '[{}]'.format(cve['level']))
+            else:
+                print('{}.'.format(index), cve['title'],'[{}]'.format(cve['level']), ":", target['errate_state'])
+            print(cve['detail']['cve_url'])
+            print('详情：')
+            print(":::")
+            print('处理意见：')
+            print(":::")
+            if cve['detail']['cve_detail']:
+                print("详情：")
+                print('  ',translator.translate(cve['detail']['cve_detail'], dest='zh-cn').text)
+            if cve['detail']['cve_statement']:
+                print("处理意见：")
+                print('  ', translator.translate(cve['detail']['cve_statement'], dest='zh-cn').text)
+
 if __name__ == '__main__':
-    get_and_dump_cve()
+    # get_and_dump_cve()
+    fn = 'cve_未分类'
+    pn = ''
+    print_no_resolve_cve(fn, pn)

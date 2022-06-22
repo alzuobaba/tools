@@ -1,0 +1,669 @@
+[
+  {
+    "cve_num": "CVE-2018-15473",
+    "title": "OpenSSH 用户枚举漏洞(CVE-2018-15473)【原理扫描】",
+    "level": "中",
+    "title_key": "ssh",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2018-15473",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "低",
+      "cve_detail": "A user enumeration vulnerability flaw was found in OpenSSH, though version 7.7. The vulnerability occurs by not delaying bailout for an invalid authenticated user until after the packet containing the request has been fully parsed. The highest threat from this vulnerability is to data confidentiality.",
+      "cve_statement": "Red Hat Product Security has rated this issue as having Low severity. An attacker could use this flaw to determine whether given usernames exist or not on the server, but no further information is disclosed and there is no availability or integrity impact. A future update may address this issue.",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2019:2143",
+          "errate_package_name": "openssh",
+          "fixed_rpms": [
+            "openssh-7.4p1-21.el7.src.rpm",
+            "openssh-7.4p1-21.el7.x86_64.rpm",
+            "openssh-askpass-7.4p1-21.el7.x86_64.rpm",
+            "openssh-cavs-7.4p1-21.el7.x86_64.rpm",
+            "openssh-clients-7.4p1-21.el7.x86_64.rpm",
+            "openssh-debuginfo-7.4p1-21.el7.i686.rpm",
+            "openssh-debuginfo-7.4p1-21.el7.x86_64.rpm",
+            "openssh-debuginfo-7.4p1-21.el7.x86_64.rpm",
+            "openssh-keycat-7.4p1-21.el7.x86_64.rpm",
+            "openssh-ldap-7.4p1-21.el7.x86_64.rpm",
+            "openssh-server-7.4p1-21.el7.x86_64.rpm",
+            "openssh-server-sysvinit-7.4p1-21.el7.x86_64.rpm",
+            "pam_ssh_agent_auth-0.10.3-2.21.el7.i686.rpm",
+            "pam_ssh_agent_auth-0.10.3-2.21.el7.x86_64.rpm"
+          ],
+          "rpm_version": "openssh-7.4p1-21.el7"
+        }
+      ],
+      "cve_keyword": "openssh"
+    }
+  },
+  {
+    "cve_num": "CVE-2017-15906",
+    "title": "OpenSSH 安全漏洞(CVE-2017-15906)",
+    "level": "中",
+    "title_key": "ssh",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2017-15906",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "低",
+      "cve_detail": "The process_open function in sftp-server.c in OpenSSH before 7.6 does not properly prevent write operations in readonly mode, which allows attackers to create zero-length files.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2018:0980",
+          "errate_package_name": "openssh",
+          "fixed_rpms": [
+            "openssh-7.4p1-16.el7.src.rpm",
+            "openssh-7.4p1-16.el7.x86_64.rpm",
+            "openssh-askpass-7.4p1-16.el7.x86_64.rpm",
+            "openssh-cavs-7.4p1-16.el7.x86_64.rpm",
+            "openssh-clients-7.4p1-16.el7.x86_64.rpm",
+            "openssh-debuginfo-7.4p1-16.el7.i686.rpm",
+            "openssh-debuginfo-7.4p1-16.el7.x86_64.rpm",
+            "openssh-debuginfo-7.4p1-16.el7.x86_64.rpm",
+            "openssh-keycat-7.4p1-16.el7.x86_64.rpm",
+            "openssh-ldap-7.4p1-16.el7.x86_64.rpm",
+            "openssh-server-7.4p1-16.el7.x86_64.rpm",
+            "openssh-server-sysvinit-7.4p1-16.el7.x86_64.rpm",
+            "pam_ssh_agent_auth-0.10.3-2.16.el7.i686.rpm",
+            "pam_ssh_agent_auth-0.10.3-2.16.el7.x86_64.rpm"
+          ],
+          "rpm_version": "openssh-7.4p1-16.el7"
+        }
+      ],
+      "cve_keyword": "openssh"
+    }
+  },
+  {
+    "cve_num": "CVE-2016-10012",
+    "title": "OpenSSH 安全限制绕过漏洞(CVE-2016-10012)",
+    "level": "高",
+    "title_key": "ssh",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2016-10012",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "低",
+      "cve_detail": "It was found that the boundary checks in the code implementing support for pre-authentication compression could have been optimized out by certain compilers. An attacker able to compromise the privilege-separated process could possibly use this flaw for further attacks against the privileged monitor process.",
+      "cve_statement": "In order to exploit this flaw, the attacker needs to first compromise the sandboxed privilege-separation process by using another security flaw. Because of this restriction for successful exploitation, this issue has been rated as having Low security impact.",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2017:2029",
+          "errate_package_name": "openssh",
+          "fixed_rpms": [
+            "openssh-7.4p1-11.el7.src.rpm",
+            "openssh-7.4p1-11.el7.x86_64.rpm",
+            "openssh-askpass-7.4p1-11.el7.x86_64.rpm",
+            "openssh-cavs-7.4p1-11.el7.x86_64.rpm",
+            "openssh-clients-7.4p1-11.el7.x86_64.rpm",
+            "openssh-debuginfo-7.4p1-11.el7.i686.rpm",
+            "openssh-debuginfo-7.4p1-11.el7.x86_64.rpm",
+            "openssh-debuginfo-7.4p1-11.el7.x86_64.rpm",
+            "openssh-keycat-7.4p1-11.el7.x86_64.rpm",
+            "openssh-ldap-7.4p1-11.el7.x86_64.rpm",
+            "openssh-server-7.4p1-11.el7.x86_64.rpm",
+            "openssh-server-sysvinit-7.4p1-11.el7.x86_64.rpm",
+            "pam_ssh_agent_auth-0.10.3-1.11.el7.i686.rpm",
+            "pam_ssh_agent_auth-0.10.3-1.11.el7.x86_64.rpm"
+          ],
+          "rpm_version": "openssh-7.4p1-11.el7"
+        }
+      ],
+      "cve_keyword": "openssh"
+    }
+  },
+  {
+    "cve_num": "CVE-2016-6515",
+    "title": "OpenSSH auth_password函数拒绝服务漏洞(CVE-2016-6515)",
+    "level": "高",
+    "title_key": "ssh",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2016-6515",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "It was found that OpenSSH did not limit password lengths for password authentication. A remote unauthenticated attacker could use this flaw to temporarily trigger high CPU consumption in sshd by sending long passwords.",
+      "cve_statement": "This issue in OpenSSH is mitigated by the usage of SELinux in Red Hat Enterprise Linux 6, 7 and 8. More details available at: https://bugzilla.redhat.com/show_bug.cgi?id=1364935#c13",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2017:2029",
+          "errate_package_name": "openssh",
+          "fixed_rpms": [
+            "openssh-7.4p1-11.el7.src.rpm",
+            "openssh-7.4p1-11.el7.x86_64.rpm",
+            "openssh-askpass-7.4p1-11.el7.x86_64.rpm",
+            "openssh-cavs-7.4p1-11.el7.x86_64.rpm",
+            "openssh-clients-7.4p1-11.el7.x86_64.rpm",
+            "openssh-debuginfo-7.4p1-11.el7.i686.rpm",
+            "openssh-debuginfo-7.4p1-11.el7.x86_64.rpm",
+            "openssh-debuginfo-7.4p1-11.el7.x86_64.rpm",
+            "openssh-keycat-7.4p1-11.el7.x86_64.rpm",
+            "openssh-ldap-7.4p1-11.el7.x86_64.rpm",
+            "openssh-server-7.4p1-11.el7.x86_64.rpm",
+            "openssh-server-sysvinit-7.4p1-11.el7.x86_64.rpm",
+            "pam_ssh_agent_auth-0.10.3-1.11.el7.i686.rpm",
+            "pam_ssh_agent_auth-0.10.3-1.11.el7.x86_64.rpm"
+          ],
+          "rpm_version": "openssh-7.4p1-11.el7"
+        }
+      ],
+      "cve_keyword": "openssh"
+    }
+  },
+  {
+    "cve_num": "CVE-2016-10708",
+    "title": "OpenSSH多个拒绝服务漏洞（CVE-2016-10708）",
+    "level": "高",
+    "title_key": "ssh",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2016-10708",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "低",
+      "cve_detail": "sshd in OpenSSH before 7.4 allows remote attackers to cause a denial of service (NULL pointer dereference and daemon crash) via an out-of-sequence NEWKEYS message, as demonstrated by Honggfuzz, related to kex.c and packet.c.",
+      "cve_statement": "This issue affects the versions of openssh as shipped with Red Hat Enterprise Linux 6 and Red Hat Enterprise Linux 7 (versions 7.3 and earlier).  For Red Hat Enterprise Linux 7 (versions 7.4 and later), this issue was fixed by the Security Advisory RHSA-2017:2029. For Red Hat Enterprise Linux 6, Red Hat Product Security has rated this issue as having Low security impact. A future update may address this issue. For additional information, refer to the Issue Severity Classification: https://access.redhat.com/security/updates/classification/.",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2017:2029",
+          "errate_package_name": "openssh",
+          "fixed_rpms": [
+            "openssh-7.4p1-11.el7.src.rpm",
+            "openssh-7.4p1-11.el7.x86_64.rpm",
+            "openssh-askpass-7.4p1-11.el7.x86_64.rpm",
+            "openssh-cavs-7.4p1-11.el7.x86_64.rpm",
+            "openssh-clients-7.4p1-11.el7.x86_64.rpm",
+            "openssh-debuginfo-7.4p1-11.el7.i686.rpm",
+            "openssh-debuginfo-7.4p1-11.el7.x86_64.rpm",
+            "openssh-debuginfo-7.4p1-11.el7.x86_64.rpm",
+            "openssh-keycat-7.4p1-11.el7.x86_64.rpm",
+            "openssh-ldap-7.4p1-11.el7.x86_64.rpm",
+            "openssh-server-7.4p1-11.el7.x86_64.rpm",
+            "openssh-server-sysvinit-7.4p1-11.el7.x86_64.rpm",
+            "pam_ssh_agent_auth-0.10.3-1.11.el7.i686.rpm",
+            "pam_ssh_agent_auth-0.10.3-1.11.el7.x86_64.rpm"
+          ],
+          "rpm_version": "openssh-7.4p1-11.el7"
+        }
+      ],
+      "cve_keyword": "openssh"
+    }
+  },
+  {
+    "cve_num": "CVE-2016-10009",
+    "title": "OpenSSH 远程代码执行漏洞(CVE-2016-10009)",
+    "level": "高",
+    "title_key": "ssh",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2016-10009",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "It was found that ssh-agent could load PKCS#11 modules from arbitrary paths. An attacker having control of the forwarded agent-socket on the server, and the ability to write to the filesystem of the client host, could use this flaw to execute arbitrary code with the privileges of the user running ssh-agent.",
+      "cve_statement": "In order to exploit this flaw, the attacker needs to have control of the forwarded agent-socket and the ability to write to the filesystem of the host running ssh-agent. Because of this restriction for successful exploitation, this issue has been rated as having Moderate security impact. A future update may address this flaw.",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2017:2029",
+          "errate_package_name": "openssh",
+          "fixed_rpms": [
+            "openssh-7.4p1-11.el7.src.rpm",
+            "openssh-7.4p1-11.el7.x86_64.rpm",
+            "openssh-askpass-7.4p1-11.el7.x86_64.rpm",
+            "openssh-cavs-7.4p1-11.el7.x86_64.rpm",
+            "openssh-clients-7.4p1-11.el7.x86_64.rpm",
+            "openssh-debuginfo-7.4p1-11.el7.i686.rpm",
+            "openssh-debuginfo-7.4p1-11.el7.x86_64.rpm",
+            "openssh-debuginfo-7.4p1-11.el7.x86_64.rpm",
+            "openssh-keycat-7.4p1-11.el7.x86_64.rpm",
+            "openssh-ldap-7.4p1-11.el7.x86_64.rpm",
+            "openssh-server-7.4p1-11.el7.x86_64.rpm",
+            "openssh-server-sysvinit-7.4p1-11.el7.x86_64.rpm",
+            "pam_ssh_agent_auth-0.10.3-1.11.el7.i686.rpm",
+            "pam_ssh_agent_auth-0.10.3-1.11.el7.x86_64.rpm"
+          ],
+          "rpm_version": "openssh-7.4p1-11.el7"
+        }
+      ],
+      "cve_keyword": "openssh"
+    }
+  },
+  {
+    "cve_num": "CVE-2016-6210",
+    "title": "OpenSSH SSH守护进程安全漏洞(CVE-2016-6210)",
+    "level": "中",
+    "title_key": "ssh",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2016-6210",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "A covert timing channel flaw was found in the way OpenSSH handled authentication of non-existent users. A remote unauthenticated attacker could possibly use this flaw to determine valid user names by measuring the timing of server responses.",
+      "cve_statement": "This issue in OpenSSH is mitigated by the usage of SELinux in Red Hat Enterprise Linux 6 and Red Hat Enterprise Linux 7.",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2017:2029",
+          "errate_package_name": "openssh",
+          "fixed_rpms": [
+            "openssh-7.4p1-11.el7.src.rpm",
+            "openssh-7.4p1-11.el7.x86_64.rpm",
+            "openssh-askpass-7.4p1-11.el7.x86_64.rpm",
+            "openssh-cavs-7.4p1-11.el7.x86_64.rpm",
+            "openssh-clients-7.4p1-11.el7.x86_64.rpm",
+            "openssh-debuginfo-7.4p1-11.el7.i686.rpm",
+            "openssh-debuginfo-7.4p1-11.el7.x86_64.rpm",
+            "openssh-debuginfo-7.4p1-11.el7.x86_64.rpm",
+            "openssh-keycat-7.4p1-11.el7.x86_64.rpm",
+            "openssh-ldap-7.4p1-11.el7.x86_64.rpm",
+            "openssh-server-7.4p1-11.el7.x86_64.rpm",
+            "openssh-server-sysvinit-7.4p1-11.el7.x86_64.rpm",
+            "pam_ssh_agent_auth-0.10.3-1.11.el7.i686.rpm",
+            "pam_ssh_agent_auth-0.10.3-1.11.el7.x86_64.rpm"
+          ],
+          "rpm_version": "openssh-7.4p1-11.el7"
+        }
+      ],
+      "cve_keyword": "openssh"
+    }
+  },
+  {
+    "cve_num": "CVE-2016-10011",
+    "title": "OpenSSH 本地信息泄露漏洞(CVE-2016-10011)",
+    "level": "低",
+    "title_key": "ssh",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2016-10011",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "低",
+      "cve_detail": "It was found that the host private key material could possibly leak to the privilege-separated child processes via re-allocated memory. An attacker able to compromise the privilege-separated process could therefore obtain the leaked key information.",
+      "cve_statement": "It seems that this flaw is not practically exploitable, the leak of host private key material to the privilege-separated child processes is theoretical. No such leak was observed in practice for normal-sized keys, nor does a leak to the child processes directly expose key material to unprivileged users. Because of the this restriction for successful exploitation, this issue has been rated as having Low security impact. A future update may address this flaw.",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2017:2029",
+          "errate_package_name": "openssh",
+          "fixed_rpms": [
+            "openssh-7.4p1-11.el7.src.rpm",
+            "openssh-7.4p1-11.el7.x86_64.rpm",
+            "openssh-askpass-7.4p1-11.el7.x86_64.rpm",
+            "openssh-cavs-7.4p1-11.el7.x86_64.rpm",
+            "openssh-clients-7.4p1-11.el7.x86_64.rpm",
+            "openssh-debuginfo-7.4p1-11.el7.i686.rpm",
+            "openssh-debuginfo-7.4p1-11.el7.x86_64.rpm",
+            "openssh-debuginfo-7.4p1-11.el7.x86_64.rpm",
+            "openssh-keycat-7.4p1-11.el7.x86_64.rpm",
+            "openssh-ldap-7.4p1-11.el7.x86_64.rpm",
+            "openssh-server-7.4p1-11.el7.x86_64.rpm",
+            "openssh-server-sysvinit-7.4p1-11.el7.x86_64.rpm",
+            "pam_ssh_agent_auth-0.10.3-1.11.el7.i686.rpm",
+            "pam_ssh_agent_auth-0.10.3-1.11.el7.x86_64.rpm"
+          ],
+          "rpm_version": "openssh-7.4p1-11.el7"
+        }
+      ],
+      "cve_keyword": "openssh"
+    }
+  },
+  {
+    "cve_num": "CVE-2015-8325",
+    "title": "OpenSSH do_setup_env函数权限提升漏洞(CVE-2015-8325)",
+    "level": "高",
+    "title_key": "ssh",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2015-8325",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "It was discovered that the OpenSSH sshd daemon fetched PAM environment settings before running the login program. In configurations with UseLogin=yes and the pam_env PAM module configured to read user environment settings, a local user could use this flaw to execute arbitrary code as root.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2016:2588",
+          "errate_package_name": "openssh",
+          "fixed_rpms": [
+            "openssh-6.6.1p1-31.el7.src.rpm",
+            "openssh-6.6.1p1-31.el7.x86_64.rpm",
+            "openssh-askpass-6.6.1p1-31.el7.x86_64.rpm",
+            "openssh-clients-6.6.1p1-31.el7.x86_64.rpm",
+            "openssh-debuginfo-6.6.1p1-31.el7.i686.rpm",
+            "openssh-debuginfo-6.6.1p1-31.el7.x86_64.rpm",
+            "openssh-debuginfo-6.6.1p1-31.el7.x86_64.rpm",
+            "openssh-keycat-6.6.1p1-31.el7.x86_64.rpm",
+            "openssh-ldap-6.6.1p1-31.el7.x86_64.rpm",
+            "openssh-server-6.6.1p1-31.el7.x86_64.rpm",
+            "openssh-server-sysvinit-6.6.1p1-31.el7.x86_64.rpm",
+            "pam_ssh_agent_auth-0.9.3-9.31.el7.i686.rpm",
+            "pam_ssh_agent_auth-0.9.3-9.31.el7.x86_64.rpm"
+          ],
+          "rpm_version": "openssh-6.6.1p1-31.el7"
+        }
+      ],
+      "cve_keyword": "openssh"
+    }
+  },
+  {
+    "cve_num": "CVE-2016-1908",
+    "title": "OpenSSH 安全漏洞(CVE-2016-1908)",
+    "level": "高",
+    "title_key": "ssh",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2016-1908",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "An access flaw was discovered in OpenSSH; the OpenSSH client did not correctly handle failures to generate authentication cookies for untrusted X11 forwarding. A malicious or compromised remote X application could possibly use this flaw to establish a trusted connection to the local X server, even if only untrusted X11 forwarding was requested.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2016:0465",
+          "errate_package_name": "openssh",
+          "fixed_rpms": [
+            "openssh-6.6.1p1-25.el7_2.src.rpm",
+            "openssh-6.6.1p1-25.el7_2.x86_64.rpm",
+            "openssh-askpass-6.6.1p1-25.el7_2.x86_64.rpm",
+            "openssh-clients-6.6.1p1-25.el7_2.x86_64.rpm",
+            "openssh-debuginfo-6.6.1p1-25.el7_2.i686.rpm",
+            "openssh-debuginfo-6.6.1p1-25.el7_2.x86_64.rpm",
+            "openssh-debuginfo-6.6.1p1-25.el7_2.x86_64.rpm",
+            "openssh-keycat-6.6.1p1-25.el7_2.x86_64.rpm",
+            "openssh-ldap-6.6.1p1-25.el7_2.x86_64.rpm",
+            "openssh-server-6.6.1p1-25.el7_2.x86_64.rpm",
+            "openssh-server-sysvinit-6.6.1p1-25.el7_2.x86_64.rpm",
+            "pam_ssh_agent_auth-0.9.3-9.25.el7_2.i686.rpm",
+            "pam_ssh_agent_auth-0.9.3-9.25.el7_2.x86_64.rpm"
+          ],
+          "rpm_version": "openssh-6.6.1p1-25.el7_2"
+        }
+      ],
+      "cve_keyword": "openssh"
+    }
+  },
+  {
+    "cve_num": "CVE-2016-3115",
+    "title": "OpenSSH <=7.2p1 xauth命令注入漏洞(CVE-2016-3115)",
+    "level": "中",
+    "title_key": "ssh",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2016-3115",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "It was discovered that the OpenSSH server did not sanitize data received in requests to enable X11 forwarding. An authenticated client with restricted SSH access could possibly use this flaw to bypass intended restrictions.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2016:0465",
+          "errate_package_name": "openssh",
+          "fixed_rpms": [
+            "openssh-6.6.1p1-25.el7_2.src.rpm",
+            "openssh-6.6.1p1-25.el7_2.x86_64.rpm",
+            "openssh-askpass-6.6.1p1-25.el7_2.x86_64.rpm",
+            "openssh-clients-6.6.1p1-25.el7_2.x86_64.rpm",
+            "openssh-debuginfo-6.6.1p1-25.el7_2.i686.rpm",
+            "openssh-debuginfo-6.6.1p1-25.el7_2.x86_64.rpm",
+            "openssh-debuginfo-6.6.1p1-25.el7_2.x86_64.rpm",
+            "openssh-keycat-6.6.1p1-25.el7_2.x86_64.rpm",
+            "openssh-ldap-6.6.1p1-25.el7_2.x86_64.rpm",
+            "openssh-server-6.6.1p1-25.el7_2.x86_64.rpm",
+            "openssh-server-sysvinit-6.6.1p1-25.el7_2.x86_64.rpm",
+            "pam_ssh_agent_auth-0.9.3-9.25.el7_2.i686.rpm",
+            "pam_ssh_agent_auth-0.9.3-9.25.el7_2.x86_64.rpm"
+          ],
+          "rpm_version": "openssh-6.6.1p1-25.el7_2"
+        }
+      ],
+      "cve_keyword": "openssh"
+    }
+  },
+  {
+    "cve_num": "CVE-2015-5600",
+    "title": "Openssh MaxAuthTries限制绕过漏洞(CVE-2015-5600)",
+    "level": "高",
+    "title_key": "ssh",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2015-5600",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "低",
+      "cve_detail": "It was discovered that the OpenSSH sshd daemon did not check the list of keyboard-interactive authentication methods for duplicates. A remote attacker could use this flaw to bypass the MaxAuthTries limit, making it easier to perform password guessing attacks.",
+      "cve_statement": "This issue does not affect the default OpenSSH sshd configuration in Red Hat Enterprise Linux 4, 5, 6 and 7.",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2015:2088",
+          "errate_package_name": "openssh",
+          "fixed_rpms": [
+            "openssh-6.6.1p1-22.el7.src.rpm",
+            "openssh-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-askpass-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-clients-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-debuginfo-6.6.1p1-22.el7.i686.rpm",
+            "openssh-debuginfo-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-debuginfo-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-keycat-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-ldap-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-server-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-server-sysvinit-6.6.1p1-22.el7.x86_64.rpm",
+            "pam_ssh_agent_auth-0.9.3-9.22.el7.i686.rpm",
+            "pam_ssh_agent_auth-0.9.3-9.22.el7.x86_64.rpm"
+          ],
+          "rpm_version": "openssh-6.6.1p1-22.el7"
+        }
+      ],
+      "cve_keyword": "openssh"
+    }
+  },
+  {
+    "cve_num": "CVE-2015-6564",
+    "title": "OpenSSH sshd mm_answer_pam_free_ctx释放后重利用漏洞(CVE-2015-6564)",
+    "level": "中",
+    "title_key": "ssh",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2015-6564",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "A use-after-free flaw was found in OpenSSH. An attacker able to fully compromise a non-privileged pre-authentication process using a different flaw could possibly cause sshd to crash or execute arbitrary code with root privileges.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2015:2088",
+          "errate_package_name": "openssh",
+          "fixed_rpms": [
+            "openssh-6.6.1p1-22.el7.src.rpm",
+            "openssh-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-askpass-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-clients-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-debuginfo-6.6.1p1-22.el7.i686.rpm",
+            "openssh-debuginfo-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-debuginfo-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-keycat-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-ldap-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-server-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-server-sysvinit-6.6.1p1-22.el7.x86_64.rpm",
+            "pam_ssh_agent_auth-0.9.3-9.22.el7.i686.rpm",
+            "pam_ssh_agent_auth-0.9.3-9.22.el7.x86_64.rpm"
+          ],
+          "rpm_version": "openssh-6.6.1p1-22.el7"
+        }
+      ],
+      "cve_keyword": "openssh"
+    }
+  },
+  {
+    "cve_num": "CVE-2015-6563",
+    "title": "OpenSSH sshd monitor组件欺骗漏洞(CVE-2015-6563)",
+    "level": "低",
+    "title_key": "ssh",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2015-6563",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "A flaw was found in the way OpenSSH handled PAM authentication when using privilege separation. An attacker with valid credentials on the system and able to fully compromise a non-privileged pre-authentication process using a different flaw could use this flaw to authenticate as other users.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Fixed",
+          "errate_url": "https://access.redhat.com/errata/RHSA-2015:2088",
+          "errate_package_name": "openssh",
+          "fixed_rpms": [
+            "openssh-6.6.1p1-22.el7.src.rpm",
+            "openssh-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-askpass-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-clients-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-debuginfo-6.6.1p1-22.el7.i686.rpm",
+            "openssh-debuginfo-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-debuginfo-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-keycat-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-ldap-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-server-6.6.1p1-22.el7.x86_64.rpm",
+            "openssh-server-sysvinit-6.6.1p1-22.el7.x86_64.rpm",
+            "pam_ssh_agent_auth-0.9.3-9.22.el7.i686.rpm",
+            "pam_ssh_agent_auth-0.9.3-9.22.el7.x86_64.rpm"
+          ],
+          "rpm_version": "openssh-6.6.1p1-22.el7"
+        }
+      ],
+      "cve_keyword": "openssh"
+    }
+  },
+  {
+    "cve_num": "CVE-2020-15778",
+    "title": "OpenSSH 命令注入漏洞(CVE-2020-15778)",
+    "level": "高",
+    "title_key": "ssh",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2020-15778",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "A flaw was found in the scp program shipped with the openssh-clients package. An attacker having the ability to scp files to a remote server, could execute arbitrary commands on the remote server by including the command as a part of the filename being copied on the server. This command is run with the permissions of user with which the files were copied on the remote server. The highest threat from this vulnerability is to data confidentiality and integrity as well as system availability.",
+      "cve_statement": "This security flaw lies in the way scp command parses its command line arguments. The SSH protocol or any other applications shipped as a part of openssh-clients packages are not vulnerable.\n\nIn order to exploit this flaw, the attacker needs to social engineer or manipulate a system administrator (who has root access on the remote server)  to run scp with a malicious command line parameter. \n\nAdministrators can uninstall openssh-clients for additional protection against accidental usage of this binary. Removing the openssh-clients package will make binaries like scp and ssh etc unavailable on that system. Also administrators can change the execute permissions on the scp binary. However this mitigation will be in place until the openssh-clients package is updated.",
+      "affect_products": [
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "openssh"
+        }
+      ],
+      "cve_keyword": "openssh"
+    }
+  },
+  {
+    "cve_num": "CVE-2021-28041",
+    "title": "OpenSSH 安全漏洞(CVE-2021-28041)",
+    "level": "高",
+    "title_key": "ssh",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2021-28041",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "A double-free memory corruption flaw was found in OpenSSH 8.2, more specifically in ssh-agent application. This flaw allows an attacker with access to the agent socket to forward an agent either to an account shared with a malicious user or to a host with an attacker holding root access. The highest threat from this vulnerability is to confidentiality, integrity, as well as system availability.",
+      "cve_statement": "This issue doesn't affected any versions of OpenSSH packaged and shipped with Red Hat Enterprise Linux 6, 7 and 8. The issue was introduced in OpenSSH 8.2 while the most recent OpenSSH version available for Red Hat Enterprise Linux 8 is based on OpenSSH  8.0.",
+      "affect_products": [
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "openssh"
+        }
+      ],
+      "cve_keyword": "openssh"
+    }
+  },
+  {
+    "cve_num": "CVE-2016-10010",
+    "title": "OpenSSH 远程权限提升漏洞(CVE-2016-10010)",
+    "level": "中",
+    "title_key": "ssh",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2016-10010",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "低",
+      "cve_detail": "sshd in OpenSSH before 7.4, when privilege separation is not used, creates forwarded Unix-domain sockets as root, which might allow local users to gain privileges via unspecified vectors, related to serverloop.c.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "openssh"
+        }
+      ],
+      "cve_keyword": "openssh"
+    }
+  },
+  {
+    "cve_num": "CVE-2016-1907",
+    "title": "OpenSSH 拒绝服务漏洞(CVE-2016-1907)",
+    "level": "中",
+    "title_key": "ssh",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2016-1907",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "The ssh_packet_read_poll2 function in packet.c in OpenSSH before 7.1p2 allows remote attackers to cause a denial of service (out-of-bounds read and application crash) via crafted network traffic.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "openssh"
+        }
+      ],
+      "cve_keyword": "openssh"
+    }
+  },
+  {
+    "cve_num": "CVE-2018-15919",
+    "title": "OpenSSH 用户枚举漏洞(CVE-2018-15919)",
+    "level": "中",
+    "title_key": "ssh",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2018-15919",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "低",
+      "cve_detail": "OpenSSH server was found to respond differently to failed GSSAPI authentication attempts when the target user existed versus when that user did not exist. A remote attacker could use this bug to test for the existence of particular usernames on a target system.",
+      "cve_statement": "",
+      "affect_products": [
+        {
+          "errate_state": "Will not fix",
+          "errate_url": null,
+          "errate_package_name": "openssh"
+        }
+      ],
+      "cve_keyword": "openssh"
+    }
+  },
+  {
+    "cve_num": "CVE-2015-5352",
+    "title": "OpenSSH 'x11_open_helper()'函数安全限制绕过漏洞(CVE-2015-5352)",
+    "level": "中",
+    "title_key": "ssh",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2015-5352",
+      "cve_state": "红帽已处理",
+      "cve_threat_severity": "中",
+      "cve_detail": "It was found that the OpenSSH client did not properly enforce the ForwardX11Timeout setting. A malicious or compromised remote X application could possibly use this flaw to establish a trusted connection to the local X server, even if only untrusted X11 forwarding was requested.",
+      "cve_statement": "This issue does not affect the version of openssh package as shipped with Red Hat Enterprise Linux 7. This issue affects the version of openssh package as shipped with Red Hat Enterprise Linux 5 and 6.\n\nRed Hat Product Security has rated this issue as having Moderate security impact. This issue is not currently planned to be addressed in future updates.",
+      "affect_products": [
+        {
+          "errate_state": "Not affected",
+          "errate_url": null,
+          "errate_package_name": "openssh"
+        }
+      ],
+      "cve_keyword": "openssh"
+    }
+  },
+  {
+    "cve_num": "CVE-2008-5161",
+    "title": "OpenSSH CBC模式信息泄露漏洞(CVE-2008-5161)【原理扫描】",
+    "level": "低",
+    "title_key": "ssh",
+    "detail": {
+      "cve_url": "https://access.redhat.com/security/cve/cve-2008-5161",
+      "cve_state": "未找到相关修复：Red Hat Enterprise Linux 7",
+      "cve_threat_severity": "低",
+      "cve_detail": "Error handling in the SSH protocol in (1) SSH Tectia Client and Server and Connector 4.0 through 4.4.11, 5.0 through 5.2.4, and 5.3 through 5.3.8; Client and Server and ConnectSecure 6.0 through 6.0.4; Server for Linux on IBM System z 6.0.4; Server for IBM z/OS 5.5.1 and earlier, 6.0.0, and 6.0.1; and Client 4.0-J through 4.3.3-J and 4.0-K through 4.3.10-K; and (2) OpenSSH 4.7p1 and possibly other versions, when using a block cipher algorithm in Cipher Block Chaining (CBC) mode, makes it easier for remote attackers to recover certain plaintext data from an arbitrary block of ciphertext in an SSH session via unknown vectors.",
+      "cve_statement": "This issue was addressed for Red Hat Enterprise Linux 5 by\nhttps://rhn.redhat.com/errata/RHSA-2009-1287.html\n\nAfter reviewing the upstream fix for this issue, Red Hat does not intend to address this flaw in Red Hat Enterprise Linux 4.",
+      "affect_products": [],
+      "cve_keyword": "未分类"
+    }
+  }
+]
