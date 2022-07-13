@@ -1,0 +1,12 @@
+- name: copy hosts
+  gather_facts: false
+  hosts: all
+  tasks:
+    - name: Fetch the hosts from the node to master
+      fetch:
+        src: "/etc/hosts"
+        dest: "buffer/{{inventory_hostname}}-hosts"
+        flat: yes
+#    手动修改好合适的hosts, stat命令可以查看文件的实际权限数字
+    - name: copy hosts #将处理好的hosts分发给各个机器上
+      copy: src=buffer/hosts dest=/etc/hosts mode=0644

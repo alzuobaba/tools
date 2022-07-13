@@ -15,6 +15,10 @@
 5. libvirt_api_python
     反编译的libvirt api 接口规范，主要是我实在没找到这玩意在libvirt哪里能看到，倒是有c接口
 
-6. ansible_scripts/auth_key
+6. ansible_scripts/auth_key.yml
    ansible 批量脚本，配置节点之间相互免密。
    usage: ansible-playbook -i multinode auth_key.yml
+
+6. ansible_scripts/copy_hosts.yml
+   ansible 批量脚本，全局复制hosts然后手动修改后回传。
+   usage: ansible-playbook -i multinode copy_hosts.yml
