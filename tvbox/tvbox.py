@@ -10,7 +10,13 @@ from pathlib import Path
 
 
 class tvBoxConfig(object):
-    def __init__(self, url, root_dir, clan_dir="TVBox", cache_root=False, update_cache_file=False, max_worker=None):
+    valid_file_suffix = ('.jar', '.json')
+
+    def __init__(
+            self, url, root_dir,
+            clan_dir="TVBox", cache_root=False,
+            update_cache_file=False, max_worker=None,
+            download_mode='parallel'):
         """
 
         :param url: tvbox or pluto player 配置地址
@@ -26,6 +32,7 @@ class tvBoxConfig(object):
         self.cache_root = cache_root
         self.update_cache_file = update_cache_file
         self.max_worker = max_worker
+        self.download_mode = download_mode
         if not os.path.exists(self.root_dir):
             os.mkdir(self.root_dir)
 
@@ -62,10 +69,12 @@ class tvBoxConfig(object):
 
     def _cache_sites(self, root):
         sites = root['sites']
-        with ThreadPoolExecutor(max_workers=32) as pool:
-            pool.map(self._cache_site, sites)
-        # for site in sites:
-        #     self._cache_site(site)
+        if self.download_mode == 'parallel':
+            with ThreadPoolExecutor(max_workers=32) as pool:
+                pool.map(self._cache_site, sites)
+        elif self.download_mode == 'serial':
+            for site in sites:
+                self._cache_site(site)
 
     def _cache_site(self, site):
         if not 'ext' in site:
@@ -108,8 +117,11 @@ class tvBoxConfig(object):
         if not file_url.startswith(('https://', 'http://')):
             raise Exception('unknown url schema：{}'.format(file_url))
         clan_addr = self._get_clan_addr(filepath=file_path)
+        if not file_url.endswith(self.valid_file_suffix):
+            return file_url
         if os.path.exists(file_path) and not self.update_cache_file:
             return clan_addr
+        print(file_url)
         dirname = os.path.dirname(file_path)
         if not os.path.exists(dirname):
             os.makedirs(dirname)
@@ -141,5 +153,5 @@ class tvBoxConfig(object):
 
 if __name__ == '__main__':
     config_url = 'https://freed.yuanhsing.cf/TVBox/meowcf.json'
-    tv = tvBoxConfig(config_url, 'yuanhsing')
+    tv = tvBoxConfig(config_url, 'yuanhsing', download_mode='serial')
     tv.parse()
