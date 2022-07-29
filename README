@@ -22,3 +22,9 @@
 6. ansible_scripts/copy_hosts.yml
    ansible 批量脚本，全局复制hosts然后手动修改后回传。
    usage: ansible-playbook -i multinode copy_hosts.yml
+
+7. tvbox/tvbox.py
+    用于将tvbox/pluto player 远程配置文件本地化
+
+8. quark
+   获取quark云盘的文件下载地址
