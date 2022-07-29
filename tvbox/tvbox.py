@@ -3,7 +3,7 @@
 import json
 import os
 import base64
-# from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime
 import requests
 from pathlib import Path
@@ -62,10 +62,10 @@ class tvBoxConfig(object):
 
     def _cache_sites(self, root):
         sites = root['sites']
-        # with ThreadPoolExecutor(max_workers=32) as pool:
-        #     pool.map(self._cache_site, sites)
-        for site in sites:
-            self._cache_site(site)
+        with ThreadPoolExecutor(max_workers=32) as pool:
+            pool.map(self._cache_site, sites)
+        # for site in sites:
+        #     self._cache_site(site)
 
     def _cache_site(self, site):
         if not 'ext' in site:
