@@ -1,15 +1,19 @@
 #!/user/bin/env python3
 # -*- coding: utf-8 -*-
+import base64
+import hashlib
 import json
 import os
 import sys
-import base64
 import requests
-from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
+from pathlib import Path
+from requests.adapters import HTTPAdapter
+from requests.packages.urllib3.util.retry import Retry
 
 DOWNLOAD_MODE = ['serial', 'parallel']
-
+CLAN_PREFIX = 'clan://'
+HTTPS_PREFIX = ('https://', 'http://')
 VALID_FILE_SUFFIX = ('.jar', '.json', '.txt')
 IGNORE_SUFFIX = ("vod/", "vod")
 
@@ -27,6 +31,17 @@ def add_failed(func, *args, **kwargs):
     return wrap
 
 
+def md5_calculate(filepath):
+    md5_hash = hashlib.md5()
+    with open(filepath, "rb") as f:
+        #  the iter() function needs an empty byte string
+        #  for the returned iterator to halt (停止) at EOF,
+        #  since read() returns b'' (not just '').
+        for byte_block in iter(lambda: f.read(8192), b""):
+            md5_hash.update(byte_block)
+        return md5_hash.hexdigest()
+
+
 class tvBoxConfig(object):
 
     def __init__(
@@ -41,6 +56,7 @@ class tvBoxConfig(object):
         :param update_cache_file: 是否更新本地文件
         :param max_worker: 线程数，最大32 默认cpu-cores+4
         """
+        self.requests = self._init_session()
         self.root_dir = root_dir
         self.clan_dir = clan_dir
         self.cache_root = cache_root
@@ -51,9 +67,21 @@ class tvBoxConfig(object):
             os.mkdir(self.root_dir)
 
     @staticmethod
-    def _parse_remote_root(config_url):
+    def _init_session():
+        retry_strategy = Retry(
+            total=3,
+            status_forcelist=[429, 500, 502, 503, 504],
+            method_whitelist=["HEAD", "GET", "OPTIONS"]
+        )
+        adapter = HTTPAdapter(max_retries=retry_strategy)
+        request = requests.Session()
+        request.mount("https://", adapter)
+        request.mount("http://", adapter)
+        return request
+
+    def _parse_remote_root(self, config_url):
         try:
-            resp = requests.get(config_url, timeout=(7, 15))
+            resp = self.requests.get(config_url, timeout=(7, 15))
         except requests.exceptions.RequestException:
             raise Exception('请求配置失败:{}，请检查网络链接是否正常。'.format(config_url))
         if resp.status_code != 200:
@@ -127,7 +155,7 @@ class tvBoxConfig(object):
                 channel['urls'] = urls
 
     def _cache_spider(self, root):
-        spider = root['spider']
+        spider = root['spider'].split(";")[0]
         file_path = self._get_file_path(filename='spider.jar', parent_dir='jar')
         root['spider'] = self._download(file_url=spider, file_path=file_path)
 
@@ -148,11 +176,12 @@ class tvBoxConfig(object):
     def _download(self, file_url, file_path):
         if not file_url:
             return file_url
-        elif file_url.startswith(('clan://')):
+        elif file_url.startswith(CLAN_PREFIX):
             print("略过clan://路径：{}".format(file_url))
             return file_url
-        elif not file_url.startswith(('https://', 'http://')):
-            raise Exception('unknown url schema：{}'.format(file_url))
+        elif not file_url.startswith(HTTPS_PREFIX):
+            print('unknown url schema：{}'.format(file_url))
+            return file_url
         elif not file_url.endswith(VALID_FILE_SUFFIX):
             if not file_url.endswith(IGNORE_SUFFIX):
                 print("略过未定义后缀文件路径：{}".format(file_url))
@@ -163,21 +192,30 @@ class tvBoxConfig(object):
         dirname = os.path.dirname(file_path)
         if not os.path.exists(dirname):
             os.makedirs(dirname)
-        print('req start:{}'.format(file_url))
+        # print('req start:{}'.format(file_url))
         try:
-            req = requests.get(file_url, timeout=(7, 15), stream=True)
+            req = self.requests.get(file_url, timeout=(7, 15), stream=True)
         except requests.exceptions.RequestException:
             print('req failed:{}，请检查网络链接是否正常。'.format(file_url))
             return file_url
         if req.status_code != 200:
             print('req failed code {}:{}'.format(req.status_code, file_url))
             return file_url
-        print('req ok:{}'.format(file_url))
+        # print('req ok:{}'.format(file_url))
+        md5_check = False
         if os.path.exists(file_path):
-            os.remove(file_path)
+            # os.remove(file_path)
+            md5_check = True
+            old_check_sum = md5_calculate(file_path)
+        md5_hash = hashlib.md5()
         with open(file_path, "wb") as f:
-            for chunk in req.iter_content(chunk_size=8192):  # 每次加载1024字节
+            for chunk in req.iter_content(chunk_size=8192):
                 f.write(chunk)
+                md5_hash.update(chunk)
+        if md5_check:
+            new_checksum = md5_hash.hexdigest()
+            if new_checksum != old_check_sum:
+                print("update file:{}".format(file_url))
         return clan_addr
 
     @staticmethod
@@ -223,7 +261,7 @@ def parse_remote():
         config_url = input("请输入tvbox远程配置url,按q退出:").strip()
         if config_url == 'q':
             exit()
-        if config_url and config_url.startswith(('https://', 'http://')):
+        if config_url and config_url.startswith(HTTPS_PREFIX):
             break
         print("请输入正确的url。")
     file_name = os.path.basename(config_url).split('.')[0]
@@ -261,14 +299,23 @@ def parse_common(root_dir, config_url=None, config_file=None):
     else:
         download_index = int(download_index)
 
+    update_file_flag = input("是否更新本地文件: 1.否 2.是。默认为1:")
+    if not update_file_flag or update_file_flag not in ["1", "2"] or update_file_flag == '1':
+        update_file_flag = False
+    else:
+        update_file_flag = True
+
     download_mode = DOWNLOAD_MODE[download_index - 1]
-    tv = tvBoxConfig(root_dir=root_dir, download_mode=download_mode)
+    tv = tvBoxConfig(root_dir=root_dir, download_mode=download_mode, update_cache_file=update_file_flag)
     tv.parse(config_url=config_url, config_file=config_file)
     print("----------")
-    print("以下链接处理失败，请再次运行本脚本或者手动处理")
+    print("以下链接处理失败，请再次运行本脚本或者手动处理:")
+    print("start:-----failed list-----")
     for file_url in Failed_URLS:
         if not file_url.endswith(IGNORE_SUFFIX):
             print(file_url)
+    print("end:-----failed list-----")
+
     print("保存结束。请查看root-local.json")
     print("请将保存的目录移动至根盘TVBox。")
     print("本地链接：{}".format(tv.get_subscribe_url()))
