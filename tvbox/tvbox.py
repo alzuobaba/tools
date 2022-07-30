@@ -3,14 +3,15 @@
 import json
 import os
 import base64
-from concurrent.futures import ThreadPoolExecutor
-from datetime import datetime
 import requests
 from pathlib import Path
+from concurrent.futures import ThreadPoolExecutor
+
+DOWNLOAD_MODE = ['serial', 'parallel']
 
 
 class tvBoxConfig(object):
-    valid_file_suffix = ('.jar', '.json')
+    valid_file_suffix = ('.jar', '.json', '.txt')
 
     def __init__(
             self, url, root_dir,
@@ -37,7 +38,10 @@ class tvBoxConfig(object):
             os.mkdir(self.root_dir)
 
     def _get_root(self):
-        resp = requests.get(self.url)
+        try:
+            resp = requests.get(self.url, timeout=(5, 10))
+        except requests.exceptions.RequestException:
+            raise Exception('请求配置失败，请检查网络链接是否正常。')
         if resp.status_code != 200:
             raise Exception('配置下载失败')
         text = resp.text
@@ -55,11 +59,19 @@ class tvBoxConfig(object):
         self._cache_spider(root)
         self._cache_lives(root)
         self._cache_sites(root)
-        self._save_file(root, filename='root-local.json')
+        self._cache_root(root, local_root=True)
 
-    def _cache_root(self, root, filename='root.json'):
-        if not self.cache_root:
-            return
+    def get_subscribe_url(self, ):
+        root_path = self._get_file_path('root-local.json')
+        return self._get_clan_addr(filepath=root_path, subscribe_url=True)
+
+    def _cache_root(self, root, local_root=False):
+        if not local_root:
+            if not self.cache_root:
+                return
+            filename = 'root.json'
+        else:
+            filename = 'root-local.json'
         self._save_file(root, filename)
 
     def _save_file(self, root, filename):
@@ -70,7 +82,7 @@ class tvBoxConfig(object):
     def _cache_sites(self, root):
         sites = root['sites']
         if self.download_mode == 'parallel':
-            with ThreadPoolExecutor(max_workers=32) as pool:
+            with ThreadPoolExecutor() as pool:
                 pool.map(self._cache_site, sites)
         elif self.download_mode == 'serial':
             for site in sites:
@@ -109,9 +121,11 @@ class tvBoxConfig(object):
             path = os.path.join(self.root_dir, parent_dir, filename)
         return path
 
-    def _get_clan_addr(self, filepath):
+    def _get_clan_addr(self, filepath, subscribe_url=False):
         filepath = Path(filepath).as_posix()
-        return "clan://localhost/{}/{}".format(self.clan_dir, filepath)
+        if subscribe_url:
+            return "clan://localhost/{}/{}".format(self.clan_dir, filepath)
+        return "clan://{}/{}".format(self.clan_dir, filepath)
 
     def _download(self, file_url, file_path):
         if not file_url.startswith(('https://', 'http://')):
@@ -125,7 +139,8 @@ class tvBoxConfig(object):
         dirname = os.path.dirname(file_path)
         if not os.path.exists(dirname):
             os.makedirs(dirname)
-        req = requests.get(file_url, stream=True)
+        print('req start:{}'.format(file_url))
+        req = requests.get(file_url, timeout=(5, 10), stream=True)
         if req.status_code != 200:
             print('req failed: {}'.format(file_url))
             return file_url
@@ -151,7 +166,38 @@ class tvBoxConfig(object):
         return json.loads(str_res)
 
 
-if __name__ == '__main__':
-    config_url = 'https://freed.yuanhsing.cf/TVBox/meowcf.json'
-    tv = tvBoxConfig(config_url, 'yuanhsing', download_mode='serial')
+def local_download():
+    while True:
+        config_url = input("请输入tvbox远程配置url:").strip()
+        if config_url and config_url.startswith(('https://', 'http://')):
+            break
+        print("请输入正确的url。")
+
+    file_name = os.path.basename(config_url).split('.')[0]
+    root_dir = input("请输入本地配置保存路径,默认为:[{}]".format(file_name))
+    if not root_dir:
+        root_dir = file_name
+
+    print("请选择下载模式: 1.串行下载 2.并行下载。默认为: 2")
+    download_index = input("请输入下载模式: ")
+    if not download_index or download_index not in ["1", "2"]:
+        download_index = 2
+    else:
+        download_index = int(download_index)
+
+    download_mode = DOWNLOAD_MODE[download_index - 1]
+    tv = tvBoxConfig(url=config_url, root_dir=root_dir, download_mode=download_mode)
     tv.parse()
+    print("保存结束。请查看root-local.json")
+    print("请将保存的目录移动至根盘TVBox。")
+    print("本地链接：{}".format(tv.get_subscribe_url()))
+
+if __name__ == '__main__':
+    print("----tvbox远程配置本地化脚本----")
+    print("source: https://raw.githubusercontent.com/alzuobaba/tools/master/tvbox/tvbox.py")
+    print("author: alzuobaba")
+    print("本脚本推荐放置于根盘/TVBox目录运行, 如果保存失败可以运行多次。")
+    print("-----------------------------")
+    local_download()
+
+# https://freed.yuanhsing.cf/TVBox/meowcf.json
