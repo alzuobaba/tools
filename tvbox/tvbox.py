@@ -14,20 +14,17 @@ class tvBoxConfig(object):
     valid_file_suffix = ('.jar', '.json', '.txt')
 
     def __init__(
-            self, url, root_dir,
+            self, root_dir,
             clan_dir="TVBox", cache_root=False,
             update_cache_file=False, max_worker=None,
             download_mode='parallel'):
         """
-
-        :param url: tvbox or pluto player 配置地址
         :param root_dir: 根路径内的子路径
         :param clan_dir: 根路径默认为TVBox
         :param cache_root: 是否保存原远程json
         :param update_cache_file: 是否更新本地文件
         :param max_worker: 线程数，最大32 默认cpu-cores+4
         """
-        self.url = url
         self.root_dir = root_dir
         self.clan_dir = clan_dir
         self.cache_root = cache_root
@@ -37,25 +34,25 @@ class tvBoxConfig(object):
         if not os.path.exists(self.root_dir):
             os.mkdir(self.root_dir)
 
-    def _get_root(self):
+    @staticmethod
+    def _parse_remote_root(config_url):
         try:
-            resp = requests.get(self.url, timeout=(5, 10))
+            resp = requests.get(config_url, timeout=(5, 10))
         except requests.exceptions.RequestException:
-            raise Exception('请求配置失败，请检查网络链接是否正常。')
+            raise Exception('请求配置失败:{}，请检查网络链接是否正常。'.format(config_url))
         if resp.status_code != 200:
             raise Exception('配置下载失败')
-        text = resp.text
-        # for test ------- start
-        # root_path = self._get_file_path('root.json')
-        # with open(root_path, encoding='utf-8') as f:
-        #     text = f.read()
-        # for test ------- end
-        root = self._remove_comment(text)
-        self._cache_root(root)
-        return root
+        return resp.text
 
-    def parse(self):
-        root = self._get_root()
+    def _parse_local_root(self, filename):
+        if not os.path.exists(filename):
+            raise Exception("输入的本地文件：%s不存在。" % filename)
+        with open(filename, encoding='utf-8') as f:
+            text = f.read()
+        return text
+
+    def parse(self, config_url=None, config_file=None):
+        root = self._parse_root(config_url=config_url, filename=config_file)
         self._cache_spider(root)
         self._cache_lives(root)
         self._cache_sites(root)
@@ -128,21 +125,29 @@ class tvBoxConfig(object):
         return "clan://{}/{}".format(self.clan_dir, filepath)
 
     def _download(self, file_url, file_path):
-        if not file_url.startswith(('https://', 'http://')):
-            raise Exception('unknown url schema：{}'.format(file_url))
-        clan_addr = self._get_clan_addr(filepath=file_path)
-        if not file_url.endswith(self.valid_file_suffix):
+        if not file_url:
             return file_url
+        elif file_url.startswith(('clan://')):
+            print("略过clan://路径：{}".format(file_url))
+            return file_url
+        elif not file_url.startswith(('https://', 'http://')):
+            raise Exception('unknown url schema：{}'.format(file_url))
+        elif not file_url.endswith(self.valid_file_suffix):
+            return file_url
+        clan_addr = self._get_clan_addr(filepath=file_path)
         if os.path.exists(file_path) and not self.update_cache_file:
             return clan_addr
-        print(file_url)
         dirname = os.path.dirname(file_path)
         if not os.path.exists(dirname):
             os.makedirs(dirname)
         print('req start:{}'.format(file_url))
-        req = requests.get(file_url, timeout=(5, 10), stream=True)
+        try:
+            req = requests.get(file_url, timeout=(5, 10), stream=True)
+        except requests.exceptions.RequestException:
+            print('req failed:{}，请检查网络链接是否正常。'.format(file_url))
+            return file_url
         if req.status_code != 200:
-            print('req failed: {}'.format(file_url))
+            print('req failed code {}:{}'.format(req.status_code, file_url))
             return file_url
         print('req ok:{}'.format(file_url))
         if os.path.exists(file_path):
@@ -165,38 +170,86 @@ class tvBoxConfig(object):
         str_res = "".join(res)
         return json.loads(str_res)
 
+    def _parse_root(self, config_url=None, filename=None):
+        if config_url:
+            text = self._parse_remote_root(config_url)
+        elif filename:
+            text = self._parse_local_root(filename)
+        else:
+            raise Exception("请输入正确的配置")
+        root = self._remove_comment(text)
+        self._cache_root(root)
+        return root
+
 
 def local_download():
+    print("本脚本推荐放置于根盘/TVBox目录运行, 如果保存失败可以运行多次。")
+    parse_index = input("请选择解析模式: 1.解析远程配置 2.解析本地文件。默认为1:")
+    if not parse_index or parse_index not in ["1", "2"]:
+        parse_index = "1"
+    if parse_index == "1":
+        parse_remote()
+    else:
+        parse_local()
+
+
+def parse_remote():
+    print("远程解析模式：-------")
     while True:
-        config_url = input("请输入tvbox远程配置url:").strip()
+        config_url = input("请输入tvbox远程配置url,按q退出:").strip()
+        if config_url == 'q':
+            exit()
         if config_url and config_url.startswith(('https://', 'http://')):
             break
         print("请输入正确的url。")
-
     file_name = os.path.basename(config_url).split('.')[0]
-    root_dir = input("请输入本地配置保存路径,默认为:[{}]".format(file_name))
+    root_dir = input("请输入配置保存路径,默认为[{}]:".format(file_name))
     if not root_dir:
         root_dir = file_name
+    parse_common(root_dir, config_url=config_url)
 
-    print("请选择下载模式: 1.串行下载 2.并行下载。默认为: 2")
-    download_index = input("请输入下载模式: ")
+
+def parse_local():
+    print("本地解析模式：-------")
+    print("请将待解析本地配置放置于脚本同级目录。")
+    print("本地配置解析不会解析clan://路径，仅将远程文件本地化，请手动修正原有clan://路径")
+    while True:
+        config_file = input("请输入tvbox本地配置名称,按q退出:").strip()
+        if config_file == 'q':
+            exit()
+        if not config_file:
+            print("请输入正确的本地文件名称")
+        elif not os.path.exists(config_file):
+            print("未找到相关文件，请查看配置文件是否与脚本处于同级目录")
+        else:
+            break
+    file_name = os.path.basename(config_file).split('.')[0]
+    root_dir = input("请输入配置保存路径,默认为[{}]:".format(file_name))
+    if not root_dir:
+        root_dir = file_name
+    parse_common(root_dir, config_file=config_file)
+
+
+def parse_common(root_dir, config_url=None, config_file=None):
+    download_index = input("请选择下载模式: 1.串行下载 2.并行下载。默认为2:")
     if not download_index or download_index not in ["1", "2"]:
         download_index = 2
     else:
         download_index = int(download_index)
 
     download_mode = DOWNLOAD_MODE[download_index - 1]
-    tv = tvBoxConfig(url=config_url, root_dir=root_dir, download_mode=download_mode)
-    tv.parse()
+    tv = tvBoxConfig(root_dir=root_dir, download_mode=download_mode)
+    tv.parse(config_url=config_url, config_file=config_file)
+    print("----------")
     print("保存结束。请查看root-local.json")
     print("请将保存的目录移动至根盘TVBox。")
     print("本地链接：{}".format(tv.get_subscribe_url()))
+
 
 if __name__ == '__main__':
     print("----tvbox远程配置本地化脚本----")
     print("source: https://raw.githubusercontent.com/alzuobaba/tools/master/tvbox/tvbox.py")
     print("author: alzuobaba")
-    print("本脚本推荐放置于根盘/TVBox目录运行, 如果保存失败可以运行多次。")
     print("-----------------------------")
     local_download()
 
