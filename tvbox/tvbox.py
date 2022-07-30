@@ -10,9 +10,24 @@ from concurrent.futures import ThreadPoolExecutor
 
 DOWNLOAD_MODE = ['serial', 'parallel']
 
+VALID_FILE_SUFFIX = ('.jar', '.json', '.txt')
+IGNORE_SUFFIX = ("vod/", "vod")
+
+Failed_URLS = set()
+
+
+def add_failed(func, *args, **kwargs):
+    def wrap(*args, **kwargs):
+        file_url = kwargs.get('file_url')
+        clan_url = func(*args, **kwargs)
+        if file_url == clan_url:
+            Failed_URLS.add(file_url)
+        return clan_url
+
+    return wrap
+
 
 class tvBoxConfig(object):
-    valid_file_suffix = ('.jar', '.json', '.txt')
 
     def __init__(
             self, root_dir,
@@ -38,7 +53,7 @@ class tvBoxConfig(object):
     @staticmethod
     def _parse_remote_root(config_url):
         try:
-            resp = requests.get(config_url, timeout=(5, 10))
+            resp = requests.get(config_url, timeout=(7, 15))
         except requests.exceptions.RequestException:
             raise Exception('请求配置失败:{}，请检查网络链接是否正常。'.format(config_url))
         if resp.status_code != 200:
@@ -87,10 +102,14 @@ class tvBoxConfig(object):
                 self._cache_site(site)
 
     def _cache_site(self, site):
-        if not 'ext' in site:
+        if not 'ext' in site or not site['ext']:
             return
         file_url = site['ext']
-        filepath = self._get_file_path(filename=os.path.basename(file_url), parent_dir='sites')
+        filename = os.path.basename(file_url)
+        site_api = str(site['api']).lower()
+        if site_api.startswith("csp_"):
+            filename = "{}_{}".format(site_api, filename)
+        filepath = self._get_file_path(filename=filename, parent_dir='sites')
         site['ext'] = self._download(file_url=file_url, file_path=filepath)
 
     def _cache_lives(self, root):
@@ -125,6 +144,7 @@ class tvBoxConfig(object):
             return "clan://localhost/{}/{}".format(self.clan_dir, filepath)
         return "clan://{}/{}".format(self.clan_dir, filepath)
 
+    @add_failed
     def _download(self, file_url, file_path):
         if not file_url:
             return file_url
@@ -133,7 +153,9 @@ class tvBoxConfig(object):
             return file_url
         elif not file_url.startswith(('https://', 'http://')):
             raise Exception('unknown url schema：{}'.format(file_url))
-        elif not file_url.endswith(self.valid_file_suffix):
+        elif not file_url.endswith(VALID_FILE_SUFFIX):
+            if not file_url.endswith(IGNORE_SUFFIX):
+                print("略过未定义后缀文件路径：{}".format(file_url))
             return file_url
         clan_addr = self._get_clan_addr(filepath=file_path)
         if os.path.exists(file_path) and not self.update_cache_file:
@@ -143,7 +165,7 @@ class tvBoxConfig(object):
             os.makedirs(dirname)
         print('req start:{}'.format(file_url))
         try:
-            req = requests.get(file_url, timeout=(5, 10), stream=True)
+            req = requests.get(file_url, timeout=(7, 15), stream=True)
         except requests.exceptions.RequestException:
             print('req failed:{}，请检查网络链接是否正常。'.format(file_url))
             return file_url
@@ -243,6 +265,10 @@ def parse_common(root_dir, config_url=None, config_file=None):
     tv = tvBoxConfig(root_dir=root_dir, download_mode=download_mode)
     tv.parse(config_url=config_url, config_file=config_file)
     print("----------")
+    print("以下链接处理失败，请再次运行本脚本或者手动处理")
+    for file_url in Failed_URLS:
+        if not file_url.endswith(IGNORE_SUFFIX):
+            print(file_url)
     print("保存结束。请查看root-local.json")
     print("请将保存的目录移动至根盘TVBox。")
     print("本地链接：{}".format(tv.get_subscribe_url()))
