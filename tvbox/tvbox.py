@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 import json
 import os
+import sys
 import base64
 import requests
 from pathlib import Path
@@ -183,6 +184,7 @@ class tvBoxConfig(object):
 
 
 def local_download():
+    os.chdir(sys.path[0])
     print("本脚本推荐放置于根盘/TVBox目录运行, 如果保存失败可以运行多次。")
     parse_index = input("请选择解析模式: 1.解析远程配置 2.解析本地文件。默认为1:")
     if not parse_index or parse_index not in ["1", "2"]:
