@@ -118,7 +118,7 @@ class tvBoxConfig(object):
     def _save_file(self, root, filename):
         root_path = self._get_file_path(filename)
         with open(root_path, mode='w', encoding='utf-8') as f:
-            f.write(json.dumps(root, ensure_ascii=False))
+            f.write(json.dumps(root, ensure_ascii=False, indent=4))
 
     def _cache_sites(self, root):
         sites = root['sites']
@@ -130,6 +130,9 @@ class tvBoxConfig(object):
                 self._cache_site(site)
 
     def _cache_site(self, site):
+        # add multi spider support.
+        if site.get('spider'):
+            self._cache_spider(site, use_file_name=True)
         if not 'ext' in site or not site['ext']:
             return
         file_url = site['ext']
@@ -154,9 +157,12 @@ class tvBoxConfig(object):
                     urls.append('ext='.join(url_list))
                 channel['urls'] = urls
 
-    def _cache_spider(self, root):
+    def _cache_spider(self, root, use_file_name=False):
+        spider_name = 'spider.jar'
         spider = root['spider'].split(";")[0]
-        file_path = self._get_file_path(filename='spider.jar', parent_dir='jar')
+        if use_file_name:
+            spider_name = os.path.basename(spider)
+        file_path = self._get_file_path(filename=spider_name, parent_dir='jar')
         root['spider'] = self._download(file_url=spider, file_path=file_path)
 
     def _get_file_path(self, filename, parent_dir=None):
@@ -329,3 +335,4 @@ if __name__ == '__main__':
     local_download()
 
 # https://freed.yuanhsing.cf/TVBox/meowcf.json
+# https://shuyuan.miaogongzi.net/shuyuan/1658731733.json
