@@ -1,4 +1,3 @@
-#!/user/bin/env python3
 # -*- coding: utf-8 -*-
 import base64
 import hashlib
@@ -6,6 +5,8 @@ import json
 import os
 import sys
 import requests
+import re
+from urllib.parse import urlparse
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from requests.adapters import HTTPAdapter
@@ -40,6 +41,45 @@ def md5_calculate(filepath):
         for byte_block in iter(lambda: f.read(8192), b""):
             md5_hash.update(byte_block)
         return md5_hash.hexdigest()
+
+
+# 判断是否为转义字符
+def is_escapeOpr(instr):
+    if len(instr) <= 0:
+        return False
+    cnt = 0
+    while instr[-1] == '\\':
+        cnt += 1
+        instr = instr[:-1]
+    if cnt % 2 == 1:
+        return True
+    else:
+        return False
+
+
+def remove_comment(instr):
+    qtCnt = cmtPos = slashPos = 0
+    rearLine = instr
+    # rearline: 前一个comment_flag之后的字符串，
+    # 双引号里的comment_flag不是注释标志，所以遇到这种情况，仍需继续查找后续的comment_flag
+    comment_flags = ["//", "#"]
+    for comment_flag in comment_flags:
+        while rearLine.find(comment_flag) >= 0:  # 查找comment_flag
+            slashPos = rearLine.find(comment_flag)
+            cmtPos += slashPos
+            # print 'slashPos: ' + str(slashPos)
+            headLine = rearLine[:slashPos]
+            while headLine.find('"') >= 0:  # 查找comment_flag前的双引号
+                qtPos = headLine.find('"')
+                if not is_escapeOpr(headLine[:qtPos]):  # 如果双引号没有被转义
+                    qtCnt += 1  # 双引号的数量加1
+                headLine = headLine[qtPos + 1:]
+            if qtCnt % 2 == 0:  # 如果双引号的数量为偶数，则说明comment_flag是注释标志
+                return instr[:cmtPos]
+            rearLine = rearLine[slashPos + len(comment_flag):]
+            # print rearLine
+            cmtPos += len(comment_flag)
+    return instr
 
 
 class tvBoxConfig(object):
@@ -159,13 +199,14 @@ class tvBoxConfig(object):
 
     def _cache_spider(self, root, use_file_name=False):
         spider_name = 'spider.jar'
-        spider = root['spider'].split(";")[0]
+        spider = root['spider']
         if use_file_name:
             spider_name = os.path.basename(spider)
         file_path = self._get_file_path(filename=spider_name, parent_dir='jar')
         root['spider'] = self._download(file_url=spider, file_path=file_path)
 
     def _get_file_path(self, filename, parent_dir=None):
+        filename = os.path.basename(urlparse(filename).path)
         if not parent_dir:
             path = os.path.join(self.root_dir, filename)
         else:
@@ -188,8 +229,8 @@ class tvBoxConfig(object):
         elif not file_url.startswith(HTTPS_PREFIX):
             print('unknown url schema：{}'.format(file_url))
             return file_url
-        elif not file_url.endswith(VALID_FILE_SUFFIX):
-            if not file_url.endswith(IGNORE_SUFFIX):
+        elif not urlparse(file_url).path.endswith(VALID_FILE_SUFFIX):
+            if not urlparse(file_url).path.endswith(IGNORE_SUFFIX):
                 print("略过未定义后缀文件路径：{}".format(file_url))
             return file_url
         clan_addr = self._get_clan_addr(filepath=file_path)
@@ -233,6 +274,8 @@ class tvBoxConfig(object):
             line = line.strip()
             if line.startswith(("#", "//")):
                 continue
+            elif not re.match(r'\s*\n', line):
+                line = remove_comment(line)
             res.append(line)
         str_res = "".join(res)
         return json.loads(str_res)
@@ -336,3 +379,4 @@ if __name__ == '__main__':
 
 # https://freed.yuanhsing.cf/TVBox/meowcf.json
 # https://shuyuan.miaogongzi.net/shuyuan/1658731733.json
+# http://52bsj.vip:81/api/v3/file/get/2511/0716.txt?sign=ROEu3S_XQiUApjCY-vlXNxsSTcDlfyoRctzFOslKdjg%3D%3A0
