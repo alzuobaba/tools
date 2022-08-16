@@ -171,7 +171,10 @@ class tvBoxConfig(object):
 
     def _cache_site(self, site):
         # add multi spider support.
-        if site.get('spider'):
+        spider_keys = ["jar", "spider", "plugin"]
+        spider_key = next(filter(lambda x: bool(site.get(x)), spider_keys), None)
+        if spider_key:
+            site['spider'] = site.pop(spider_key)
             self._cache_spider(site, use_file_name=True)
         if not 'ext' in site or not site['ext']:
             return
@@ -199,7 +202,7 @@ class tvBoxConfig(object):
 
     def _cache_spider(self, root, use_file_name=False):
         spider_name = 'spider.jar'
-        spider = root['spider']
+        spider = root['spider'].split(";")[0]
         if use_file_name:
             spider_name = os.path.basename(spider)
         file_path = self._get_file_path(filename=spider_name, parent_dir='jar')
@@ -379,4 +382,5 @@ if __name__ == '__main__':
 
 # https://freed.yuanhsing.cf/TVBox/meowcf.json
 # https://shuyuan.miaogongzi.net/shuyuan/1658731733.json
+# http://52bsj.vip:81/api/v3/file/get/2511/0716.txt?sign=ROEu3S_XQiUApjCY-vlXNxsSTcDlfyoRctzFOslKdjg%3D%3A0
 # http://52bsj.vip:81/api/v3/file/get/2511/0716.txt?sign=ROEu3S_XQiUApjCY-vlXNxsSTcDlfyoRctzFOslKdjg%3D%3A0
